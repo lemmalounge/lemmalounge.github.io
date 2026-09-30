@@ -332,7 +332,7 @@ footer a:hover{color:var(--accent)}
   </div>
 </section>
 
-<section class="chapter era-bodoni" id="harmonics" style="--steps:4" aria-labelledby="h-harm">
+<section class="chapter era-bodoni" id="harmonics" style="--steps:5" aria-labelledby="h-harm">
   <div class="stage">
     <div class="copy">
       <p class="chap-no">Chapter III</p>
@@ -356,18 +356,24 @@ footer a:hover{color:var(--accent)}
           <p>A generation before Fourier, Laplace and Legendre, working out the gravity of the planets, found the sphere's version of sines and cosines. Today spherical harmonics describe the shapes of atomic orbitals, the Earth's gravity field, and the ripples in the cosmic microwave background. Keep scrolling to morph through them.</p>
           <p class="math">Y<sub>l</sub><sup>m</sup>(θ, φ) ∝ P<sub>l</sub><sup>m</sup>(cos θ) cos mφ</p>
         </div>
+        <div class="step">
+          <p class="when">1926, the hydrogen atom</p>
+          <p>Solve Schrödinger's equation for hydrogen's one electron and the spherical harmonics appear unbidden: they are the angular shape of every orbital. The quantum numbers <i>l</i> and <i>m</i> of chemistry class are Laplace's indices, and the electron's probability cloud wears the same lobes as the sphere you just saw.</p>
+          <p class="math">ψ<sub>nlm</sub> = R<sub>nl</sub>(r) Y<sub>l</sub><sup>m</sup>(θ, φ)</p>
+        </div>
       </div>
-      <div class="pips" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="pips" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
     </div>
     <figure class="figure">
       <canvas class="layer on" data-scene="fourier" data-on="0 1 2" data-cap='Fig. 4a. <span id="fourier-n">1 circle</span> drawing the letter λ.' role="img" aria-label="A chain of rotating circles whose tip draws the Greek letter lambda, growing sharper as circles are added"></canvas>
       <canvas class="layer" data-scene="sph" data-on="3" data-cap='Fig. 4b. The spherical harmonic with <span id="sph-lm">l = 1, m = 0</span>: the sphere bulges out where it is positive (red) and in where it is negative (blue).' role="img" aria-label="A rotating sphere whose surface bulges into the lobes of successive spherical harmonics, red where positive and blue where negative"></canvas>
+      <canvas class="layer" data-scene="hydrogen" data-on="4" data-cap='Fig. 4c. The hydrogen orbital <span id="hyd-lab">1s</span>: a slice through the electron cloud, red where ψ is positive, blue where negative.' role="img" aria-label="Cross-sections through hydrogen atom orbitals, the electron probability cloud cycling through 1s, 2p, 3d and higher states, red where the wavefunction is positive and blue where negative"></canvas>
       <figcaption>Fig. 4a. <span id="fourier-n">1 circle</span> drawing the letter λ.</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="chapter era-stix" id="number" style="--steps:3" aria-labelledby="h-num">
+<section class="chapter era-stix" id="number" style="--steps:4" aria-labelledby="h-num">
   <div class="stage">
     <div class="copy">
       <p class="chap-no">Chapter IV</p>
@@ -386,19 +392,25 @@ footer a:hover{color:var(--accent)}
           <p>In his last letter to G. H. Hardy, months before he died, Srinivasa Ramanujan described a strange new family of <i>q</i>-series. What they truly were stayed hidden until 2002, when Sander Zwegers showed they are the holomorphic parts of harmonic Maass forms.</p>
           <p class="math">f(q) = Σ<sub>n≥0</sub> q<sup>n²</sup> / (1 + q)²(1 + q²)² ⋯ (1 + q<sup>n</sup>)²</p>
         </div>
+        <div class="step">
+          <p class="when">Today, in your address bar</p>
+          <p>Trade the real numbers for clock arithmetic modulo a prime and the curve shatters into a scatter of points, but the chord-and-tangent addition survives. Adding a point <i>G</i> to itself <i>k</i> times is quick; recovering <i>k</i> from <i>kG</i> alone seems hopeless. That one-way street, the discrete logarithm, is elliptic curve cryptography — it secured the connection that delivered this page.</p>
+          <p class="math">Q = kG: easy.&nbsp;&nbsp;Given Q, find k: intractable.</p>
+        </div>
       </div>
-      <div class="pips" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="pips" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     </div>
     <figure class="figure">
       <canvas class="layer on" data-scene="ulam" data-cap="Fig. 5a. The Ulam spiral, primes marked." role="img" aria-label="The integers written in a square spiral with the primes marked, zooming out to reveal diagonal lines of primes"></canvas>
       <canvas class="layer" data-scene="elliptic" data-cap="Fig. 5b. y² = x³ − x + 1, and the chord that adds P to Q." role="img" aria-label="The elliptic curve y squared equals x cubed minus x plus one, with a line through points P and Q meeting the curve at a third point R, reflected to give P plus Q"></canvas>
       <canvas class="layer" data-scene="mocktheta" data-cap="Fig. 5c. Ramanujan's f(q) across the unit disk; color is phase, bands are modulus." role="img" aria-label="A phase portrait of Ramanujan's third-order mock theta function on the unit disk, with intricate color bands crowding toward the boundary"></canvas>
+      <canvas class="layer" data-scene="ecc" data-cap="Fig. 5d. The same chord-and-tangent game over the finite field F₆₁: the line wraps around like a billiard, and kG hops unpredictably." role="img" aria-label="The elliptic curve y squared equals x cubed minus x plus one over the finite field of sixty-one elements: a scatter of points with a wrapping chord line, the multiples of a base point G hopping unpredictably"></canvas>
       <figcaption>Fig. 5a. The Ulam spiral, primes marked.</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="chapter era-stix" id="space" style="--steps:3" aria-labelledby="h-space">
+<section class="chapter era-stix" id="space" style="--steps:4" aria-labelledby="h-space">
   <div class="stage">
     <div class="copy">
       <p class="chap-no">Chapter V</p>
@@ -416,13 +428,19 @@ footer a:hover{color:var(--accent)}
           <p class="when">1820s to 1882, the hyperbolic plane</p>
           <p>Gauss, Bolyai and Lobachevsky bent space the other way: through the point <i>P</i> run infinitely many lines that never meet <i>L</i>. Poincaré fit the whole infinite plane inside a disk, where every triangle of this tiling is the same size.</p>
         </div>
+        <div class="step">
+          <p class="when">1915, general relativity</p>
+          <p>Einstein read Riemann and saw the heavens anew: gravity is no force, but the curvature of spacetime itself. Each mass presses a well into the fabric, and the planets — the same seven wanderers Ptolemy tracked — coast along the straightest paths the curved geometry allows. The first test was already in the sky: a stubborn 43 arcseconds per century in Mercury's orbit that Newton could not explain.</p>
+          <p class="math">G<sub>μν</sub> = 8πG T<sub>μν</sub> / c⁴</p>
+        </div>
       </div>
-      <div class="pips" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="pips" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     </div>
     <figure class="figure">
       <canvas class="layer on" data-scene="euclid" data-cap="Fig. 6a. Alternate angles: α + β + γ = 180°." role="img" aria-label="A Euclidean triangle whose angles, copied along a parallel line through the top vertex, fill a straight angle"></canvas>
       <canvas class="layer" data-scene="sphere" data-cap="Fig. 6b. A spherical triangle with three right angles." role="img" aria-label="A rotating sphere with a triangle bounded by the equator and two meridians, with three right angles"></canvas>
       <canvas class="layer" data-scene="hyper" data-cap="Fig. 6c. Poincaré's disk, tiled by congruent triangles." role="img" aria-label="The Poincaré disk tiled by congruent triangles, with a line L and many lines through a point P that never meet it"></canvas>
+      <canvas class="layer" data-scene="gr" data-cap="Fig. 6d. Spacetime curved by the Sun and its planets, the wanderers still wearing their signs from Fig. 2: each mass makes its own well, and each orbit is a straight line in curved geometry." role="img" aria-label="A rotating three-dimensional sheet of spacetime curved into a deep well by the Sun and small wells by each planet, with the planets, drawn as their alchemical symbols, orbiting on the curved surface"></canvas>
       <figcaption>Fig. 6a. Alternate angles: α + β + γ = 180°.</figcaption>
     </figure>
   </div>
@@ -724,7 +742,7 @@ function fourier(canvas, label) {
   return scene(canvas, {
     animated: true,
     draw(s, t) {
-      const n = Math.max(1, Math.round(Math.pow(160, clamp(s.p / .75))));
+      const n = Math.max(1, Math.round(Math.pow(160, clamp(s.p / .6))));
       if (n !== N) { N = n; path = []; for (let i = 0; i <= 480; i++) path.push(evalAt(i / 480 * TAU, N)); }
       { const el = document.getElementById('fourier-n'), tx = N === 1 ? '1 circle' : N + ' circles'; if (el && el.textContent !== tx) el.textContent = tx; }
       const ctx = s.ctx, W = s.w, c = W / 2, S = W * .43, X = v => c + v[0] * S, Y = v => c + v[1] * S;
@@ -777,7 +795,7 @@ function sphharm(canvas) {
   return scene(canvas, {
     animated: true,
     draw(s, t) {
-      const lp = clamp((s.p * 4 - 3) / .88), fi = lp * (LIST.length - 1), ia = Math.floor(fi), ib = Math.min(LIST.length - 1, ia + 1), fr = ease(fi - ia);
+      const lp = clamp((s.p * 5 - 3) / .88), fi = lp * (LIST.length - 1), ia = Math.floor(fi), ib = Math.min(LIST.length - 1, ia + 1), fr = ease(fi - ia);
       const [l, m] = LIST[fr < .5 ? ia : ib], el = document.getElementById('sph-lm'), tx = `l = ${l}, m = ${m}`;
       if (el && el.textContent !== tx) el.textContent = tx;
       const ctx = s.ctx, W = s.w, c = W / 2, R = W * .29, amp = .34, yaw = (reduce ? .6 : t * .22), pit = .42;
@@ -834,6 +852,58 @@ function Raster(res, pixel) {
   };
 }
 
+/* ---------- Chapter III, step 5: the hydrogen atom wears the spherical harmonics ---------- */
+function hydrogen(canvas) {
+  const ORBS = [[1, 0, 0], [2, 0, 0], [2, 1, 0], [2, 1, 1], [3, 1, 0], [3, 2, 0], [3, 2, 1], [3, 2, 2], [4, 3, 0], [4, 3, 2]];
+  const RES = 300, LET = 'spdfg', BLUEC = [42, 79, 143];
+  const leg = (l, m, x) => {
+    let pmm = 1; const s = Math.sqrt(Math.max(0, 1 - x * x));
+    for (let i = 1; i <= m; i++) pmm *= -(2 * i - 1) * s;
+    if (l === m) return pmm;
+    let pm1 = x * (2 * m + 1) * pmm; if (l === m + 1) return pm1;
+    let pl = 0; for (let ll = m + 2; ll <= l; ll++) { pl = ((2 * ll - 1) * x * pm1 - (ll + m - 1) * pmm) / (ll - m); pmm = pm1; pm1 = pl; }
+    return pl;
+  };
+  const lag = (k, a, x) => { let l0 = 1, l1 = 1 + a - x; if (k === 0) return l0; for (let i = 1; i < k; i++) { const ln = ((2 * i + 1 + a - x) * l1 - (i + a) * l0) / (i + 1); l0 = l1; l1 = ln; } return l1; };
+  const psi = (n, l, m, x, z) => {
+    const r = Math.hypot(x, z) + 1e-9, rho = 2 * r / n;
+    return Math.exp(-r / n) * Math.pow(rho, l) * lag(n - l - 1, 2 * l + 1, rho) * leg(l, m, z / r) * (x < 0 && m % 2 ? -1 : 1);
+  };
+  const ext = n => 2.4 * n * n + 3.5;
+  const make = i => {
+    const [n, l, m] = ORBS[i], V = ext(n); let mx = 0;
+    for (let a = 0; a <= 72; a++) for (let b = 0; b <= 72; b++) mx = Math.max(mx, Math.abs(psi(n, l, m, (a / 36 - 1) * V, (b / 36 - 1) * V)));
+    const pos = P.accent.slice();
+    return Raster(RES, (x, y, D, o) => {
+      const v = psi(n, l, m, x * V, y * V) / mx, tgt = v >= 0 ? pos : BLUEC, f = Math.min(1, Math.pow(Math.abs(v), .45));
+      D[o] = tgt[0]; D[o + 1] = tgt[1]; D[o + 2] = tgt[2]; D[o + 3] = Math.round(f * 235);
+    });
+  };
+  const cache = new Map(); let I = -1, prev = null;
+  return scene(canvas, {
+    animated: true,
+    busy: () => cache.has(I) && !cache.get(I).done,
+    draw(s, t) {
+      const i = reduce ? 5 : Math.floor(t / 4.5) % ORBS.length;
+      if (i !== I) { if (cache.has(I) && cache.get(I).done) prev = cache.get(I); I = i; if (!cache.has(I)) cache.set(I, make(I)); }
+      const r = cache.get(I); if (!r.done) r.work(7);
+      const [n, l, m] = ORBS[I];
+      { const el = document.getElementById('hyd-lab'), tx = `${n}${LET[l]}, m = ${m}`; if (el && el.textContent !== tx) el.textContent = tx; }
+      const ctx = s.ctx, W = s.w, c = W / 2, R = W * .46, fs = Math.max(12, W * .03);
+      ctx.clearRect(0, 0, W, W);
+      if (!r.done && prev) ctx.drawImage(prev.cv, c - R, c - R, 2 * R, 2 * R);
+      ctx.drawImage(r.cv, c - R, c - R, 2 * R, 2 * R);
+      ctx.strokeStyle = rgba(P.ink, .6); ctx.lineWidth = 1.2; ctx.strokeRect(c - R, c - R, 2 * R, 2 * R);
+      ctx.strokeStyle = rgba(P.pencil, .5); ctx.lineWidth = .8; ctx.setLineDash([2, 4]);
+      ctx.beginPath(); ctx.moveTo(c - R, c); ctx.lineTo(c + R, c); ctx.moveTo(c, c - R); ctx.lineTo(c, c + R); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = rgba(P.ink); ctx.beginPath(); ctx.arc(c, c, 2.2, 0, TAU); ctx.fill();
+      ctx.font = `italic ${fs}px "Bodoni Moda", Didot, serif`;
+      ctx.fillStyle = rgba(P.ink); ctx.fillText(`n = ${n}, l = ${l}, m = ${m}`, c - R + fs * .6, c - R + fs * 1.4);
+      ctx.fillStyle = rgba(P.muted); ctx.fillText(`${Math.round(2 * ext(n))} Bohr radii across`, c - R + fs * .6, c + R - fs * .7);
+    }
+  });
+}
+
 /* ---------- Chapter IV: primes, elliptic curves, mock theta functions ---------- */
 function ulam(canvas) {
   const MAX = 101 * 101, prime = new Uint8Array(MAX + 1).fill(1), cx = new Int16Array(MAX + 1), cy = new Int16Array(MAX + 1);
@@ -844,7 +914,7 @@ function ulam(canvas) {
   while (n < MAX) { for (let r = 0; r < 2; r++) { for (let i = 0; i < step && n < MAX; i++) { x += dirs[d][0]; y += dirs[d][1]; n++; cx[n] = x; cy[n] = y; } d = (d + 1) % 4; } step++; }
   return scene(canvas, {
     draw(s) {
-      const ctx = s.ctx, W = s.w, c = W / 2, lp = clamp(s.p * 3 / .85);
+      const ctx = s.ctx, W = s.w, c = W / 2, lp = clamp(s.p * 4 / .85);
       const count = Math.min(MAX, Math.round(9 * Math.pow(MAX / 9, lp)));
       const side = 2 * Math.ceil((Math.sqrt(count) - 1) / 2) + 1, cell = Math.min(W * .94 / side, W / 7);
       ctx.clearRect(0, 0, W, W);
@@ -945,7 +1015,7 @@ function mocktheta(canvas) {
   return scene(canvas, {
     busy: () => cache.has(N) && !cache.get(N).done,
     draw(s) {
-      const n = TERMS[Math.round(clamp((s.p * 3 - 2) / .8) * (TERMS.length - 1))];
+      const n = TERMS[Math.round(clamp((s.p * 4 - 2) / .8) * (TERMS.length - 1))];
       if (n !== N) { if (cache.has(N) && cache.get(N).done) prev = cache.get(N); N = n; if (!cache.has(N)) cache.set(N, make(N)); }
       const r = cache.get(N); if (!r.done) r.work(7);
       const ctx = s.ctx, W = s.w, c = W / 2, R = W * .44, E = R / .99;
@@ -960,6 +1030,71 @@ function mocktheta(canvas) {
       ctx.fillText('1', c + R + 11, c + fs * .35); ctx.fillText('−1', c - R - fs * 1.7, c + fs * .35);
       ctx.fillText('i', c - fs * .15, c - R - 12); ctx.fillText('−i', c - fs * .5, c + R + fs * 1.3);
       ctx.fillStyle = rgba(P.ink); ctx.fillText(`terms up to n = ${N}`, W * .03, W * .06);
+    }
+  });
+}
+
+/* ---------- Chapter IV, step 4: the same curve over a finite field ---------- */
+function ecc(canvas) {
+  const PP = 61, mod = v => ((v % PP) + PP) % PP;
+  const pw = (b, e) => { let r = 1; b = mod(b); while (e > 0) { if (e & 1) r = r * b % PP; b = b * b % PP; e >>= 1; } return r; };
+  const inv = v => pw(v, PP - 2);
+  const pts = [];
+  for (let x = 0; x < PP; x++) { const rhs = mod(x * x * x - x + 1); for (let y = 0; y < PP; y++) if (y * y % PP === rhs) pts.push([x, y]); }
+  const add = (A, B) => {
+    if (!A) return B; if (!B) return A;
+    const [x1, y1] = A, [x2, y2] = B;
+    if (x1 === x2 && mod(y1 + y2) === 0) return null;
+    const lam = x1 === x2 && y1 === y2 ? mod((3 * x1 * x1 - 1) * inv(mod(2 * y1))) : mod((y2 - y1) * inv(mod(x2 - x1)));
+    const x3 = mod(lam * lam - x1 - x2);
+    return [x3, mod(lam * (x1 - x3) - y1), lam];
+  };
+  const G = [1, 1], mult = [null, G.concat(0)];
+  for (let k = 2; k < 400; k++) { const q = add(mult[k - 1], G); mult.push(q); if (!q) break; }
+  const ORD = mult.length - 1;
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const ctx = s.ctx, W = s.w, mgn = W * .1, sc = (W - 2 * mgn) / (PP - 1), fs = Math.max(12, W * .03);
+      const X = x => mgn + x * sc, Y = y => W - mgn - y * sc;
+      const k = 2 + (reduce ? 15 : Math.floor(t / 1.6)) % (ORD - 2);
+      const A = mult[k - 1], Q = mult[k], lam = Q[2], flipY = mod(-Q[1]);
+      ctx.clearRect(0, 0, W, W); ctx.lineCap = 'round';
+      ctx.strokeStyle = rgba(P.ink, .55); ctx.lineWidth = 1; ctx.strokeRect(mgn, mgn, W - 2 * mgn, W - 2 * mgn);
+      ctx.font = `italic ${fs * .85}px "STIX Two Text", serif`; ctx.fillStyle = rgba(P.muted);
+      ctx.fillText('0', mgn - fs * .5, Y(0) + fs * 1.3); ctx.fillText('60', X(PP - 1) - fs * .5, Y(0) + fs * 1.3);
+      ctx.fillText('60', mgn - fs * 1.6, Y(PP - 1) + fs * .4);
+      ctx.save(); ctx.beginPath(); ctx.rect(mgn, mgn, W - 2 * mgn, W - 2 * mgn); ctx.clip();
+      if (lam > 0) {
+        ctx.strokeStyle = rgba(P.accent, .45); ctx.lineWidth = 1.2; ctx.beginPath();
+        let xx = 0, yy = mod(A[1] - lam * A[0]);
+        while (xx < PP - 1e-9) {
+          const xe = Math.min(PP - 1e-9, xx + (PP - yy) / lam);
+          ctx.moveTo(X(xx), Y(yy)); ctx.lineTo(X(xe), Y(yy + lam * (xe - xx)));
+          xx = xe; yy = 0;
+        }
+        ctx.stroke();
+      }
+      ctx.setLineDash([4, 4]); ctx.strokeStyle = rgba(P.ink, .5); ctx.lineWidth = 1.1;
+      ctx.beginPath(); ctx.moveTo(X(Q[0]), Y(flipY)); ctx.lineTo(X(Q[0]), Y(Q[1])); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = rgba(P.ink, .8);
+      for (const p of pts) { ctx.beginPath(); ctx.arc(X(p[0]), Y(p[1]), Math.max(1.8, sc * .22), 0, TAU); ctx.fill(); }
+      for (let j = 2; j <= 6; j++) {
+        const q = mult[k - j]; if (!q || k - j < 1) break;
+        ctx.fillStyle = rgba(P.accent, .55 * (1 - (j - 1) / 6)); ctx.beginPath(); ctx.arc(X(q[0]), Y(q[1]), Math.max(2.4, sc * .3), 0, TAU); ctx.fill();
+      }
+      const ring = (p, col, rr) => { ctx.strokeStyle = rgba(col); ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(X(p[0]), Y(p[1]), rr, 0, TAU); ctx.stroke(); };
+      ring(G, P.ink, Math.max(4, sc * .5)); ring(A, P.ink, Math.max(4, sc * .5));
+      ctx.fillStyle = rgba(P.bg, .9); ctx.beginPath(); ctx.arc(X(Q[0]), Y(flipY), Math.max(3, sc * .38), 0, TAU); ctx.fill();
+      ring([Q[0], flipY], P.muted, Math.max(3, sc * .38));
+      ctx.fillStyle = rgba(P.accent); ctx.beginPath(); ctx.arc(X(Q[0]), Y(Q[1]), Math.max(4.4, sc * .55), 0, TAU); ctx.fill();
+      ctx.restore();
+      ctx.font = `italic ${fs}px "STIX Two Text", serif`; ctx.fillStyle = rgba(P.ink);
+      ctx.fillText(`G`, X(G[0]) + fs * .5, Y(G[1]) + fs * .4);
+      ctx.fillStyle = rgba(P.accent); ctx.fillText(`kG`, X(Q[0]) + fs * .5, Y(Q[1]) - fs * .4);
+      ctx.fillStyle = rgba(P.ink);
+      ctx.fillText(`y² = x³ − x + 1 over F₆₁`, mgn, mgn - fs * .8);
+      ctx.fillText(`k = ${k}:  kG = (${Q[0]}, ${Q[1]})`, mgn, W - mgn + fs * 2.2);
     }
   });
 }
@@ -1080,8 +1215,73 @@ function hyper(canvas) {
   });
 }
 
+/* ---------- Chapter V, step 4: the sheet that replaces the force ---------- */
+function gr(canvas) {
+  const BODIES = [
+    { k: 'mercury', r: .17, m: .010, sz: .78 },
+    { k: 'venus', r: .26, m: .020, sz: .95 },
+    { k: 'earth', r: .36, m: .020, sz: .95 },
+    { k: 'mars', r: .46, m: .014, sz: .85 },
+    { k: 'jupiter', r: .67, m: .055, sz: 1.3 },
+    { k: 'saturn', r: .89, m: .042, sz: 1.18 }
+  ].map((b, i) => ({ ...b, w: .22 * Math.pow(b.r, -1.5), ph: i * 2.39996 }));
+  const NG = 42, EXT = 1.12;
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const ctx = s.ctx, W = s.w, c = W / 2, cy0 = W * .52, R = W * .38, fs = Math.max(12, W * .032);
+      const tt = reduce ? 7 : t * .5, yaw = (reduce ? .5 : t * .1), pit = .95;
+      const cyw = Math.cos(yaw), syw = Math.sin(yaw), cp = Math.cos(pit), sp = Math.sin(pit);
+      const pp = BODIES.map(b => [b.r * Math.cos(b.w * tt * 4 + b.ph), b.r * Math.sin(b.w * tt * 4 + b.ph)]);
+      const depth = (x, y) => {
+        let z = -.13 / Math.sqrt(Math.hypot(x, y) + .02);
+        for (let i = 0; i < BODIES.length; i++) { const d = Math.hypot(x - pp[i][0], y - pp[i][1]); z -= BODIES[i].m / Math.sqrt(d + .02); }
+        return Math.max(z, -1.05);
+      };
+      const proj = (x, y, z) => {
+        const x1 = x * cyw - y * syw, y1 = x * syw + y * cyw;
+        return [c + x1 * R, cy0 - (y1 * sp + z * cp) * R, y1 * cp - z * sp];
+      };
+      ctx.clearRect(0, 0, W, W); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      const line = pts2 => { ctx.beginPath(); pts2.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.stroke(); };
+      for (let i = 0; i <= NG; i++) {
+        const u = (i / NG * 2 - 1) * EXT, major = i % 6 === 0;
+        ctx.strokeStyle = rgba(P.ink, major ? .4 : .22); ctx.lineWidth = major ? 1 : .7;
+        const row = [], col = [];
+        for (let j = 0; j <= NG; j++) {
+          const v = (j / NG * 2 - 1) * EXT;
+          row.push(proj(v, u, depth(v, u))); col.push(proj(u, v, depth(u, v)));
+        }
+        line(row); line(col);
+      }
+      ctx.strokeStyle = rgba(P.pencil, .6); ctx.lineWidth = .8; ctx.setLineDash([2, 4]);
+      for (const b of BODIES) {
+        const orb = []; for (let a = 0; a <= 90; a++) { const th = a / 90 * TAU, x = b.r * Math.cos(th), y = b.r * Math.sin(th); orb.push(proj(x, y, depth(x, y) + .012)); }
+        line(orb);
+      }
+      ctx.setLineDash([]);
+      const ss = Math.max(6, W * .016);
+      const knock = (x, y, r) => { ctx.fillStyle = rgba(P.bg, .92); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); };
+      const sun = proj(0, 0, depth(.04, 0) * .55);
+      const drawn = BODIES.map((b, i) => { const q = proj(pp[i][0], pp[i][1], depth(pp[i][0], pp[i][1]) + .02); return { k: b.k, sz: b.sz, q }; });
+      drawn.push({ k: 'sun', sz: 1.5, q: sun });
+      drawn.sort((a, b) => b.q[2] - a.q[2]);
+      for (const d of drawn) {
+        const sc2 = d.sz * lerp(1.12, .86, clamp((d.q[2] + 1.2) / 2.4));
+        knock(d.q[0], d.q[1], ss * sc2 * 1.3);
+        sign(ctx, d.k, d.q[0], d.q[1], ss * sc2, d.k === 'sun' ? rgba(P.accent) : rgba(P.ink), 1.5);
+      }
+      ctx.font = `italic ${fs}px "STIX Two Text", serif`; ctx.fillStyle = rgba(P.muted);
+      ctx.textAlign = 'center';
+      ctx.fillText('Mass tells spacetime how to curve;', c, W * .945);
+      ctx.fillText('spacetime tells mass how to move.', c, W * .945 + fs * 1.3);
+      ctx.textAlign = 'start';
+    }
+  });
+}
+
 /* ---------- Scroll: chapter steps, the palette's journey, the chapter rail ---------- */
-const factories = { ptolemy, calculus, fourier, sph: sphharm, ulam, elliptic, mocktheta, euclid, sphere, hyper };
+const factories = { ptolemy, calculus, fourier, sph: sphharm, hydrogen, ulam, elliptic, mocktheta, ecc, euclid, sphere, hyper, gr };
 const fourierLabel = document.getElementById('fourier-n');
 const chapters = [...document.querySelectorAll('.chapter')].map(el => {
   const layers = [...el.querySelectorAll('.layer')];
