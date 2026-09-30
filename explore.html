@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Explore: two thousand years of mathematics, Lemma Lounge</title>
+<meta name="description" content="From Ptolemy's epicycles to Ramanujan's mock theta functions: a scroll-through history of mathematics from the Lemma Lounge Mathematical Society.">
+<meta property="og:title" content="Explore: two thousand years of mathematics, Lemma Lounge">
+<meta property="og:description" content="From Ptolemy's epicycles to Ramanujan's mock theta functions: a scroll-through history of mathematics from the Lemma Lounge Mathematical Society.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lemmalounge.github.io/explore.html">
+<meta property="og:image" content="https://lemmalounge.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://lemmalounge.github.io/explore.html">
+<meta name="theme-color" content="#E7DDC7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23E7DDC7' stroke='%232A2019' stroke-width='3'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='34' text-anchor='middle' fill='%232A2019'%3E%CE%BB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#E7DDC7; --ink:#2A2019; --muted:#6B5A45; --accent:#A1301D; --rule:rgba(42,32,25,.2);
+  --paper-o:1; --grid-o:0;
+  --fell:"IM Fell English","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --bodoni:"Bodoni Moda","Bodoni 72",Didot,"Times New Roman",serif;
+  --stix:"STIX Two Text",Cambria,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--stix);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:12px;top:-60px;z-index:20;background:var(--ink);color:var(--bg);padding:8px 14px;text-decoration:none;font-family:var(--sans);font-size:.9rem}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* The page itself: rag paper that turns into graph paper */
+.bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.bg>div{position:absolute;inset:0}
+.bg-paper{opacity:var(--paper-o);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .22 0 0 0 0 .12 1.1 0 0 0 -.52'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='m' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0033333' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .3 0 0 0 0 .12 .9 0 0 0 -.38'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(90deg,transparent 0 118px,rgba(90,62,30,.055) 118px 120px),
+    repeating-linear-gradient(0deg,rgba(90,62,30,.03) 0 1px,transparent 1px 5px),
+    radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(96,64,28,.2) 100%);
+}
+.bg-grid{opacity:var(--grid-o);
+  background-image:
+    linear-gradient(rgba(38,78,140,.14) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(38,78,140,.14) 1px,transparent 1px),
+    linear-gradient(rgba(38,78,140,.065) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(38,78,140,.065) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px;background-position:-1px -1px;
+}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding:clamp(16px,3vw,32px) clamp(20px,5vw,72px) clamp(20px,3vw,36px);overflow:hidden;isolation:isolate}
+.stains{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.stain{position:absolute;mix-blend-mode:multiply}
+.ink-layer{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.hero>*:not(.stains):not(.ink-layer){position:relative;z-index:1}
+.hero-nav{display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;font-family:var(--fell)}
+.mark{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:1.25rem}
+.mark .sym{width:38px;height:38px;border:1.5px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:var(--stix);font-style:italic;font-size:1.2rem;line-height:1}
+.hero-nav .links{display:flex;gap:clamp(14px,2.6vw,32px);font-style:italic;font-size:1.1rem}
+.hero-nav .links a{text-decoration:none}
+.hero-nav a:hover{color:var(--accent)}
+.hero-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(24px,5vw,72px);padding-block:clamp(28px,6vh,72px)}
+.where{font-family:var(--fell);font-style:italic;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--muted);margin:0 0 .9rem}
+.hero h1{font-family:var(--fell);font-weight:400;font-size:clamp(4rem,12.5vw,11rem);line-height:.84;letter-spacing:-.015em;margin:0 0 0 -.04em}
+.hero h1 .l2{display:block;padding-left:.62em}
+.society{font-family:var(--fell);font-style:italic;font-size:clamp(1.5rem,3.1vw,2.6rem);line-height:1.1;margin:.45em 0 0 .08em}
+.welcome{margin:clamp(1.6rem,4vh,2.6rem) 0 0;font-family:var(--stix);font-style:italic;font-size:clamp(1.15rem,1.9vw,1.45rem);display:flex;gap:.55em;flex-wrap:wrap;align-items:baseline}
+.welcome .q{font-style:normal;color:var(--accent);font-size:1.25em;line-height:1}
+.plate{margin:0;justify-self:center;width:min(100%,520px)}
+.plate canvas{display:block;width:100%;aspect-ratio:1}
+.plate figcaption,.figure figcaption{font-family:var(--fell);font-style:italic;color:var(--muted);text-align:center;font-size:1rem;line-height:1.4;margin-top:.4rem}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 24px;flex-wrap:wrap;font-family:var(--fell);font-style:italic;font-size:1.1rem}
+.hero-foot a{text-decoration:none}
+.hero-foot a:hover{color:var(--accent)}
+.begin{display:inline-flex;align-items:center;gap:12px}
+.begin svg{width:14px;height:44px;overflow:visible}
+
+/* Drops (ink) */
+.drop .core,.drop .halo,.drop .spat{transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:no-preference){
+  .drop .core{animation:spread 1.9s cubic-bezier(.12,.9,.22,1) both;animation-delay:var(--d,0s)}
+  .drop .halo{animation:bleed 4.2s cubic-bezier(.2,.7,.3,1) both;animation-delay:var(--d,0s)}
+  .drop .spat{animation:spat .5s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:calc(var(--d,0s) + .05s)}
+}
+@keyframes spread{0%{transform:scale(0)}100%{transform:scale(1)}}
+@keyframes bleed{0%{transform:scale(0);opacity:0}30%{opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes spat{0%{transform:scale(0)}100%{transform:scale(1)}}
+
+/* Chapters: sticky stage, text steps on the left, a plate on the right */
+.chapter{position:relative}
+.js .chapter{height:calc(100svh + var(--steps,3) * 78svh)}
+.stage{max-width:1240px;margin:0 auto;padding:clamp(16px,4vh,44px) clamp(20px,5vw,72px);display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(24px,5vw,80px);align-items:center}
+.js .stage{position:sticky;top:0;height:100svh}
+.copy{max-width:33rem}
+.chap-no{font-style:italic;color:var(--muted);margin:0 0 .15em;font-size:1.05rem}
+.chapter h2{font-weight:400;font-size:clamp(2.4rem,5vw,4.1rem);line-height:1;margin:0 0 .45em;letter-spacing:-.01em}
+.era-fell h2,.era-fell .chap-no,.era-fell .when{font-family:var(--fell)}
+.era-bodoni h2{font-family:var(--bodoni);font-weight:500;font-style:italic;letter-spacing:-.02em}
+.era-bodoni .chap-no,.era-bodoni .when{font-family:var(--bodoni)}
+.era-stix h2{font-family:var(--stix);font-weight:400}
+.steps{display:grid}
+.step p{margin:0 0 .75em}
+.when{font-style:italic;color:var(--accent);font-size:1.12rem;margin-bottom:.35em!important}
+.math{font-family:var(--stix);font-style:italic;font-size:1.08rem;padding:.55em 0 0;border-top:1px solid var(--rule);display:inline-block}
+.js .steps>.step{grid-area:1/1;opacity:0;pointer-events:none;transition:opacity .4s ease}
+.js .steps>.step.on{opacity:1;pointer-events:auto;transition:opacity .5s ease .12s}
+.pips{display:none;gap:8px;margin-top:1.1rem}
+.js .pips{display:flex}
+.pips i{width:7px;height:7px;border-radius:50%;border:1px solid var(--ink);display:block;transition:background .3s}
+.pips i.on{background:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:.4em 0 0;padding:0;list-style:none;font-family:var(--fell);font-style:italic;font-size:1rem}
+.legend li{display:inline-flex;align-items:center;gap:6px}
+.legend canvas{width:20px;height:20px}
+.figure{margin:0;display:grid;justify-items:center;align-content:center}
+.figure .layer{grid-area:1/1;width:min(100%,74svh);aspect-ratio:1;display:block}
+.js .figure .layer{opacity:0;transition:opacity .6s ease}
+.js .figure .layer.on{opacity:1}
+.figure figcaption{grid-row:2;max-width:30rem}
+.era-bodoni .figure figcaption{font-family:var(--bodoni)}
+.era-stix .figure figcaption{font-family:var(--stix)}
+
+/* Progress rail */
+.rail{position:fixed;left:22px;top:50%;transform:translateY(-50%);z-index:5;display:none;opacity:0;transition:opacity .5s;font-family:var(--stix)}
+@media (min-width:1360px){.rail{display:block}}
+.rail a span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (min-width:1660px){.rail a span{position:static;width:auto;height:auto;overflow:visible;clip:auto}}
+.rail.show{opacity:1}
+.rail ol{list-style:none;margin:0;padding:0 0 0 14px;position:relative}
+.rail ol::before,.rail ol::after{content:"";position:absolute;left:0;top:6px;width:1px}
+.rail ol::before{bottom:6px;background:var(--rule)}
+.rail ol::after{background:var(--ink);height:calc((100% - 12px) * var(--rp,0))}
+.rail a{display:block;padding:5px 0;color:var(--muted);text-decoration:none;font-style:italic;font-size:.92rem;line-height:1.3}
+.rail a b{display:inline-block;min-width:1.7em;font-weight:400;font-style:normal}
+.rail li.on a{color:var(--ink)}
+.rail li.on b{color:var(--accent)}
+.rail a:hover{color:var(--accent)}
+
+@media (max-width:860px){
+  .hero-body{grid-template-columns:minmax(0,1fr);gap:8px}
+  .plate{width:min(80vw,340px);order:-1;justify-self:end;margin:-8px -8px 12px 0}
+  .plate figcaption{font-size:.9rem}
+  .hero-nav .links{font-size:1rem}
+  .stage{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);align-content:start;gap:14px;padding-top:max(14px,env(safe-area-inset-top))}
+  .figure{order:-1}
+  .figure .layer{width:min(100%,44svh)}
+  .figure figcaption{font-size:.88rem;margin-top:.15rem}
+  .chapter h2{font-size:clamp(1.9rem,8vw,2.4rem);margin-bottom:.3em}
+  .chap-no{font-size:.95rem}
+  .step p{font-size:1rem;line-height:1.5;margin-bottom:.55em}
+  .when{font-size:1rem}
+  .legend{font-size:.9rem;gap:4px 12px}
+  .pips{margin-top:.4rem}
+}
+
+
+/* Shared odds and ends */
+.fox{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(128,78,30,.2),rgba(128,78,30,.07) 45%,rgba(128,78,30,0) 70%)}
+.cta{display:inline-block;margin-top:1.6rem;padding:.65em 1.3em;border:1.5px solid var(--ink);color:var(--ink);background:var(--bg);text-decoration:none;font-family:var(--stix);font-size:1.15rem;line-height:1.3;transition:background .2s,color .2s}
+.cta:hover{background:var(--ink);color:var(--bg)}
+footer{max-width:1200px;margin:0 auto;padding:28px clamp(20px,5vw,72px) 44px;border-top:1.5px solid var(--ink);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-family:var(--sans);font-size:.95rem;color:var(--muted)}
+footer .eq{font-family:var(--stix);font-style:italic;font-size:1.1rem;color:var(--ink)}
+footer a{text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+/* Explore: opening and epilogue */
+.xhero .hero-body{grid-template-columns:minmax(0,1fr)}
+.xhero .society{max-width:22em}
+.epilogue{min-height:80svh;display:grid;align-items:center;padding:14vh 0}
+.epilogue .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px);width:100%}
+.epilogue .big{font-family:var(--stix);font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.1;max-width:18em;margin:0 0 .5em;text-wrap:balance}
+.epilogue .lede{font-family:var(--stix);font-style:italic;font-size:clamp(1.2rem,2vw,1.45rem);color:var(--muted);margin:0}
+</style>
+</head>
+<body>
+<a class="skip" href="#heavens">Skip to chapter I</a>
+<div class="bg" aria-hidden="true"><div class="bg-paper"></div><div class="bg-grid"></div></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="f-ring" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="12" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation=".45"/>
+    </filter>
+    <filter id="f-ink" x="-70%" y="-70%" width="240%" height="240%">
+      <feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="15" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation=".3"/>
+    </filter>
+    <filter id="f-bleed" x="-70%" y="-70%" width="240%" height="240%">
+      <feTurbulence type="fractalNoise" baseFrequency=".12" numOctaves="2" seed="8" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="20" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="1.8"/>
+    </filter>
+    <radialGradient id="g-coffee">
+      <stop offset="0" stop-color="#8a5a2b" stop-opacity=".05"/>
+      <stop offset=".8" stop-color="#8a5a2b" stop-opacity=".08"/>
+      <stop offset=".93" stop-color="#76461d" stop-opacity=".26"/>
+      <stop offset=".975" stop-color="#633814" stop-opacity=".44"/>
+      <stop offset="1" stop-color="#633814" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<nav class="rail" aria-label="Chapters">
+  <ol>
+    <li><a href="#heavens"><b>I</b><span>The heavens</span></a></li>
+    <li><a href="#infinitesimal"><b>II</b><span>The infinitesimal</span></a></li>
+    <li><a href="#harmonics"><b>III</b><span>Harmonics</span></a></li>
+    <li><a href="#number"><b>IV</b><span>Number</span></a></li>
+    <li><a href="#space"><b>V</b><span>Space</span></a></li>
+    <li><a href="#epilogue"><b>∴</b><span>Onward</span></a></li>
+  </ol>
+</nav>
+
+<header class="hero xhero" id="top">
+  <div class="stains" aria-hidden="true">
+    <svg class="stain" style="right:-120px;top:-90px;width:440px;height:440px" viewBox="0 0 200 200">
+      <g filter="url(#f-ring)">
+        <circle cx="100" cy="100" r="84" fill="url(#g-coffee)"/>
+        <path d="M22 118 A84 84 0 0 1 128 22" transform="translate(-9 7)" fill="none" stroke="#633814" stroke-opacity=".2" stroke-width="2.4"/>
+      </g>
+    </svg>
+    <svg class="stain" style="left:-150px;bottom:6%;width:330px;height:330px;opacity:.8" viewBox="0 0 200 200">
+      <g filter="url(#f-ring)"><circle cx="100" cy="100" r="84" fill="url(#g-coffee)"/></g>
+    </svg>
+    <i class="fox" style="left:38%;top:12%;width:26px;height:26px"></i>
+    <i class="fox" style="left:12%;top:83%;width:18px;height:18px"></i>
+    <i class="fox" style="right:22%;bottom:9%;width:34px;height:34px;opacity:.7"></i>
+  </div>
+  <svg class="ink-layer" id="ink" aria-hidden="true"></svg>
+
+  <nav class="hero-nav" aria-label="Main">
+    <a class="mark" href="index.html"><span class="sym">λ</span>Lemma Lounge</a>
+    <div class="links"><a href="index.html">Home</a><a href="index.html#what">What we do</a><a href="index.html#join">Join</a></div>
+  </nav>
+
+  <div class="hero-body">
+    <div>
+      <p class="where">Lemma Lounge Mathematical Society</p>
+      <h1>Explore</h1>
+      <p class="society">Two thousand years of mathematics, from Ptolemy's epicycles to Ramanujan's mock theta functions</p>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <a class="begin" href="#heavens">
+      <svg viewBox="0 0 14 44" aria-hidden="true"><path d="M7 1 C 5 14, 9 26, 7 41 M2 34 L7 42 L12 34" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Scroll to begin the story
+    </a>
+    <a href="index.html">Back to the Lounge</a>
+  </div>
+</header>
+
+<section class="chapter era-fell" id="heavens" style="--steps:3" aria-labelledby="h-heavens">
+  <div class="stage">
+    <div class="copy">
+      <p class="chap-no">Chapter I</p>
+      <h2 id="h-heavens">The heavens</h2>
+      <div class="steps">
+        <div class="step">
+          <p class="when">c. 150 CE, Alexandria</p>
+          <p>Claudius Ptolemy puts the Earth at the center of everything and asks a precise question: where will each wandering star be tomorrow night? His answer, the <i>Almagest</i>, is the first great mathematical model of the sky.</p>
+        </div>
+        <div class="step">
+          <p class="when">Circles upon circles</p>
+          <p>Now and then a planet halts and drifts backwards against the stars. Ptolemy's remedy: the planet rides a small circle, the epicycle, whose center rides a larger one, the deferent. Watch the paths loop back on themselves.</p>
+        </div>
+        <div class="step">
+          <p class="when">Seven wanderers, seven metals</p>
+          <p>Alchemists paired each planet with a metal and gave both one sign. The model was wrong about the cosmos, yet it predicted the sky well enough to stand for fourteen centuries.</p>
+          <ul class="legend">
+            <li><canvas data-sym="saturn" aria-hidden="true"></canvas>Saturn, lead</li>
+            <li><canvas data-sym="jupiter" aria-hidden="true"></canvas>Jupiter, tin</li>
+            <li><canvas data-sym="mars" aria-hidden="true"></canvas>Mars, iron</li>
+            <li><canvas data-sym="sun" aria-hidden="true"></canvas>Sun, gold</li>
+            <li><canvas data-sym="venus" aria-hidden="true"></canvas>Venus, copper</li>
+            <li><canvas data-sym="mercury" aria-hidden="true"></canvas>Mercury, quicksilver</li>
+            <li><canvas data-sym="moon" aria-hidden="true"></canvas>Moon, silver</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pips" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <figure class="figure">
+      <canvas class="layer on" data-scene="ptolemy" role="img" aria-label="Ptolemy's geocentric model: the Moon, Mercury, Venus, Sun, Mars, Jupiter and Saturn circle the Earth on epicycles, tracing looping paths"></canvas>
+      <figcaption>Fig. 2. The Ptolemaic system. From the Earth outward: Moon, Mercury, Venus, Sun, Mars, Jupiter, Saturn.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="chapter era-fell" id="infinitesimal" style="--steps:3" aria-labelledby="h-inf">
+  <div class="stage">
+    <div class="copy">
+      <p class="chap-no">Chapter II</p>
+      <h2 id="h-inf">The infinitesimal</h2>
+      <div class="steps">
+        <div class="step">
+          <p class="when">1665, Woolsthorpe</p>
+          <p>Plague closes Cambridge, and a young Isaac Newton goes home to think. To find the slope of a curve at a single point, slide a second point toward it. As the gap <i>h</i> shrinks toward nothing, the secant settles into the tangent.</p>
+          <p class="math">dy/dx = lim<sub>h→0</sub> [ f(x + h) − f(x) ] / h</p>
+        </div>
+        <div class="step">
+          <p class="when">1684, Leipzig</p>
+          <p>Gottfried Wilhelm Leibniz publishes a calculus of his own, in the notation we still use. Fill an area with rectangles and let them thin: their sum converges to the integral. His ∫ is a stretched S, for <i>summa</i>.</p>
+          <p class="math">∫<sub>a</sub><sup>b</sup> f(x) dx = lim<sub>n→∞</sub> Σ f(x<sub>i</sub>) Δx</p>
+        </div>
+        <div class="step">
+          <p class="when">1687, the <i>Principia</i></p>
+          <p>Differentiation and integration undo each other: the rate at which area accumulates is the height of the curve. With these ideas, Newton showed that one inverse-square law of gravity produces the planets' elliptical orbits.</p>
+          <p class="math">d/dx ∫<sub>a</sub><sup>x</sup> f(t) dt = f(x)</p>
+        </div>
+      </div>
+      <div class="pips" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <figure class="figure">
+      <canvas class="layer on" data-scene="calculus" role="img" aria-label="A curve with a secant line closing in on a tangent, then rectangles filling the area beneath it, then the accumulated area plotted as a new curve"></canvas>
+      <figcaption>Fig. 3. Secant to tangent, rectangles to area.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="chapter era-bodoni" id="harmonics" style="--steps:4" aria-labelledby="h-harm">
+  <div class="stage">
+    <div class="copy">
+      <p class="chap-no">Chapter III</p>
+      <h2 id="h-harm">Harmonics</h2>
+      <div class="steps">
+        <div class="step">
+          <p class="when">1807, Grenoble</p>
+          <p>Joseph Fourier, studying how heat spreads through a metal bar, makes an outrageous claim: any function can be written as a sum of sines and cosines.</p>
+        </div>
+        <div class="step">
+          <p class="when">Epicycles, returned</p>
+          <p>Written with complex numbers, each term of a Fourier series is a circle turning at its own whole-number speed. Chain them end to end and the tip traces a curve: Ptolemy's machinery, reborn as pure mathematics.</p>
+          <p class="math">f(t) = Σ c<sub>n</sub> e<sup>int</sup></p>
+        </div>
+        <div class="step">
+          <p class="when">More circles, sharper curves</p>
+          <p>With a handful of circles the drawing is a blur; with a hundred and more, it is our λ. Making Fourier's claim precise took a century of analysis, from Dirichlet to Riemann to Lebesgue.</p>
+        </div>
+        <div class="step">
+          <p class="when">1782, the sphere's own harmonics</p>
+          <p>A generation before Fourier, Laplace and Legendre, working out the gravity of the planets, found the sphere's version of sines and cosines. Today spherical harmonics describe the shapes of atomic orbitals, the Earth's gravity field, and the ripples in the cosmic microwave background. Keep scrolling to morph through them.</p>
+          <p class="math">Y<sub>l</sub><sup>m</sup>(θ, φ) ∝ P<sub>l</sub><sup>m</sup>(cos θ) cos mφ</p>
+        </div>
+      </div>
+      <div class="pips" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </div>
+    <figure class="figure">
+      <canvas class="layer on" data-scene="fourier" data-on="0 1 2" data-cap='Fig. 4a. <span id="fourier-n">1 circle</span> drawing the letter λ.' role="img" aria-label="A chain of rotating circles whose tip draws the Greek letter lambda, growing sharper as circles are added"></canvas>
+      <canvas class="layer" data-scene="sph" data-on="3" data-cap='Fig. 4b. The spherical harmonic with <span id="sph-lm">l = 1, m = 0</span>: the sphere bulges out where it is positive (red) and in where it is negative (blue).' role="img" aria-label="A rotating sphere whose surface bulges into the lobes of successive spherical harmonics, red where positive and blue where negative"></canvas>
+      <figcaption>Fig. 4a. <span id="fourier-n">1 circle</span> drawing the letter λ.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="chapter era-stix" id="number" style="--steps:3" aria-labelledby="h-num">
+  <div class="stage">
+    <div class="copy">
+      <p class="chap-no">Chapter IV</p>
+      <h2 id="h-num">Number</h2>
+      <div class="steps">
+        <div class="step">
+          <p class="when">Primes, from Euclid to Ulam</p>
+          <p>Around 300 BCE, Euclid proves there is no largest prime. In 1963, Stanisław Ulam, bored during a talk, writes the integers in a spiral and circles the primes. They gather along diagonals, a pattern still not fully explained.</p>
+        </div>
+        <div class="step">
+          <p class="when">Elliptic curves</p>
+          <p>A line through two points of this curve meets it exactly once more. Reflect that third point across the axis and you have <i>added</i> the first two: the points form a group. Elliptic curves carried Andrew Wiles' 1995 proof of Fermat's Last Theorem, and today they secure much of the internet.</p>
+        </div>
+        <div class="step">
+          <p class="when">1920, mock theta functions</p>
+          <p>In his last letter to G. H. Hardy, months before he died, Srinivasa Ramanujan described a strange new family of <i>q</i>-series. What they truly were stayed hidden until 2002, when Sander Zwegers showed they are the holomorphic parts of harmonic Maass forms.</p>
+          <p class="math">f(q) = Σ<sub>n≥0</sub> q<sup>n²</sup> / (1 + q)²(1 + q²)² ⋯ (1 + q<sup>n</sup>)²</p>
+        </div>
+      </div>
+      <div class="pips" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <figure class="figure">
+      <canvas class="layer on" data-scene="ulam" data-cap="Fig. 5a. The Ulam spiral, primes marked." role="img" aria-label="The integers written in a square spiral with the primes marked, zooming out to reveal diagonal lines of primes"></canvas>
+      <canvas class="layer" data-scene="elliptic" data-cap="Fig. 5b. y² = x³ − x + 1, and the chord that adds P to Q." role="img" aria-label="The elliptic curve y squared equals x cubed minus x plus one, with a line through points P and Q meeting the curve at a third point R, reflected to give P plus Q"></canvas>
+      <canvas class="layer" data-scene="mocktheta" data-cap="Fig. 5c. Ramanujan's f(q) across the unit disk; color is phase, bands are modulus." role="img" aria-label="A phase portrait of Ramanujan's third-order mock theta function on the unit disk, with intricate color bands crowding toward the boundary"></canvas>
+      <figcaption>Fig. 5a. The Ulam spiral, primes marked.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="chapter era-stix" id="space" style="--steps:3" aria-labelledby="h-space">
+  <div class="stage">
+    <div class="copy">
+      <p class="chap-no">Chapter V</p>
+      <h2 id="h-space">Space</h2>
+      <div class="steps">
+        <div class="step">
+          <p class="when">c. 300 BCE, the fifth postulate</p>
+          <p>Through a point off a line, exactly one parallel passes, and every triangle's angles sum to 180°. For two thousand years mathematicians tried to prove this postulate from Euclid's other four, and failed.</p>
+        </div>
+        <div class="step">
+          <p class="when">1854, Riemann</p>
+          <p>On a sphere the straightest paths are great circles, and any two of them meet. Two lines both perpendicular to the equator, parallel by Euclid's lights, cross at the pole: this triangle has three right angles. Riemann's curved geometry later became the language of Einstein's gravity.</p>
+        </div>
+        <div class="step">
+          <p class="when">1820s to 1882, the hyperbolic plane</p>
+          <p>Gauss, Bolyai and Lobachevsky bent space the other way: through the point <i>P</i> run infinitely many lines that never meet <i>L</i>. Poincaré fit the whole infinite plane inside a disk, where every triangle of this tiling is the same size.</p>
+        </div>
+      </div>
+      <div class="pips" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <figure class="figure">
+      <canvas class="layer on" data-scene="euclid" data-cap="Fig. 6a. Alternate angles: α + β + γ = 180°." role="img" aria-label="A Euclidean triangle whose angles, copied along a parallel line through the top vertex, fill a straight angle"></canvas>
+      <canvas class="layer" data-scene="sphere" data-cap="Fig. 6b. A spherical triangle with three right angles." role="img" aria-label="A rotating sphere with a triangle bounded by the equator and two meridians, with three right angles"></canvas>
+      <canvas class="layer" data-scene="hyper" data-cap="Fig. 6c. Poincaré's disk, tiled by congruent triangles." role="img" aria-label="The Poincaré disk tiled by congruent triangles, with a line L and many lines through a point P that never meet it"></canvas>
+      <figcaption>Fig. 6a. Alternate angles: α + β + γ = 180°.</figcaption>
+    </figure>
+  </div>
+</section>
+
+
+<section class="epilogue" id="epilogue" aria-labelledby="h-epi">
+  <div class="wrap">
+    <p class="big" id="h-epi">The branches keep dividing: topology, logic, probability, dynamics, and whatever gets proved next.</p>
+    <p class="lede">Some of it might be proved by you.</p>
+    <a class="cta" href="index.html#join">Come to the Lounge</a>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html">Lemma Lounge Mathematical Society, Rutgers University–Newark</a>
+  <span class="eq">e<sup>iπ</sup> + 1 = 0</span>
+</footer>
+
+<script>
+(function () {
+'use strict';
+const root = document.documentElement;
+root.classList.add('js');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const TAU = Math.PI * 2;
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+/* ---------- Palette: iron-gall ink on rag paper, becoming navy on graph paper ---------- */
+const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const OLD = { bg: hex('#E7DDC7'), ink: hex('#2A2019'), muted: hex('#6B5A45'), accent: hex('#A1301D'), pencil: hex('#8A785F') };
+const NEW = { bg: hex('#F3F6F9'), ink: hex('#14203A'), muted: hex('#4B5A73'), accent: hex('#C8102E'), pencil: hex('#8C9DB8') };
+const P = {};
+const mixc = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
+const rgba = (c, a = 1) => `rgba(${c[0]},${c[1]},${c[2]},${a})`;
+let gNow = -1;
+function setPalette(g) {
+  for (const k in OLD) P[k] = mixc(OLD[k], NEW[k], g);
+  root.style.setProperty('--bg', rgba(P.bg));
+  root.style.setProperty('--ink', rgba(P.ink));
+  root.style.setProperty('--muted', rgba(P.muted));
+  root.style.setProperty('--accent', rgba(P.accent));
+  root.style.setProperty('--rule', rgba(P.ink, lerp(.2, .16, g)));
+  root.style.setProperty('--paper-o', (1 - smooth(.2, .75, g)).toFixed(3));
+  root.style.setProperty('--grid-o', smooth(.3, .85, g).toFixed(3));
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = rgba(P.bg);
+}
+setPalette(0);
+
+/* ---------- Scene plumbing: sized canvases, drawn only when visible ---------- */
+const scenes = [];
+function scene(canvas, opts) {
+  const s = Object.assign({ canvas, ctx: canvas.getContext('2d'), w: 0, h: 0, visible: false, active: true, dirty: true, p: 0, animated: false }, opts);
+  scenes.push(s); ro.observe(canvas); io.observe(canvas);
+  return s;
+}
+function fit(s) {
+  const r = s.canvas.getBoundingClientRect();
+  if (!r.width) return;
+  const d = Math.min(window.devicePixelRatio || 1, 2);
+  s.w = r.width; s.h = r.height;
+  s.canvas.width = Math.round(r.width * d); s.canvas.height = Math.round(r.height * d);
+  s.ctx.setTransform(d, 0, 0, d, 0, 0);
+  s.dirty = true;
+  if (s.onResize) s.onResize(s);
+}
+const ro = new ResizeObserver(es => { for (const e of es) { const s = scenes.find(x => x.canvas === e.target); if (s) fit(s); } });
+const io = new IntersectionObserver(es => { for (const e of es) { const s = scenes.find(x => x.canvas === e.target); if (s) { s.visible = e.isIntersecting; s.dirty = true; if (!e.isIntersecting) s.t0 = null; } } }, { rootMargin: '120px' });
+
+
+/* ---------- One random seed per visit; every generative piece draws from it ---------- */
+const qsSeed = new URLSearchParams(location.search).get('seed');
+const SEED = qsSeed && /^\d{1,10}$/.test(qsSeed) ? Number(qsSeed) >>> 0
+  : (window.crypto && crypto.getRandomValues ? crypto.getRandomValues(new Uint32Array(1))[0] : Math.floor(Math.random() * 4294967296));
+const mulberry = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+const master = mulberry(SEED), fork = () => mulberry(Math.floor(master() * 4294967296));
+const pick = (r, arr) => arr[Math.floor(r() * arr.length)];
+const shuffle = (r, arr) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+/* ---------- Hero: coffee-stained paper, ink drops that spread ---------- */
+const hero = document.getElementById('top');
+const inkSvg = document.getElementById('ink');
+const NS = 'http://www.w3.org/2000/svg';
+let userDrops = [];
+function drop(x, y, r, color, delay, seed) {
+  let rnd = seed || Math.random() * 1e4;
+  const rand = () => { rnd = (rnd * 9301 + 49297) % 233280; return rnd / 233280; };
+  const g = document.createElementNS(NS, 'g');
+  g.setAttribute('class', 'drop');
+  g.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
+  g.style.setProperty('--d', delay + 's');
+  const c = (cls, cx, cy, rr, op, filt) => {
+    const e = document.createElementNS(NS, 'circle');
+    e.setAttribute('class', cls); e.setAttribute('cx', cx.toFixed(1)); e.setAttribute('cy', cy.toFixed(1));
+    e.setAttribute('r', rr.toFixed(1)); e.setAttribute('fill', color); e.setAttribute('fill-opacity', op);
+    e.setAttribute('filter', `url(#${filt})`);
+    g.appendChild(e);
+  };
+  c('halo', 0, 0, r * 1.45, .16, 'f-bleed');
+  c('core', 0, 0, r, .92, 'f-ink');
+  const n = 3 + Math.floor(rand() * 5);
+  for (let i = 0; i < n; i++) {
+    const a = rand() * TAU, d = r * (1.35 + rand() * 1.6);
+    c('spat', Math.cos(a) * d, Math.sin(a) * d, Math.max(1.2, r * (.05 + rand() * .13)), .85, 'f-ink');
+  }
+  inkSvg.appendChild(g);
+  return g;
+}
+const dropPlan = (() => {
+  const r = fork(), j = v => v + (r() - .5) * .04;
+  const wide = { big: [[.58, .84], [.93, .62], [.47, .9], [.64, .8]], red: [[.535, .19], [.47, .12], [.63, .1], [.95, .78]], small: [[.35, .91], [.07, .7], [.54, .64], [.84, .2]] };
+  const narrow = { big: [[.86, .92], [.92, .45], [.15, .95]], red: [[.1, .26], [.22, .08], [.9, .3]], small: [[.7, .6], [.55, .93], [.85, .78]] };
+  const mk = S => { const b = pick(r, S.big), rd = pick(r, S.red), sm = pick(r, S.small); return [[j(b[0]), j(b[1]), .038 + r() * .022, 0, .4 + r() * .4, 1 + Math.floor(r() * 9999)], [j(rd[0]), j(rd[1]), .014 + r() * .012, 1, 1.1 + r() * .5, 1 + Math.floor(r() * 9999)], [j(sm[0]), j(sm[1]), .012 + r() * .008, 0, 2 + r() * .6, 1 + Math.floor(r() * 9999)]]; };
+  return { wide: mk(wide), narrow: mk(narrow) };
+})();
+function seedDrops() {
+  inkSvg.querySelectorAll('.drop.seed').forEach(e => e.remove());
+  const w = hero.clientWidth, h = hero.clientHeight, m = Math.min(w, h);
+  for (const [fx, fy, fr, red, dl, sd] of (w > 860 ? dropPlan.wide : dropPlan.narrow)) drop(fx * w, fy * h, fr * m, rgba(red ? OLD.accent : OLD.ink), dl, sd).classList.add('seed');
+}
+seedDrops();
+let lastW = hero.clientWidth;
+new ResizeObserver(() => { if (Math.abs(hero.clientWidth - lastW) > 40) { lastW = hero.clientWidth; seedDrops(); } }).observe(hero);
+hero.addEventListener('pointerdown', e => {
+  if (e.target.closest('a, button')) return;
+  const b = hero.getBoundingClientRect();
+  const col = Math.random() < .25 ? rgba(OLD.accent) : rgba(OLD.ink);
+  userDrops.push(drop(e.clientX - b.left, e.clientY - b.top, 8 + Math.random() * 16, col, 0));
+  if (userDrops.length > 10) userDrops.shift().remove();
+});
+
+/* ---------- The seven planetary signs, drawn by hand rather than trusted to fonts ---------- */
+function sign(ctx, key, x, y, s, color, lw) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = (lw || 1.5) / s; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  const L = (x1, y1, x2, y2) => { ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); };
+  ctx.beginPath();
+  switch (key) {
+    case 'sun': ctx.arc(0, 0, .8, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.arc(0, 0, .2, 0, TAU); ctx.fill(); break;
+    case 'moon': ctx.arc(0, 0, .82, -Math.PI / 2, Math.PI / 2, false); ctx.arc(-.36, 0, .895, 1.159, -1.159, true); ctx.closePath(); ctx.fill(); break;
+    case 'mercury': ctx.arc(0, -.12, .4, 0, TAU); L(0, .28, 0, .98); L(-.3, .66, .3, .66); ctx.moveTo(.36, -.92); ctx.arc(0, -.92, .36, 0, Math.PI); ctx.stroke(); break;
+    case 'venus': ctx.arc(0, -.32, .48, 0, TAU); L(0, .16, 0, 1); L(-.32, .6, .32, .6); ctx.stroke(); break;
+    case 'mars': ctx.arc(-.2, .2, .5, 0, TAU); L(.154, -.154, .76, -.76); L(.76, -.76, .3, -.76); L(.76, -.76, .76, -.3); ctx.stroke(); break;
+    case 'jupiter': ctx.moveTo(-.62, -.5); ctx.bezierCurveTo(-.5, -.98, .12, -.92, .02, -.4); ctx.bezierCurveTo(-.05, -.08, -.36, .16, -.62, .3); ctx.lineTo(.72, .3); L(.38, -.58, .38, .92); ctx.stroke(); break;
+    case 'saturn': L(-.32, -.98, -.32, .55); L(-.64, -.62, .02, -.62); ctx.moveTo(-.32, -.06); ctx.bezierCurveTo(-.12, -.42, .56, -.4, .44, .06); ctx.bezierCurveTo(.36, .36, .14, .58, .38, .92); ctx.stroke(); break;
+    case 'earth': ctx.arc(0, 0, .78, 0, TAU); L(-.78, 0, .78, 0); L(0, -.78, 0, .78); ctx.stroke(); break;
+  }
+  ctx.restore();
+}
+document.querySelectorAll('canvas[data-sym]').forEach(cv => {
+  const d = Math.min(window.devicePixelRatio || 1, 2); cv.width = 20 * d; cv.height = 20 * d;
+  const ctx = cv.getContext('2d'); ctx.setTransform(d, 0, 0, d, 0, 0);
+  sign(ctx, cv.dataset.sym, 10, 10, 7.4, cv.dataset.sym === 'sun' ? rgba(OLD.accent) : rgba(OLD.ink), 1.4);
+});
+
+/* ---------- Chapter I: Ptolemy's heavens ---------- */
+const PLANETS = [
+  { k: 'moon', D: .15, e: .032, a: 2.6, b: 9, ph: .8, pe: 0, metal: 'silver' },
+  { k: 'mercury', D: .27, e: .075, a: 1, b: 5.2, ph: 0, pe: 1.3, metal: 'quicksilver' },
+  { k: 'venus', D: .41, e: .1, a: 1, b: 5, ph: 0, pe: 2.2, metal: 'copper' },
+  { k: 'sun', D: .55, e: 0, a: 1, b: 0, ph: 0, pe: 0, metal: 'gold' },
+  { k: 'mars', D: .69, e: .12, a: .53, b: 4, ph: 2.1, pe: .4, metal: 'iron' },
+  { k: 'jupiter', D: .82, e: .075, a: .25, b: 3.6, ph: 4, pe: 1, metal: 'tin' },
+  { k: 'saturn', D: .94, e: .05, a: .14, b: 3.4, ph: 5.2, pe: 2.5, metal: 'lead' }
+];
+function ptolemy(canvas) {
+  const pos = (pl, t) => [pl.D * Math.cos(pl.a * t + pl.ph) + pl.e * Math.cos(pl.b * t + pl.pe), pl.D * Math.sin(pl.a * t + pl.ph) + pl.e * Math.sin(pl.b * t + pl.pe)];
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const ctx = s.ctx, W = s.w, c = W / 2, R = W * .43, T = reduce ? 23 : t * .5 + 23;
+      const epiA = smooth(.24, .4, s.p), trailA = .2 + .8 * smooth(.28, .5, s.p), labA = smooth(.66, .8, s.p);
+      const ink = P.ink, X = v => c + v[0] * R, Y = v => c - v[1] * R;
+      const knock = (x, y, r) => { ctx.fillStyle = rgba(P.bg, .94); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); };
+      ctx.clearRect(0, 0, W, W);
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = rgba(ink, .55); ctx.lineWidth = .8;
+      ctx.beginPath(); ctx.arc(c, c, R * 1.02, 0, TAU); ctx.stroke();
+      ctx.beginPath(); ctx.arc(c, c, R * 1.08, 0, TAU); ctx.stroke();
+      for (let i = 0; i < 72; i++) {
+        const a = i / 72 * TAU, l = i % 6 === 0 ? 1.08 : 1.045;
+        ctx.beginPath(); ctx.moveTo(c + Math.cos(a) * R * 1.02, c + Math.sin(a) * R * 1.02); ctx.lineTo(c + Math.cos(a) * R * l, c + Math.sin(a) * R * l); ctx.stroke();
+      }
+      ctx.strokeStyle = rgba(P.pencil, .55); ctx.lineWidth = .7; ctx.setLineDash([2, 4]);
+      for (const pl of PLANETS) { ctx.beginPath(); ctx.arc(c, c, pl.D * R, 0, TAU); ctx.stroke(); }
+      ctx.setLineDash([]);
+      for (const pl of PLANETS) {
+        if (!pl.e) continue;
+        const L = 2.4 * TAU / Math.abs(pl.b - pl.a), M = 180, K = 6;
+        for (let k = 0; k < K; k++) {
+          ctx.beginPath();
+          for (let i = 0; i <= M / K; i++) { const v = pos(pl, T - L + L * ((k * M / K + i) / M)); i ? ctx.lineTo(X(v), Y(v)) : ctx.moveTo(X(v), Y(v)); }
+          ctx.strokeStyle = rgba(ink, trailA * (.1 + .72 * (k + 1) / K)); ctx.lineWidth = 1.1; ctx.stroke();
+        }
+      }
+      if (epiA > .01) for (const pl of PLANETS) {
+        if (!pl.e) continue;
+        const cx = c + pl.D * Math.cos(pl.a * T + pl.ph) * R, cy = c - pl.D * Math.sin(pl.a * T + pl.ph) * R, v = pos(pl, T);
+        ctx.lineWidth = .8;
+        ctx.strokeStyle = rgba(P.pencil, .7 * epiA); ctx.beginPath(); ctx.moveTo(c, c); ctx.lineTo(cx, cy); ctx.stroke();
+        ctx.strokeStyle = rgba(ink, .6 * epiA); ctx.beginPath(); ctx.arc(cx, cy, pl.e * R, 0, TAU); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(X(v), Y(v)); ctx.stroke();
+        ctx.fillStyle = rgba(ink, .7 * epiA); ctx.beginPath(); ctx.arc(cx, cy, 1.6, 0, TAU); ctx.fill();
+      }
+      const ss = Math.max(6, W * .017);
+      knock(c, c, ss * 1.25); sign(ctx, 'earth', c, c, ss * 1.05, rgba(ink), 1.5);
+      ctx.font = `italic ${Math.max(11, W * .025)}px "IM Fell English", Georgia, serif`;
+      for (const pl of PLANETS) {
+        const v = pos(pl, T), x = X(v), y = Y(v);
+        knock(x, y, ss * 1.3);
+        sign(ctx, pl.k, x, y, ss, pl.k === 'sun' ? rgba(P.accent) : rgba(ink), 1.5);
+        if (labA > .01) { ctx.fillStyle = rgba(P.muted, labA); ctx.fillText(pl.metal, x + ss * 1.5, y - ss * .8); }
+      }
+    }
+  });
+}
+
+/* ---------- Chapter II: secants, rectangles, and the fundamental theorem ---------- */
+function calculus(canvas) {
+  const f = x => 1.2 + .7 * Math.sin(.9 * x - .6) + .12 * x;
+  const a = .5, b = 5.5, X1 = 6, Y1 = 3, NA = 600, A = new Float64Array(NA + 1);
+  for (let i = 1; i <= NA; i++) { const x0 = a + (b - a) * (i - 1) / NA, x1 = a + (b - a) * i / NA; A[i] = A[i - 1] + (f(x0) + f(x1)) / 2 * (x1 - x0); }
+  const Atot = A[NA], Aat = x => { const u = clamp((x - a) / (b - a)) * NA, i = Math.floor(u); return i >= NA ? A[NA] : A[i] + (A[i + 1] - A[i]) * (u - i); };
+  return scene(canvas, {
+    draw(s) {
+      const ctx = s.ctx, W = s.w, m = W * .1, fs = Math.max(12, W * .032);
+      const px = x => m + x / X1 * (W - 1.6 * m), py = y => W - m - y / Y1 * (W - 2 * m);
+      const ink = P.ink, font = `italic ${fs}px "IM Fell English", Georgia, serif`;
+      const dot = (x, y, col, r) => { ctx.fillStyle = rgba(col); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); };
+      const curve = (lw, from = .02, to = X1 - .02, g = f, col = ink) => { ctx.strokeStyle = rgba(col); ctx.lineWidth = lw; ctx.beginPath(); for (let i = 0; i <= 260; i++) { const x = from + (to - from) * i / 260; i ? ctx.lineTo(px(x), py(g(x))) : ctx.moveTo(px(x), py(g(x))); } ctx.stroke(); };
+      ctx.clearRect(0, 0, W, W); ctx.lineCap = 'round';
+      ctx.strokeStyle = rgba(ink, .8); ctx.lineWidth = 1.1;
+      ctx.beginPath(); ctx.moveTo(px(0), py(Y1) - 6); ctx.lineTo(px(0), py(0)); ctx.lineTo(px(X1) + 6, py(0)); ctx.stroke();
+      for (let i = 1; i <= 6; i++) { ctx.beginPath(); ctx.moveTo(px(i), py(0)); ctx.lineTo(px(i), py(0) + 5); ctx.stroke(); }
+      for (let i = 1; i <= 3; i++) { ctx.beginPath(); ctx.moveTo(px(0), py(i)); ctx.lineTo(px(0) - 5, py(i)); ctx.stroke(); }
+      ctx.font = font;
+      const phase = Math.min(2, Math.floor(s.p * 3)), lp = clamp(s.p * 3 - phase);
+      const readout = (line1, line2) => { ctx.fillStyle = rgba(ink); ctx.fillText(line1, px(0) + 14, py(Y1) + fs * .4); if (line2) { ctx.fillStyle = rgba(P.muted); ctx.fillText(line2, px(0) + 14, py(Y1) + fs * 1.6); } };
+      if (phase === 0) {
+        const x0 = 1.6, h = lerp(2.9, .0004, ease(clamp(lp * 1.2))), x1 = x0 + h, sl = (f(x1) - f(x0)) / h;
+        curve(2);
+        ctx.save(); ctx.beginPath(); ctx.rect(px(0), py(Y1), px(X1) - px(0), py(0) - py(Y1)); ctx.clip();
+        ctx.strokeStyle = rgba(P.accent); ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(px(0), py(f(x0) - sl * x0)); ctx.lineTo(px(X1), py(f(x0) + sl * (X1 - x0))); ctx.stroke(); ctx.restore();
+        if (h > .14) {
+          ctx.setLineDash([3, 4]); ctx.strokeStyle = rgba(ink, .55); ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(px(x0), py(f(x0))); ctx.lineTo(px(x1), py(f(x0))); ctx.lineTo(px(x1), py(f(x1))); ctx.stroke(); ctx.setLineDash([]);
+          ctx.fillStyle = rgba(P.muted); ctx.fillText('Δx', (px(x0) + px(x1)) / 2 - fs * .5, py(f(x0)) + fs * 1.15); ctx.fillText('Δy', px(x1) + 7, (py(f(x0)) + py(f(x1))) / 2 + fs * .3);
+          dot(px(x1), py(f(x1)), P.accent, 4); ctx.fillStyle = rgba(P.accent); ctx.fillText('Q', px(x1) + 6, py(f(x1)) - 8);
+        }
+        dot(px(x0), py(f(x0)), ink, 4.2); ctx.fillStyle = rgba(ink); ctx.fillText('P', px(x0) - fs * .9, py(f(x0)) - 8);
+        readout(h > .003 ? `h = ${h.toFixed(3)}` : 'h → 0', h > .003 ? `slope of secant ≈ ${sl.toFixed(3)}` : `slope of tangent = ${sl.toFixed(3)}`);
+      } else if (phase === 1) {
+        const n = Math.round(Math.pow(2, lerp(1.6, 7, ease(lp)))), dx = (b - a) / n; let S = 0;
+        ctx.fillStyle = rgba(P.accent, .16); ctx.strokeStyle = rgba(ink, n > 64 ? 0 : .5); ctx.lineWidth = .8;
+        for (let i = 0; i < n; i++) { const x = a + i * dx, y = f(x + dx / 2); S += y * dx; ctx.fillRect(px(x), py(y), px(x + dx) - px(x), py(0) - py(y)); if (n <= 64) ctx.strokeRect(px(x), py(y), px(x + dx) - px(x), py(0) - py(y)); }
+        curve(2);
+        readout(`${n} rectangles: area ≈ ${S.toFixed(4)}`, `the integral: ${Atot.toFixed(4)}`);
+      } else {
+        const xs = lerp(a + .001, b, ease(lp)), k = Y1 * .9 / Atot;
+        ctx.fillStyle = rgba(P.accent, .14); ctx.beginPath(); ctx.moveTo(px(a), py(0));
+        for (let i = 0; i <= 120; i++) { const x = a + (xs - a) * i / 120; ctx.lineTo(px(x), py(f(x))); }
+        ctx.lineTo(px(xs), py(0)); ctx.closePath(); ctx.fill();
+        curve(2);
+        curve(2.2, a, xs, x => Aat(x) * k, P.accent);
+        const yA = Aat(xs) * k, sl = f(xs) * k, dd = .5;
+        ctx.setLineDash([3, 4]); ctx.strokeStyle = rgba(ink, .5); ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(px(xs), py(0)); ctx.lineTo(px(xs), py(Math.max(yA, f(xs)))); ctx.stroke();
+        ctx.strokeStyle = rgba(P.accent, .9); ctx.beginPath(); ctx.moveTo(px(xs - dd), py(yA - sl * dd)); ctx.lineTo(px(xs + dd), py(yA + sl * dd)); ctx.stroke(); ctx.setLineDash([]);
+        dot(px(xs), py(yA), P.accent, 4.2); dot(px(xs), py(f(xs)), ink, 3.6);
+        ctx.fillStyle = rgba(P.muted); ctx.fillText('a', px(a) - 3, py(0) + fs * 1.2); ctx.fillText('x', px(xs) - 3, py(0) + fs * 1.2);
+        readout('red: the area so far, A(x)', `A′(x) = f(x) = ${f(xs).toFixed(3)}`);
+      }
+    }
+  });
+}
+
+/* ---------- Chapter III: Fourier epicycles drawing λ ---------- */
+function fourier(canvas, label) {
+  const V = [[-.62, .92], [.2, 0], [-.15, -.8], [-.3, -.94], [-.5, -.9], [-.3, -.94], [-.15, -.8], [.2, 0], [.64, .92], [.2, 0], [-.62, .92]];
+  const seg = [], M = 512; let tot = 0;
+  for (let i = 1; i < V.length; i++) { const l = Math.hypot(V[i][0] - V[i - 1][0], V[i][1] - V[i - 1][1]); seg.push(l); tot += l; }
+  const pts = [];
+  for (let m = 0; m < M; m++) {
+    let d = m / M * tot, i = 0; while (i < seg.length - 1 && d > seg[i]) { d -= seg[i]; i++; }
+    const u = seg[i] ? d / seg[i] : 0; pts.push([lerp(V[i][0], V[i + 1][0], u), lerp(V[i][1], V[i + 1][1], u)]);
+  }
+  const coef = [];
+  for (let k = -M / 2; k < M / 2; k++) {
+    let re = 0, im = 0;
+    for (let m = 0; m < M; m++) { const a = -TAU * k * m / M; re += pts[m][0] * Math.cos(a) - pts[m][1] * Math.sin(a); im += pts[m][0] * Math.sin(a) + pts[m][1] * Math.cos(a); }
+    coef.push({ k, re: re / M, im: im / M, r: Math.hypot(re, im) / M, ph: Math.atan2(im, re) });
+  }
+  const c0 = coef.find(c => c.k === 0), terms = coef.filter(c => c.k !== 0).sort((x, y) => y.r - x.r);
+  let N = -1, path = [];
+  const evalAt = (tau, n) => { let x = c0.re, y = c0.im; for (let j = 0; j < n; j++) { const c = terms[j], a = c.k * tau + c.ph; x += c.r * Math.cos(a); y += c.r * Math.sin(a); } return [x, y]; };
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const n = Math.max(1, Math.round(Math.pow(160, clamp(s.p / .75))));
+      if (n !== N) { N = n; path = []; for (let i = 0; i <= 480; i++) path.push(evalAt(i / 480 * TAU, N)); }
+      { const el = document.getElementById('fourier-n'), tx = N === 1 ? '1 circle' : N + ' circles'; if (el && el.textContent !== tx) el.textContent = tx; }
+      const ctx = s.ctx, W = s.w, c = W / 2, S = W * .43, X = v => c + v[0] * S, Y = v => c + v[1] * S;
+      const tau = reduce ? TAU * .999 : (t * .42) % TAU;
+      ctx.clearRect(0, 0, W, W); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.strokeStyle = rgba(P.pencil, .35); ctx.lineWidth = 1; ctx.setLineDash([2, 4]);
+      ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(X(p), Y(p)) : ctx.moveTo(X(p), Y(p))); ctx.stroke(); ctx.setLineDash([]);
+      ctx.strokeStyle = rgba(P.ink, .42); ctx.lineWidth = 1.3; ctx.beginPath(); path.forEach((p, i) => i ? ctx.lineTo(X(p), Y(p)) : ctx.moveTo(X(p), Y(p))); ctx.stroke();
+      const upto = Math.floor(tau / TAU * 480);
+      ctx.strokeStyle = rgba(P.accent); ctx.lineWidth = 2.2; ctx.beginPath();
+      for (let i = 0; i <= upto; i++) { const p = path[i]; i ? ctx.lineTo(X(p), Y(p)) : ctx.moveTo(X(p), Y(p)); }
+      const tip = evalAt(tau, N); ctx.lineTo(X(tip), Y(tip)); ctx.stroke();
+      let x = c0.re, y = c0.im;
+      for (let j = 0; j < N; j++) {
+        const cc = terms[j], a = cc.k * tau + cc.ph, nx = x + cc.r * Math.cos(a), ny = y + cc.r * Math.sin(a);
+        if (j < 90 && cc.r * S > .8) { ctx.strokeStyle = rgba(P.ink, .2); ctx.lineWidth = .8; ctx.beginPath(); ctx.arc(X([x, y]), Y([x, y]), cc.r * S, 0, TAU); ctx.stroke(); }
+        ctx.strokeStyle = rgba(P.ink, .7); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(X([x, y]), Y([x, y])); ctx.lineTo(X([nx, ny]), Y([nx, ny])); ctx.stroke();
+        x = nx; y = ny;
+      }
+      ctx.fillStyle = rgba(P.accent); ctx.beginPath(); ctx.arc(X(tip), Y(tip), 3.8, 0, TAU); ctx.fill();
+      ctx.font = `italic ${Math.max(13, W * .036)}px "Bodoni Moda", Didot, serif`; ctx.fillStyle = rgba(P.ink);
+      ctx.fillText('N = ' + N, W * .05, W * .08);
+    }
+  });
+}
+
+
+/* ---------- Chapter III, step 4: spherical harmonics, the sphere's own Fourier modes ---------- */
+function sphharm(canvas) {
+  const LIST = [[1, 0], [1, 1], [2, 0], [2, 1], [2, 2], [3, 0], [3, 1], [3, 2], [3, 3], [4, 0], [4, 2], [4, 3], [4, 4], [5, 2], [5, 5], [6, 0], [6, 3], [6, 6], [7, 4], [8, 5]];
+  const NT = 42, NP = 84, NV = (NT + 1) * (NP + 1), BLUEC = [42, 79, 143];
+  const leg = (l, m, x) => {
+    let pmm = 1; const s = Math.sqrt(Math.max(0, 1 - x * x));
+    for (let i = 1; i <= m; i++) pmm *= -(2 * i - 1) * s;
+    if (l === m) return pmm;
+    let pm1 = x * (2 * m + 1) * pmm; if (l === m + 1) return pm1;
+    let pl = 0; for (let ll = m + 2; ll <= l; ll++) { pl = ((2 * ll - 1) * x * pm1 - (ll + m - 1) * pmm) / (ll - m); pmm = pm1; pm1 = pl; }
+    return pl;
+  };
+  const tables = LIST.map(([l, m]) => {
+    const Y = new Float32Array(NV); let mx = 0;
+    for (let i = 0; i <= NT; i++) { const P = leg(l, m, Math.cos(i / NT * Math.PI)); for (let j = 0; j <= NP; j++) { const v = P * Math.cos(m * j / NP * TAU); Y[i * (NP + 1) + j] = v; mx = Math.max(mx, Math.abs(v)); } }
+    for (let k = 0; k < NV; k++) Y[k] /= mx;
+    return Y;
+  });
+  const unit = []; for (let i = 0; i <= NT; i++) for (let j = 0; j <= NP; j++) { const th = i / NT * Math.PI, ph = j / NP * TAU; unit.push([Math.sin(th) * Math.cos(ph), Math.sin(th) * Math.sin(ph), Math.cos(th)]); }
+  const X = new Float32Array(NV), Yd = new Float32Array(NV), Z = new Float32Array(NV), val = new Float32Array(NV), quads = [];
+  for (let i = 0; i < NT; i++) for (let j = 0; j < NP; j++) { const a = i * (NP + 1) + j; quads.push({ a, b: a + 1, c: a + NP + 2, d: a + NP + 1, z: 0 }); }
+  const L = (() => { const v = [-.45, -.8, .55], l = Math.hypot(...v); return v.map(x => x / l); })();
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const lp = clamp((s.p * 4 - 3) / .88), fi = lp * (LIST.length - 1), ia = Math.floor(fi), ib = Math.min(LIST.length - 1, ia + 1), fr = ease(fi - ia);
+      const [l, m] = LIST[fr < .5 ? ia : ib], el = document.getElementById('sph-lm'), tx = `l = ${l}, m = ${m}`;
+      if (el && el.textContent !== tx) el.textContent = tx;
+      const ctx = s.ctx, W = s.w, c = W / 2, R = W * .29, amp = .34, yaw = (reduce ? .6 : t * .22), pit = .42;
+      const cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pit), sp = Math.sin(pit), Ya = tables[ia], Yb = tables[ib];
+      for (let k = 0; k < NV; k++) {
+        const v = Ya[k] + (Yb[k] - Ya[k]) * fr, r = 1 + amp * v, u = unit[k];
+        const x1 = (u[0] * cy - u[1] * sy) * r, y1 = (u[0] * sy + u[1] * cy) * r, z1 = u[2] * r;
+        X[k] = x1; Yd[k] = y1 * cp - z1 * sp; Z[k] = y1 * sp + z1 * cp; val[k] = v;
+      }
+      for (const q of quads) q.z = Yd[q.a] + Yd[q.b] + Yd[q.c] + Yd[q.d];
+      quads.sort((p, q) => q.z - p.z);
+      ctx.clearRect(0, 0, W, W); ctx.lineJoin = 'round'; ctx.lineWidth = .7;
+      const bg = P.bg, pos = P.accent;
+      for (const q of quads) {
+        const ux = X[q.c] - X[q.a], uy = Yd[q.c] - Yd[q.a], uz = Z[q.c] - Z[q.a], vx = X[q.d] - X[q.b], vy = Yd[q.d] - Yd[q.b], vz = Z[q.d] - Z[q.b];
+        let nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx; const nl = Math.hypot(nx, ny, nz) || 1;
+        const lit = .55 + .45 * Math.abs((nx * L[0] + ny * L[1] + nz * L[2]) / nl);
+        const v = (val[q.a] + val[q.b] + val[q.c] + val[q.d]) / 4, tgt = v >= 0 ? pos : BLUEC, f = Math.min(1, Math.abs(v) * 1.3);
+        const col = [0, 1, 2].map(i => Math.round((bg[i] + (tgt[i] - bg[i]) * f) * lit)), cs = `rgb(${col[0]},${col[1]},${col[2]})`;
+        ctx.fillStyle = cs; ctx.strokeStyle = cs; ctx.beginPath();
+        ctx.moveTo(c + X[q.a] * R, c - Z[q.a] * R); ctx.lineTo(c + X[q.b] * R, c - Z[q.b] * R); ctx.lineTo(c + X[q.c] * R, c - Z[q.c] * R); ctx.lineTo(c + X[q.d] * R, c - Z[q.d] * R);
+        ctx.closePath(); ctx.fill(); ctx.stroke();
+      }
+      ctx.font = `italic ${Math.max(13, W * .036)}px "Bodoni Moda", Didot, serif`; ctx.fillStyle = rgba(P.ink);
+      ctx.fillText(`Y`, W * .05, W * .08); ctx.font = `italic ${Math.max(10, W * .024)}px "Bodoni Moda", Didot, serif`;
+      ctx.fillText(String(m), W * .05 + Math.max(13, W * .036) * .75, W * .08 - Math.max(13, W * .036) * .45); ctx.fillText(String(l), W * .05 + Math.max(13, W * .036) * .75, W * .08 + Math.max(13, W * .036) * .25);
+    }
+  });
+}
+/* ---------- Progressive raster: heavy per-pixel pictures render a few rows per frame ---------- */
+function Raster(res, pixel) {
+  const cv = document.createElement('canvas'); cv.width = cv.height = res;
+  const cx = cv.getContext('2d'), img = cx.createImageData(res, res); let row = 0;
+  return {
+    cv, done: false,
+    work(budget) {
+      const t0 = performance.now(), D = img.data;
+      while (row < res && performance.now() - t0 < budget) {
+        const y = 1 - (row + .5) / res * 2;
+        for (let i = 0; i < res; i++) pixel((i + .5) / res * 2 - 1, y, D, (row * res + i) * 4);
+        row++;
+      }
+      cx.putImageData(img, 0, 0);
+      if (row >= res) this.done = true;
+    }
+  };
+}
+
+/* ---------- Chapter IV: primes, elliptic curves, mock theta functions ---------- */
+function ulam(canvas) {
+  const MAX = 101 * 101, prime = new Uint8Array(MAX + 1).fill(1), cx = new Int16Array(MAX + 1), cy = new Int16Array(MAX + 1);
+  prime[0] = prime[1] = 0;
+  for (let i = 2; i * i <= MAX; i++) if (prime[i]) for (let j = i * i; j <= MAX; j += i) prime[j] = 0;
+  const dirs = [[1, 0], [0, -1], [-1, 0], [0, 1]];
+  let x = 0, y = 0, n = 1, step = 1, d = 0;
+  while (n < MAX) { for (let r = 0; r < 2; r++) { for (let i = 0; i < step && n < MAX; i++) { x += dirs[d][0]; y += dirs[d][1]; n++; cx[n] = x; cy[n] = y; } d = (d + 1) % 4; } step++; }
+  return scene(canvas, {
+    draw(s) {
+      const ctx = s.ctx, W = s.w, c = W / 2, lp = clamp(s.p * 3 / .85);
+      const count = Math.min(MAX, Math.round(9 * Math.pow(MAX / 9, lp)));
+      const side = 2 * Math.ceil((Math.sqrt(count) - 1) / 2) + 1, cell = Math.min(W * .94 / side, W / 7);
+      ctx.clearRect(0, 0, W, W);
+      if (cell >= 7) {
+        ctx.strokeStyle = rgba(P.pencil, .5); ctx.lineWidth = 1; ctx.beginPath();
+        for (let i = 1; i <= count; i++) { const X = c + cx[i] * cell, Y = c + cy[i] * cell; i > 1 ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y); }
+        ctx.stroke();
+      }
+      if (cell >= 22) {
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.font = `${cell * .36}px "STIX Two Text", serif`;
+        for (let i = 1; i <= count; i++) {
+          const X = c + cx[i] * cell, Y = c + cy[i] * cell;
+          ctx.fillStyle = rgba(P.bg); ctx.beginPath(); ctx.arc(X, Y, cell * .34, 0, TAU); ctx.fill();
+          if (prime[i]) { ctx.strokeStyle = rgba(P.accent); ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(X, Y, cell * .34, 0, TAU); ctx.stroke(); }
+          ctx.fillStyle = prime[i] ? rgba(P.ink) : rgba(P.muted, .75); ctx.fillText(i, X, Y + 1);
+        }
+        ctx.textAlign = 'start'; ctx.textBaseline = 'alphabetic';
+      } else {
+        for (let i = 2; i <= count; i++) {
+          if (!prime[i]) { if (cell > 9) { ctx.fillStyle = rgba(P.pencil, .45); ctx.fillRect(c + cx[i] * cell - 1, c + cy[i] * cell - 1, 2, 2); } continue; }
+          const X = c + cx[i] * cell, Y = c + cy[i] * cell;
+          ctx.fillStyle = rgba(P.ink);
+          if (cell > 6) { ctx.beginPath(); ctx.arc(X, Y, cell * .32, 0, TAU); ctx.fill(); }
+          else { const q = Math.max(1, cell * .92); ctx.fillRect(X - q / 2, Y - q / 2, q, q); }
+        }
+      }
+      ctx.font = `italic ${Math.max(12, W * .03)}px "STIX Two Text", serif`; ctx.fillStyle = rgba(P.muted);
+      ctx.fillText(`1 to ${count.toLocaleString()}`, W * .04, W * .97);
+    }
+  });
+}
+
+function elliptic(canvas) {
+  const F = x => x * x * x - x + 1, x0 = -1.3247180, XMIN = -2.6, XMAX = 3.8, YMIN = -3.2, YMAX = 3.2;
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const ctx = s.ctx, W = s.w, fs = Math.max(12, W * .033);
+      const px = x => (x - XMIN) / (XMAX - XMIN) * W, py = y => (YMAX - y) / (YMAX - YMIN) * W;
+      const dot = (x, y, col, r, hollow) => { ctx.beginPath(); ctx.arc(px(x), py(y), r, 0, TAU); if (hollow) { ctx.fillStyle = rgba(P.bg); ctx.fill(); ctx.strokeStyle = rgba(col); ctx.lineWidth = 1.6; ctx.stroke(); } else { ctx.fillStyle = rgba(col); ctx.fill(); } };
+      ctx.clearRect(0, 0, W, W); ctx.lineCap = 'round';
+      ctx.strokeStyle = rgba(P.ink, .75); ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.moveTo(0, py(0)); ctx.lineTo(W, py(0)); ctx.moveTo(px(0), 0); ctx.lineTo(px(0), W); ctx.stroke();
+      ctx.beginPath();
+      for (let i = Math.ceil(XMIN); i <= XMAX; i++) if (i) { ctx.moveTo(px(i), py(0) - 4); ctx.lineTo(px(i), py(0) + 4); }
+      for (let j = Math.ceil(YMIN); j <= YMAX; j++) if (j) { ctx.moveTo(px(0) - 4, py(j)); ctx.lineTo(px(0) + 4, py(j)); }
+      ctx.stroke();
+      const up = [];
+      for (let i = 0; i <= 300; i++) { const u = i / 300, x = x0 + u * u * (XMAX - x0); up.push([x, Math.sqrt(Math.max(0, F(x)))]); }
+      ctx.strokeStyle = rgba(P.ink); ctx.lineWidth = 2.2; ctx.beginPath();
+      for (let i = up.length - 1; i >= 0; i--) { const p = up[i]; i === up.length - 1 ? ctx.moveTo(px(p[0]), py(p[1])) : ctx.lineTo(px(p[0]), py(p[1])); }
+      for (let i = 1; i < up.length; i++) ctx.lineTo(px(up[i][0]), py(-up[i][1]));
+      ctx.stroke();
+      const xp = lerp(-1.22, .28, .5 - .5 * Math.cos((reduce ? 1.4 : t) * .45)), yp = Math.sqrt(F(xp));
+      const xq = 1.8, yq = -Math.sqrt(F(xq)), lam = (yq - yp) / (xq - xp);
+      const x3 = lam * lam - xp - xq, y3 = lam * (xp - x3) - yp;
+      ctx.strokeStyle = rgba(P.accent); ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(px(XMIN), py(yp + lam * (XMIN - xp))); ctx.lineTo(px(XMAX), py(yp + lam * (XMAX - xp))); ctx.stroke();
+      ctx.setLineDash([4, 4]); ctx.strokeStyle = rgba(P.ink, .55); ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.moveTo(px(x3), py(-y3)); ctx.lineTo(px(x3), py(y3)); ctx.stroke(); ctx.setLineDash([]);
+      dot(xp, yp, P.ink, 4.5); dot(xq, yq, P.ink, 4.5); dot(x3, -y3, P.ink, 4.5, true); dot(x3, y3, P.accent, 5.5);
+      ctx.font = `italic ${fs}px "STIX Two Text", serif`;
+      ctx.fillStyle = rgba(P.ink);
+      ctx.fillText('P', px(xp) - fs * .5, py(yp) - fs * .6);
+      ctx.fillText('Q', px(xq) + fs * .5, py(yq) + fs * .3);
+      ctx.fillText('R', px(x3) + fs * .5, py(-y3) + fs * .9);
+      ctx.fillStyle = rgba(P.accent); ctx.fillText('P + Q', px(x3) + fs * .55, py(y3) - fs * .35);
+      ctx.fillStyle = rgba(P.ink); ctx.font = `italic ${fs * 1.1}px "STIX Two Text", serif`;
+      ctx.fillStyle = rgba(P.bg, .85); ctx.fillRect(W * .03, W * .03, fs * 8.4, fs * 1.7);
+      ctx.fillStyle = rgba(P.ink); ctx.fillText('y² = x³ − x + 1', W * .05, W * .03 + fs * 1.2);
+    }
+  });
+}
+
+function mocktheta(canvas) {
+  const TERMS = [1, 2, 3, 4, 6, 9, 14, 22, 34], RES = 340;
+  const anchors = ['#EEF1F5', '#E3B25A', '#C8102E', '#1B2F5B', '#4F8F96'].map(hex);
+  const phaseColor = u => { u = ((u % 1) + 1) % 1 * anchors.length; const i = Math.floor(u) % anchors.length, f = u - Math.floor(u), a = anchors[i], b = anchors[(i + 1) % anchors.length]; return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, a[2] + (b[2] - a[2]) * f]; };
+  const make = N => Raster(RES, (qr, qi, D, o) => {
+    if (qr * qr + qi * qi >= .9801) { D[o + 3] = 0; return; }
+    let sr = 1, si = 0, pr = 1, pi = 0, kr = 1, ki = 0, nr = 1, ni = 0, or = qr, oi = qi, tr, ti;
+    const q2r = qr * qr - qi * qi, q2i = 2 * qr * qi;
+    for (let n = 1; n <= N; n++) {
+      tr = nr * or - ni * oi; ti = nr * oi + ni * or; nr = tr; ni = ti;
+      tr = or * q2r - oi * q2i; ti = or * q2i + oi * q2r; or = tr; oi = ti;
+      tr = kr * qr - ki * qi; ti = kr * qi + ki * qr; kr = tr; ki = ti;
+      const ar = 1 + kr, ai = ki, s2r = ar * ar - ai * ai, s2i = 2 * ar * ai;
+      tr = pr * s2r - pi * s2i; ti = pr * s2i + pi * s2r; pr = tr; pi = ti;
+      const den = pr * pr + pi * pi; if (den < 1e-280) break;
+      const ur = (nr * pr + ni * pi) / den, ui = (ni * pr - nr * pi) / den;
+      sr += ur; si += ui;
+      if (ur * ur + ui * ui < 1e-18) break;
+    }
+    const lm = Math.log2(Math.hypot(sr, si) || 1e-12), fr = lm - Math.floor(lm), shade = .84 + .16 * (.5 - .5 * Math.cos(TAU * fr)), col = phaseColor(Math.atan2(si, sr) / TAU);
+    D[o] = col[0] * shade; D[o + 1] = col[1] * shade; D[o + 2] = col[2] * shade; D[o + 3] = 255;
+  });
+  const cache = new Map(); let N = -1, prev = null;
+  return scene(canvas, {
+    busy: () => cache.has(N) && !cache.get(N).done,
+    draw(s) {
+      const n = TERMS[Math.round(clamp((s.p * 3 - 2) / .8) * (TERMS.length - 1))];
+      if (n !== N) { if (cache.has(N) && cache.get(N).done) prev = cache.get(N); N = n; if (!cache.has(N)) cache.set(N, make(N)); }
+      const r = cache.get(N); if (!r.done) r.work(7);
+      const ctx = s.ctx, W = s.w, c = W / 2, R = W * .44, E = R / .99;
+      ctx.clearRect(0, 0, W, W);
+      ctx.save(); ctx.beginPath(); ctx.arc(c, c, R, 0, TAU); ctx.clip();
+      if (!r.done && prev) ctx.drawImage(prev.cv, c - E, c - E, 2 * E, 2 * E);
+      ctx.drawImage(r.cv, c - E, c - E, 2 * E, 2 * E); ctx.restore();
+      ctx.strokeStyle = rgba(P.ink); ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(c, c, R, 0, TAU); ctx.stroke();
+      ctx.strokeStyle = rgba(P.ink, .6); ctx.lineWidth = 1;
+      for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2; ctx.beginPath(); ctx.moveTo(c + Math.cos(a) * R, c + Math.sin(a) * R); ctx.lineTo(c + Math.cos(a) * (R + 8), c + Math.sin(a) * (R + 8)); ctx.stroke(); }
+      const fs = Math.max(12, W * .03); ctx.font = `italic ${fs}px "STIX Two Text", serif`; ctx.fillStyle = rgba(P.muted);
+      ctx.fillText('1', c + R + 11, c + fs * .35); ctx.fillText('−1', c - R - fs * 1.7, c + fs * .35);
+      ctx.fillText('i', c - fs * .15, c - R - 12); ctx.fillText('−i', c - fs * .5, c + R + fs * 1.3);
+      ctx.fillStyle = rgba(P.ink); ctx.fillText(`terms up to n = ${N}`, W * .03, W * .06);
+    }
+  });
+}
+
+/* ---------- Chapter V: flat, spherical, hyperbolic ---------- */
+function shortArc(ctx, x, y, r, a0, a1) { let d = a1 - a0; while (d > Math.PI) d -= TAU; while (d <= -Math.PI) d += TAU; ctx.arc(x, y, r, a0, a0 + d, d < 0); }
+function euclid(canvas) {
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const ctx = s.ctx, W = s.w, tt = reduce ? 1 : t * .35, fs = Math.max(12, W * .034);
+      ctx.clearRect(0, 0, W, W); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      const A = [W * .14, W * .74], B = [W * .86, W * .74], C = [W * (.46 + .17 * Math.sin(tt)), W * (.3 + .05 * Math.cos(tt * 1.3))];
+      const ang = (p, q) => Math.atan2(q[1] - p[1], q[0] - p[0]);
+      const wedge = (p, a0, a1, r, col, al) => { ctx.fillStyle = rgba(col, al); ctx.beginPath(); ctx.moveTo(p[0], p[1]); shortArc(ctx, p[0], p[1], r, a0, a1); ctx.closePath(); ctx.fill(); ctx.strokeStyle = rgba(col, .9); ctx.lineWidth = 1.2; ctx.beginPath(); shortArc(ctx, p[0], p[1], r, a0, a1); ctx.stroke(); };
+      const aAB = ang(A, B), aAC = ang(A, C), aBA = ang(B, A), aBC = ang(B, C), aCA = ang(C, A), aCB = ang(C, B);
+      const al = Math.abs(aAC - aAB), be = Math.abs(((aBC - aBA + 3 * Math.PI) % TAU) - Math.PI), ga = Math.PI - al - be;
+      const r = W * .075, cols = [P.accent, [42, 79, 143], [196, 128, 30]];
+      ctx.fillStyle = rgba(P.ink, .04); ctx.beginPath(); ctx.moveTo(...A); ctx.lineTo(...B); ctx.lineTo(...C); ctx.closePath(); ctx.fill();
+      wedge(A, aAB, aAC, r, cols[0], .25); wedge(B, aBA, aBC, r, cols[1], .22); wedge(C, aCA, aCB, r, cols[2], .3);
+      wedge(C, Math.PI, aCA, r * 1.25, cols[0], .25); wedge(C, 0, aCB, r * 1.25, cols[1], .22);
+      ctx.strokeStyle = rgba(P.accent); ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(W * .03, C[1]); ctx.lineTo(W * .97, C[1]); ctx.stroke();
+      ctx.strokeStyle = rgba(P.ink); ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(...A); ctx.lineTo(...B); ctx.lineTo(...C); ctx.closePath(); ctx.stroke();
+      ctx.font = `italic ${fs}px "STIX Two Text", serif`; ctx.fillStyle = rgba(P.ink);
+      const lab = (p, a0, a1, rr, txt) => { const m = (a0 + a1) / 2 + ((Math.abs(a1 - a0) > Math.PI) ? Math.PI : 0); ctx.fillText(txt, p[0] + Math.cos(m) * rr - fs * .3, p[1] + Math.sin(m) * rr + fs * .35); };
+      lab(A, aAB, aAC, r * 1.55, 'α'); lab(B, aBA, aBC < 0 ? aBC + TAU : aBC, r * 1.55, 'β'); lab(C, aCA, aCB, r * 1.6, 'γ');
+      lab(C, Math.PI, aCA, r * 1.9, 'α'); lab(C, 0, aCB, r * 1.9, 'β');
+      const d = v => Math.round(v * 180 / Math.PI), da = d(al), db = d(be), dg = 180 - da - db;
+      ctx.font = `italic ${fs * 1.05}px "STIX Two Text", serif`;
+      ctx.fillText(`α + β + γ = ${da}° + ${db}° + ${dg}° = 180°`, W * .14, W * .9);
+    }
+  });
+}
+function sphere(canvas) {
+  const dot3 = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+  const norm = v => { const l = Math.hypot(...v); return v.map(x => x / l); };
+  const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+  const sph = (lat, lon) => [Math.cos(lat) * Math.cos(lon), Math.cos(lat) * Math.sin(lon), Math.sin(lat)];
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const ctx = s.ctx, W = s.w, c = W / 2, R = W * .4, tt = reduce ? 0 : t, fs = Math.max(12, W * .034);
+      const lam = Math.PI / 4 + .45 * Math.sin(tt * .3), phi = .5 + .14 * Math.sin(tt * .21);
+      const e = sph(phi, lam), rt = norm([-e[1], e[0], 0]), up = cross(e, rt);
+      const pr = v => [c + dot3(v, rt) * R, c - dot3(v, up) * R, dot3(v, e)];
+      ctx.clearRect(0, 0, W, W); ctx.lineCap = 'round';
+      ctx.fillStyle = rgba(P.ink, .035); ctx.beginPath(); ctx.arc(c, c, R, 0, TAU); ctx.fill();
+      const front = new Path2D(), back = new Path2D();
+      const trace = fn => { let prev = null; for (let i = 0; i <= 120; i++) { const q = pr(fn(i / 120)); if (prev) { const P2 = (prev[2] + q[2]) > 0 ? front : back; P2.moveTo(prev[0], prev[1]); P2.lineTo(q[0], q[1]); } prev = q; } };
+      for (let lo = 0; lo < 12; lo++) trace(u => sph(-Math.PI / 2 + u * Math.PI, lo * Math.PI / 6));
+      for (let la = -2; la <= 2; la++) trace(u => sph(la * Math.PI / 6, u * TAU));
+      ctx.setLineDash([2, 4]); ctx.strokeStyle = rgba(P.pencil, .35); ctx.lineWidth = .8; ctx.stroke(back); ctx.setLineDash([]);
+      ctx.strokeStyle = rgba(P.ink, .3); ctx.lineWidth = 1; ctx.stroke(front);
+      ctx.strokeStyle = rgba(P.ink, .9); ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(c, c, R, 0, TAU); ctx.stroke();
+      const Vs = [[1, 0, 0], [0, 1, 0], [0, 0, 1]], edge = (a, b, u) => a.map((x, i) => x * Math.cos(u * Math.PI / 2) + b[i] * Math.sin(u * Math.PI / 2));
+      ctx.beginPath();
+      for (let k = 0; k < 3; k++) for (let i = 0; i <= 60; i++) { const q = pr(edge(Vs[k], Vs[(k + 1) % 3], i / 60)); (k === 0 && i === 0) ? ctx.moveTo(q[0], q[1]) : ctx.lineTo(q[0], q[1]); }
+      ctx.closePath(); ctx.fillStyle = rgba(P.accent, .15); ctx.fill(); ctx.strokeStyle = rgba(P.accent); ctx.lineWidth = 2.2; ctx.stroke();
+      ctx.lineWidth = 1.3;
+      for (let k = 0; k < 3; k++) {
+        const V = Vs[k], U1 = Vs[(k + 1) % 3], U2 = Vs[(k + 2) % 3], ep = .13;
+        const a = pr(norm(V.map((x, i) => x + ep * U1[i]))), m = pr(norm(V.map((x, i) => x + ep * (U1[i] + U2[i])))), b = pr(norm(V.map((x, i) => x + ep * U2[i])));
+        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(m[0], m[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      }
+      ctx.font = `italic ${fs}px "STIX Two Text", serif`; ctx.fillStyle = rgba(P.ink);
+      const np = pr([0, 0, 1]); ctx.fillText('pole', np[0] + 8, np[1] - 8);
+      ctx.fillText('90° + 90° + 90° = 270°', W * .2, W * .97);
+    }
+  });
+}
+function hyper(canvas) {
+  const pp = 7, qq = 3, a = Math.PI / pp, b = Math.PI / qq, den = Math.sqrt(Math.cos(b) ** 2 - Math.sin(a) ** 2);
+  const d = Math.cos(b) / den, r2 = (Math.sin(a) / den) ** 2, sa = Math.sin(a), ca = Math.cos(a);
+  let raster = null, rW = 0;
+  const makeRaster = res => { const c0 = mixc(P.bg, P.ink, .04), c1 = mixc(P.bg, P.ink, .16); return Raster(res, (x, y, D, o) => {
+    if (x * x + y * y >= 1) { D[o + 3] = 0; return; }
+    let f = 0;
+    for (let i = 0; i < 80; i++) {
+      let ch = false;
+      if (y < 0) { y = -y; f++; ch = true; }
+      const s = sa * x - ca * y; if (s < 0) { x -= 2 * s * sa; y += 2 * s * ca; f++; ch = true; }
+      const dx = x - d, q = dx * dx + y * y; if (q < r2) { const k = r2 / q; x = d + dx * k; y *= k; f++; ch = true; }
+      if (!ch) break;
+    }
+    const col = f & 1 ? c1 : c0; D[o] = col[0]; D[o + 1] = col[1]; D[o + 2] = col[2]; D[o + 3] = 255;
+  }); };
+  const Pt = [0, .28], Ps = [0, 1 / .28], LC = [0, -1.6], LR = Math.sqrt(1.56);
+  const Ex = Math.sqrt(1 - .625 * .625), E = [Ex, -.625];
+  const circ3 = (p1, p2, p3) => { const ax = p1[0], ay = p1[1], bx = p2[0], by = p2[1], cx = p3[0], cy = p3[1], dd = 2 * (ax * (by - cy) + bx * (cy - ay) + cx * (ay - by)); const ux = ((ax * ax + ay * ay) * (by - cy) + (bx * bx + by * by) * (cy - ay) + (cx * cx + cy * cy) * (ay - by)) / dd, uy = ((ax * ax + ay * ay) * (cx - bx) + (bx * bx + by * by) * (ax - cx) + (cx * cx + cy * cy) * (bx - ax)) / dd; return [ux, uy, Math.hypot(ax - ux, ay - uy)]; };
+  const lim = circ3(Pt, Ps, E), thL = Math.abs(Math.atan2(-(Pt[0] - lim[0]), Pt[1] - lim[1]));
+  const limAng = Math.min(thL, Math.PI - thL);
+  const geo = th => { const n = [-Math.sin(th), Math.cos(th)], dv = [Pt[0] - Ps[0], Pt[1] - Ps[1]], nd = n[0] * dv[0] + n[1] * dv[1]; if (Math.abs(nd) < 1e-9) return null; const s = -(dv[0] * dv[0] + dv[1] * dv[1]) / (2 * nd); return [Pt[0] + s * n[0], Pt[1] + s * n[1], Math.abs(s)]; };
+  return scene(canvas, {
+    animated: true,
+    busy: () => raster && !raster.done,
+    draw(s, t) {
+      const ctx = s.ctx, W = s.w, c = W / 2, R = W * .44, fs = Math.max(12, W * .034);
+      if (!raster || rW !== W) { rW = W; raster = makeRaster(Math.min(480, Math.round(W * Math.min(2, window.devicePixelRatio || 1)))); }
+      if (!raster.done) raster.work(8);
+      const X = x => c + x * R, Y = y => c - y * R;
+      ctx.clearRect(0, 0, W, W);
+      ctx.drawImage(raster.cv, c - R, c - R, 2 * R, 2 * R);
+      ctx.save(); ctx.beginPath(); ctx.arc(c, c, R, 0, TAU); ctx.clip(); ctx.lineCap = 'round';
+      const circle = (cc, col, lw, dash) => { ctx.setLineDash(dash || []); ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath(); if (cc) ctx.arc(X(cc[0]), Y(cc[1]), cc[2] * R, 0, TAU); ctx.stroke(); ctx.setLineDash([]); };
+      for (let i = 1; i <= 4; i++) { const th = limAng * (i / 5 * 2 - 1); circle(geo(th), rgba(P.accent, .4), 1.2); }
+      circle(circ3(Pt, Ps, E), rgba(P.accent, .85), 1.4, [5, 5]);
+      circle(circ3(Pt, Ps, [-E[0], E[1]]), rgba(P.accent, .85), 1.4, [5, 5]);
+      circle(geo(limAng * .92 * Math.sin((reduce ? .6 : t) * .5)), rgba(P.accent), 2.2);
+      circle([LC[0], LC[1], LR], rgba(P.ink), 2.8);
+      ctx.restore();
+      ctx.strokeStyle = rgba(P.ink); ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(c, c, R, 0, TAU); ctx.stroke();
+      ctx.fillStyle = rgba(P.accent); ctx.beginPath(); ctx.arc(X(Pt[0]), Y(Pt[1]), 4.5, 0, TAU); ctx.fill();
+      ctx.font = `italic ${fs}px "STIX Two Text", serif`;
+      ctx.fillStyle = rgba(P.bg, .9); ctx.fillRect(X(0) + 7, Y(Pt[1]) - fs * 1.35, fs * .9, fs * 1.1);
+      ctx.fillStyle = rgba(P.ink); ctx.fillText('P', X(0) + 9, Y(Pt[1]) - fs * .45);
+      ctx.fillText('L', X(0) - fs * .3, Y(-.351) + fs * 1.3);
+    }
+  });
+}
+
+/* ---------- Scroll: chapter steps, the palette's journey, the chapter rail ---------- */
+const factories = { ptolemy, calculus, fourier, sph: sphharm, ulam, elliptic, mocktheta, euclid, sphere, hyper };
+const fourierLabel = document.getElementById('fourier-n');
+const chapters = [...document.querySelectorAll('.chapter')].map(el => {
+  const layers = [...el.querySelectorAll('.layer')];
+  return {
+    el, layers, n: el.querySelectorAll('.step').length, step: -1, p: -1,
+    steps: [...el.querySelectorAll('.step')], pips: [...el.querySelectorAll('.pips i')], cap: el.querySelector('.figure figcaption'),
+    scenes: layers.map((l, i) => { const s = l.dataset.scene === 'fourier' ? fourier(l, fourierLabel) : factories[l.dataset.scene](l); s.active = i === 0; return s; })
+  };
+});
+const prologue = document.getElementById('heavens'), lounge = document.getElementById('epilogue');
+const rail = document.querySelector('.rail'), railItems = [...rail.querySelectorAll('li')];
+const railTargets = railItems.map(li => document.querySelector(li.querySelector('a').getAttribute('href')));
+let railOn = -1;
+function frame(now) {
+  const t = now / 1000, vh = innerHeight, sy = scrollY;
+  const A = prologue.getBoundingClientRect().top + sy + vh * .8, B = lounge.getBoundingClientRect().top + sy - vh * .6;
+  const g = smooth(0, 1, (sy - A) / (B - A));
+  if (Math.abs(g - gNow) > .002) { gNow = g; setPalette(g); scenes.forEach(s => { s.dirty = true; }); }
+  rail.classList.toggle('show', sy > vh * .85);
+  rail.style.setProperty('--rp', clamp((sy - A) / (B - A + vh * .6)).toFixed(3));
+  let on = -1; railTargets.forEach((el, i) => { if (el.getBoundingClientRect().top <= vh * .5) on = i; });
+  if (on !== railOn) { railOn = on; railItems.forEach((li, i) => li.classList.toggle('on', i === on)); }
+  for (const ch of chapters) {
+    const r = ch.el.getBoundingClientRect(), p = clamp(-r.top / Math.max(1, r.height - vh));
+    if (Math.abs(p - ch.p) > 1e-4) { ch.p = p; ch.scenes.forEach(s => { s.p = p; s.dirty = true; }); }
+    const st = Math.min(ch.n - 1, Math.floor(p * ch.n));
+    if (st !== ch.step) {
+      ch.step = st;
+      ch.steps.forEach((e, i) => e.classList.toggle('on', i === st));
+      ch.pips.forEach((e, i) => e.classList.toggle('on', i === st));
+      if (ch.layers.length > 1) {
+        const onAt = (l, i) => l.dataset.on ? l.dataset.on.split(' ').map(Number).includes(st) : i === st;
+        let capL = null;
+        ch.layers.forEach((l, i) => { const on = onAt(l, i); l.classList.toggle('on', on); if (on) capL = l; });
+        ch.scenes.forEach((s, i) => { s.active = onAt(ch.layers[i], i); s.dirty = true; });
+        if (ch.cap && capL && capL.dataset.cap) ch.cap.innerHTML = capL.dataset.cap;
+      }
+    }
+  }
+  for (const s of scenes) {
+    if (!s.visible || !s.active || !s.w) continue;
+    if (s.dirty || (s.animated && !reduce) || (s.busy && s.busy())) { s.dirty = false; s.draw(s, t); }
+  }
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+if (document.fonts) document.fonts.ready.then(() => scenes.forEach(s => { s.dirty = true; }));
+})();
+</script>
+</body>
+</html>
