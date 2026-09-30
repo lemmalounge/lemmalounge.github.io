@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found, Lemma Lounge</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="This page is not in the Lemma Lounge.">
+<meta property="og:title" content="Page not found, Lemma Lounge">
+<meta property="og:description" content="This page is not in the Lemma Lounge.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lemmalounge.github.io/404.html">
+<meta property="og:image" content="https://lemmalounge.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://lemmalounge.github.io/404.html">
+<meta name="theme-color" content="#E7DDC7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23E7DDC7' stroke='%232A2019' stroke-width='3'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='34' text-anchor='middle' fill='%232A2019'%3E%CE%BB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --bg:#E7DDC7; --ink:#2A2019; --muted:#6B5A45; --accent:#A1301D; --rule:rgba(42,32,25,.2);
+  --paper-o:1; --grid-o:0;
+  --fell:"IM Fell English","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --bodoni:"Bodoni Moda","Bodoni 72",Didot,"Times New Roman",serif;
+  --stix:"STIX Two Text",Cambria,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--stix);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:12px;top:-60px;z-index:20;background:var(--ink);color:var(--bg);padding:8px 14px;text-decoration:none;font-family:var(--sans);font-size:.9rem}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* The page itself: rag paper that turns into graph paper */
+.bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.bg>div{position:absolute;inset:0}
+.bg-paper{opacity:var(--paper-o);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .22 0 0 0 0 .12 1.1 0 0 0 -.52'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='m' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0033333' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .3 0 0 0 0 .12 .9 0 0 0 -.38'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(90deg,transparent 0 118px,rgba(90,62,30,.055) 118px 120px),
+    repeating-linear-gradient(0deg,rgba(90,62,30,.03) 0 1px,transparent 1px 5px),
+    radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(96,64,28,.2) 100%);
+}
+.bg-grid{opacity:var(--grid-o);
+  background-image:
+    linear-gradient(rgba(38,78,140,.14) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(38,78,140,.14) 1px,transparent 1px),
+    linear-gradient(rgba(38,78,140,.065) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(38,78,140,.065) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px;background-position:-1px -1px;
+}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding:clamp(16px,3vw,32px) clamp(20px,5vw,72px) clamp(20px,3vw,36px);overflow:hidden;isolation:isolate}
+.stains{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.stain{position:absolute;mix-blend-mode:multiply}
+.ink-layer{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.hero>*:not(.stains):not(.ink-layer){position:relative;z-index:1}
+.hero-nav{display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;font-family:var(--fell)}
+.mark{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:1.25rem}
+.mark .sym{width:38px;height:38px;border:1.5px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:var(--stix);font-style:italic;font-size:1.2rem;line-height:1}
+.hero-nav .links{display:flex;gap:clamp(14px,2.6vw,32px);font-style:italic;font-size:1.1rem}
+.hero-nav .links a{text-decoration:none}
+.hero-nav a:hover{color:var(--accent)}
+.hero-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(24px,5vw,72px);padding-block:clamp(28px,6vh,72px)}
+.where{font-family:var(--fell);font-style:italic;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--muted);margin:0 0 .9rem}
+.hero h1{font-family:var(--fell);font-weight:400;font-size:clamp(4rem,12.5vw,11rem);line-height:.84;letter-spacing:-.015em;margin:0 0 0 -.04em}
+.hero h1 .l2{display:block;padding-left:.62em}
+.society{font-family:var(--fell);font-style:italic;font-size:clamp(1.5rem,3.1vw,2.6rem);line-height:1.1;margin:.45em 0 0 .08em}
+.welcome{margin:clamp(1.6rem,4vh,2.6rem) 0 0;font-family:var(--stix);font-style:italic;font-size:clamp(1.15rem,1.9vw,1.45rem);display:flex;gap:.55em;flex-wrap:wrap;align-items:baseline}
+.welcome .q{font-style:normal;color:var(--accent);font-size:1.25em;line-height:1}
+.plate{margin:0;justify-self:center;width:min(100%,520px)}
+.plate canvas{display:block;width:100%;aspect-ratio:1}
+.plate figcaption,.figure figcaption{font-family:var(--fell);font-style:italic;color:var(--muted);text-align:center;font-size:1rem;line-height:1.4;margin-top:.4rem}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 24px;flex-wrap:wrap;font-family:var(--fell);font-style:italic;font-size:1.1rem}
+.hero-foot a{text-decoration:none}
+.hero-foot a:hover{color:var(--accent)}
+.begin{display:inline-flex;align-items:center;gap:12px}
+.begin svg{width:14px;height:44px;overflow:visible}
+
+
+/* Shared odds and ends */
+.fox{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(128,78,30,.2),rgba(128,78,30,.07) 45%,rgba(128,78,30,0) 70%)}
+.cta{display:inline-block;margin-top:1.6rem;padding:.65em 1.3em;border:1.5px solid var(--ink);color:var(--ink);background:var(--bg);text-decoration:none;font-family:var(--stix);font-size:1.15rem;line-height:1.3;transition:background .2s,color .2s}
+.cta:hover{background:var(--ink);color:var(--bg)}
+footer{max-width:1200px;margin:0 auto;padding:28px clamp(20px,5vw,72px) 44px;border-top:1.5px solid var(--ink);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-family:var(--sans);font-size:.95rem;color:var(--muted)}
+footer .eq{font-family:var(--stix);font-style:italic;font-size:1.1rem;color:var(--ink)}
+footer a{text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+/* 404 */
+.nf{min-height:100svh;display:grid;align-content:center;gap:0;padding:clamp(24px,5vw,72px);max-width:960px;position:relative}
+.nf .mark{position:absolute;top:clamp(16px,3vw,32px);left:clamp(20px,5vw,72px);font-family:var(--fell)}
+.nf h1{font-family:var(--fell);font-weight:400;font-size:clamp(6rem,24vw,15rem);line-height:.8;margin:0 0 .15em -.04em}
+.nf .society{margin:0 0 .5em}
+.nf-p{font-family:var(--fell);font-size:clamp(1.2rem,2.2vw,1.55rem);color:var(--muted);margin:0;max-width:30em}
+.nf-p .q{color:var(--accent)}
+.nf .blot{position:absolute;right:8%;top:18%;width:min(34vw,300px);height:auto;pointer-events:none}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><div class="bg-paper"></div><div class="bg-grid"></div></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="f-ring" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="12" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation=".45"/>
+    </filter>
+    <filter id="f-ink" x="-70%" y="-70%" width="240%" height="240%">
+      <feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="15" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation=".3"/>
+    </filter>
+    <filter id="f-bleed" x="-70%" y="-70%" width="240%" height="240%">
+      <feTurbulence type="fractalNoise" baseFrequency=".12" numOctaves="2" seed="8" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="20" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="1.8"/>
+    </filter>
+    <radialGradient id="g-coffee">
+      <stop offset="0" stop-color="#8a5a2b" stop-opacity=".05"/>
+      <stop offset=".8" stop-color="#8a5a2b" stop-opacity=".08"/>
+      <stop offset=".93" stop-color="#76461d" stop-opacity=".26"/>
+      <stop offset=".975" stop-color="#633814" stop-opacity=".44"/>
+      <stop offset="1" stop-color="#633814" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<main class="nf">
+  <a class="mark" href="/"><span class="sym">λ</span>Lemma Lounge</a>
+  <svg class="blot" viewBox="0 0 200 200" aria-hidden="true">
+    <circle cx="100" cy="100" r="62" fill="#2A2019" fill-opacity=".16" filter="url(#f-bleed)"/>
+    <circle cx="100" cy="100" r="44" fill="#2A2019" fill-opacity=".92" filter="url(#f-ink)"/>
+    <circle cx="164" cy="72" r="6" fill="#2A2019" filter="url(#f-ink)"/><circle cx="42" cy="146" r="4" fill="#2A2019" filter="url(#f-ink)"/><circle cx="150" cy="158" r="3" fill="#2A2019" filter="url(#f-ink)"/>
+  </svg>
+  <h1>404</h1>
+  <p class="society">Suppose this page exists.</p>
+  <p class="nf-p">Following the link, we arrive at a contradiction; hence it does not. <span class="q">∎</span></p>
+  <p><a class="cta" href="/">Back to the Lounge</a></p>
+</main>
+</body>
+</html>

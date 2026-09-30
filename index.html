@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lemma Lounge Mathematical Society, Rutgers University–Newark</title>
+<meta name="description" content="The Lemma Lounge Mathematical Society at Rutgers University–Newark: lectures, outreach, and events for anyone who finds mathematics beautiful.">
+<meta property="og:title" content="Lemma Lounge Mathematical Society, Rutgers University–Newark">
+<meta property="og:description" content="The Lemma Lounge Mathematical Society at Rutgers University–Newark: lectures, outreach, and events for anyone who finds mathematics beautiful.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lemmalounge.github.io/">
+<meta property="og:image" content="https://lemmalounge.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://lemmalounge.github.io/">
+<meta name="theme-color" content="#E7DDC7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23E7DDC7' stroke='%232A2019' stroke-width='3'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='34' text-anchor='middle' fill='%232A2019'%3E%CE%BB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#E7DDC7; --ink:#2A2019; --muted:#6B5A45; --accent:#A1301D; --rule:rgba(42,32,25,.2);
+  --paper-o:1; --grid-o:0;
+  --fell:"IM Fell English","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --bodoni:"Bodoni Moda","Bodoni 72",Didot,"Times New Roman",serif;
+  --stix:"STIX Two Text",Cambria,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--stix);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:12px;top:-60px;z-index:20;background:var(--ink);color:var(--bg);padding:8px 14px;text-decoration:none;font-family:var(--sans);font-size:.9rem}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* The page itself: rag paper that turns into graph paper */
+.bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.bg>div{position:absolute;inset:0}
+.bg-paper{opacity:var(--paper-o);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .22 0 0 0 0 .12 1.1 0 0 0 -.52'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='m' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0033333' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .3 0 0 0 0 .12 .9 0 0 0 -.38'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(90deg,transparent 0 118px,rgba(90,62,30,.055) 118px 120px),
+    repeating-linear-gradient(0deg,rgba(90,62,30,.03) 0 1px,transparent 1px 5px),
+    radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(96,64,28,.2) 100%);
+}
+.bg-grid{opacity:var(--grid-o);
+  background-image:
+    linear-gradient(rgba(38,78,140,.14) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(38,78,140,.14) 1px,transparent 1px),
+    linear-gradient(rgba(38,78,140,.065) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(38,78,140,.065) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px;background-position:-1px -1px;
+}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding:clamp(16px,3vw,32px) clamp(20px,5vw,72px) clamp(20px,3vw,36px);overflow:hidden;isolation:isolate}
+.stains{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.stain{position:absolute;mix-blend-mode:multiply}
+.ink-layer{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.hero>*:not(.stains):not(.ink-layer){position:relative;z-index:1}
+.hero-nav{display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;font-family:var(--fell)}
+.mark{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:1.25rem}
+.mark .sym{width:38px;height:38px;border:1.5px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:var(--stix);font-style:italic;font-size:1.2rem;line-height:1}
+.hero-nav .links{display:flex;gap:clamp(14px,2.6vw,32px);font-style:italic;font-size:1.1rem}
+.hero-nav .links a{text-decoration:none}
+.hero-nav a:hover{color:var(--accent)}
+.hero-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(24px,5vw,72px);padding-block:clamp(28px,6vh,72px)}
+.where{font-family:var(--fell);font-style:italic;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--muted);margin:0 0 .9rem}
+.hero h1{font-family:var(--fell);font-weight:400;font-size:clamp(4rem,12.5vw,11rem);line-height:.84;letter-spacing:-.015em;margin:0 0 0 -.04em}
+.hero h1 .l2{display:block;padding-left:.62em}
+.society{font-family:var(--fell);font-style:italic;font-size:clamp(1.5rem,3.1vw,2.6rem);line-height:1.1;margin:.45em 0 0 .08em}
+.welcome{margin:clamp(1.6rem,4vh,2.6rem) 0 0;font-family:var(--stix);font-style:italic;font-size:clamp(1.15rem,1.9vw,1.45rem);display:flex;gap:.55em;flex-wrap:wrap;align-items:baseline}
+.welcome .q{font-style:normal;color:var(--accent);font-size:1.25em;line-height:1}
+.plate{margin:0;justify-self:center;width:min(100%,520px)}
+.plate canvas{display:block;width:100%;aspect-ratio:1}
+.plate figcaption,.figure figcaption{font-family:var(--fell);font-style:italic;color:var(--muted);text-align:center;font-size:1rem;line-height:1.4;margin-top:.4rem}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 24px;flex-wrap:wrap;font-family:var(--fell);font-style:italic;font-size:1.1rem}
+.hero-foot a{text-decoration:none}
+.hero-foot a:hover{color:var(--accent)}
+.begin{display:inline-flex;align-items:center;gap:12px}
+.begin svg{width:14px;height:44px;overflow:visible}
+
+/* Drops (ink) */
+.drop .core,.drop .halo,.drop .spat{transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:no-preference){
+  .drop .core{animation:spread 1.9s cubic-bezier(.12,.9,.22,1) both;animation-delay:var(--d,0s)}
+  .drop .halo{animation:bleed 4.2s cubic-bezier(.2,.7,.3,1) both;animation-delay:var(--d,0s)}
+  .drop .spat{animation:spat .5s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:calc(var(--d,0s) + .05s)}
+}
+@keyframes spread{0%{transform:scale(0)}100%{transform:scale(1)}}
+@keyframes bleed{0%{transform:scale(0);opacity:0}30%{opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes spat{0%{transform:scale(0)}100%{transform:scale(1)}}
+
+/* Prologue */
+.prologue{min-height:100svh;display:grid;place-items:center;padding:14vh clamp(20px,6vw,72px)}
+.prologue .inner{max-width:40rem;width:100%}
+.prologue .lead{font-family:var(--fell);font-size:clamp(2.1rem,5vw,3.6rem);line-height:1.08;margin:0 0 .55em;text-wrap:balance}
+.prologue .bridge{font-family:var(--fell);font-size:clamp(1.25rem,2.3vw,1.6rem);line-height:1.45;color:var(--muted);margin:0 0 1.3em;max-width:32rem}
+.verse{font-family:var(--fell);font-style:italic;font-size:clamp(1.4rem,2.9vw,2.05rem);line-height:1.45;margin:0 0 0 clamp(0px,4vw,3rem)}
+.verse span{display:block}
+.verse span:nth-child(even){padding-left:1.4em}
+.attrib{margin:1.3em 0 0 clamp(0px,4vw,3rem);font-family:var(--fell);font-size:1.02rem;color:var(--muted)}
+.orn{font-family:var(--stix);text-align:center;font-size:2.4rem;color:var(--accent);margin:12vh 0 0;line-height:1}
+
+@media (max-width:860px){
+  .hero-body{grid-template-columns:minmax(0,1fr);gap:8px}
+  .plate{width:min(80vw,340px);order:-1;justify-self:end;margin:-8px -8px 12px 0}
+  .plate figcaption{font-size:.9rem}
+  .hero-nav .links{font-size:1rem}
+  .stage{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);align-content:start;gap:14px;padding-top:max(14px,env(safe-area-inset-top))}
+  .figure{order:-1}
+  .figure .layer{width:min(100%,44svh)}
+  .figure figcaption{font-size:.88rem;margin-top:.15rem}
+  .chapter h2{font-size:clamp(1.9rem,8vw,2.4rem);margin-bottom:.3em}
+  .chap-no{font-size:.95rem}
+  .step p{font-size:1rem;line-height:1.5;margin-bottom:.55em}
+  .when{font-size:1rem}
+  .legend{font-size:.9rem;gap:4px 12px}
+  .pips{margin-top:.4rem}
+}
+
+
+/* Shared odds and ends */
+.fox{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(128,78,30,.2),rgba(128,78,30,.07) 45%,rgba(128,78,30,0) 70%)}
+.cta{display:inline-block;margin-top:1.6rem;padding:.65em 1.3em;border:1.5px solid var(--ink);color:var(--ink);background:var(--bg);text-decoration:none;font-family:var(--stix);font-size:1.15rem;line-height:1.3;transition:background .2s,color .2s}
+.cta:hover{background:var(--ink);color:var(--bg)}
+footer{max-width:1200px;margin:0 auto;padding:28px clamp(20px,5vw,72px) 44px;border-top:1.5px solid var(--ink);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-family:var(--sans);font-size:.95rem;color:var(--muted)}
+footer .eq{font-family:var(--stix);font-style:italic;font-size:1.1rem;color:var(--ink)}
+footer a{text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+/* The club page: graph paper, with a piece of mathematics drawn behind each section */
+.club{font-family:var(--sans);font-size:1.0625rem;line-height:1.65}
+.res{position:relative;isolation:isolate;overflow:hidden}
+.art{position:absolute;top:0;right:0;width:min(70vw,1060px);height:100%;z-index:0;pointer-events:none;display:block;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.14) 28%,rgba(0,0,0,.5) 46%,#000 64%),linear-gradient(to bottom,transparent 0,#000 14%,#000 86%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.14) 28%,rgba(0,0,0,.5) 46%,#000 64%),linear-gradient(to bottom,transparent 0,#000 14%,#000 86%,transparent 100%);
+  mask-composite:intersect}
+.art-label{position:absolute;right:clamp(16px,3vw,40px);bottom:16px;margin:0;z-index:1;font-family:var(--stix);font-style:italic;font-size:.9rem;line-height:1.35;color:var(--muted);max-width:24rem;text-align:right}
+.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.res-grid{border-top:1.5px solid var(--ink);padding-block:clamp(80px,15vh,150px);display:grid;grid-template-columns:minmax(0,12rem) minmax(0,1fr);gap:16px clamp(24px,5vw,72px);text-shadow:0 0 18px var(--bg),0 0 6px var(--bg),0 0 2px var(--bg)}
+.res-grid .body{max-width:35rem;min-width:0}
+.res-grid .body.wide{max-width:none}
+.lab{font-family:var(--stix);font-size:1.12rem;line-height:1.35;padding-top:.3rem;margin:0}
+.lab b{font-weight:600;display:block}
+.lab em{color:var(--muted)}
+.club h2{font-family:var(--stix);font-weight:600;letter-spacing:-.01em;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;margin:0 0 1.1rem;text-wrap:balance}
+.club h2.lede{font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.08;margin-bottom:1.4rem}
+.club p{margin:0 0 14px}
+.statement{font-family:var(--stix);font-style:italic;font-size:clamp(1.2rem,1.9vw,1.45rem);line-height:1.5;margin:0}
+.box{background:color-mix(in srgb,var(--bg) 88%,transparent);border:1.5px solid var(--ink);text-shadow:none}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.case{padding:24px 24px 28px;min-width:0}
+.case+.case{border-left:1px solid var(--rule)}
+.case .glyph{font-family:var(--stix);font-style:italic;font-size:2.1rem;line-height:1;color:var(--accent);display:block;margin-bottom:16px}
+.case h3{font-family:var(--stix);font-size:1.4rem;font-weight:600;margin:0 0 6px;line-height:1.25}
+.case .n{font-family:var(--stix);font-style:italic;color:var(--muted);font-size:1rem}
+.case p{margin:.5rem 0 0;color:var(--muted)}
+.proof{margin-top:1.3rem;padding-left:20px;border-left:2px solid var(--accent)}
+.proof .p{font-family:var(--stix);font-style:italic;font-size:1.1rem}
+.qed{text-align:right;font-size:1.2rem;margin:.3rem 0 0!important}
+.officers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.officer{padding:22px 24px;display:flex;gap:16px;align-items:center;min-width:0}
+.officer+.officer{border-left:1px solid var(--rule)}
+.avatar{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--accent);color:var(--accent);font-family:var(--stix);font-style:italic;font-size:1.3rem;font-weight:600}
+.officer .role{font-size:.95rem;color:var(--muted)}
+.officer .name{font-family:var(--stix);font-size:1.3rem;font-weight:600;line-height:1.25}
+.join{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:start}
+.set{font-family:var(--stix);font-size:clamp(1.1rem,1.8vw,1.3rem);padding:22px 24px;line-height:1.8;overflow-x:auto;white-space:nowrap}
+.set i{color:var(--accent)}
+.set .pad{display:inline-block;width:4.4em}
+.toc{list-style:none;margin:.4rem 0 0;padding:0;max-width:44rem}
+.toc li{border-bottom:1px solid var(--rule)}
+.toc a{display:flex;align-items:baseline;gap:12px;padding-block:12px;flex-wrap:wrap;text-decoration:none}
+.toc a:hover .ttl{color:var(--accent)}
+.toc .ch{font-family:var(--stix);font-style:italic;color:var(--muted);flex:none;width:6.2em}
+.toc .ttl{font-family:var(--stix);font-size:1.3rem;font-weight:600;min-width:0;transition:color .2s}
+.toc .dots{flex:1 1 40px;border-bottom:2px dotted var(--rule);transform:translateY(-5px);min-width:24px}
+.toc .who{flex:none;font-size:.95rem;color:var(--muted)}
+.poem{position:relative;overflow:hidden;isolation:isolate}
+.poem .stain{z-index:-1;opacity:.55!important}
+.poem .inner{position:relative;z-index:1}
+.poem .art{opacity:.9}
+.billiard{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+footer .gen{flex-basis:100%;margin:.6rem 0 0;font-size:.86rem;line-height:1.55;max-width:46rem}
+footer .gen a{text-decoration:underline;text-underline-offset:2px}
+.poem .qed-end{font-family:var(--stix);text-align:center;font-size:1.6rem;color:var(--accent);margin:10vh 0 0;line-height:1}
+.ax-intro{max-width:40rem}
+.axioms{list-style:none;margin:.4rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.axioms li{padding:22px 26px 24px;min-width:0}
+.axioms li:nth-child(even){border-left:1px solid var(--rule)}
+.axioms li:nth-child(n+3){border-top:1px solid var(--rule)}
+.axioms .an{font-family:var(--stix);font-weight:600;font-size:1.1rem;display:block;margin-bottom:.35rem}
+.axioms p{font-family:var(--stix);font-style:italic;font-size:clamp(1.12rem,1.6vw,1.28rem);line-height:1.45;margin:0}
+.src{font-size:.92rem;color:var(--muted);margin:1rem 0 0!important;max-width:44rem}
+.src a{text-underline-offset:2px}
+.src a:hover{color:var(--accent)}
+@media (max-width:860px){
+  .res-grid{grid-template-columns:minmax(0,1fr)}
+  .axioms{grid-template-columns:minmax(0,1fr)}
+  .axioms li:nth-child(even){border-left:0}
+  .axioms li+li{border-top:1px solid var(--rule)}
+  .art{width:100%;opacity:.42;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 86%,transparent 100%)}
+  .cases,.officers,.join{grid-template-columns:minmax(0,1fr)}
+  .case+.case,.officer+.officer{border-left:0;border-top:1px solid var(--rule)}
+  .art-label{font-size:.8rem;max-width:70vw}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#what">Skip to what we do</a>
+<div class="bg" aria-hidden="true"><div class="bg-paper"></div><div class="bg-grid"></div></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="f-ring" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="12" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation=".45"/>
+    </filter>
+    <filter id="f-ink" x="-70%" y="-70%" width="240%" height="240%">
+      <feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="15" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation=".3"/>
+    </filter>
+    <filter id="f-bleed" x="-70%" y="-70%" width="240%" height="240%">
+      <feTurbulence type="fractalNoise" baseFrequency=".12" numOctaves="2" seed="8" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="20" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="1.8"/>
+    </filter>
+    <radialGradient id="g-coffee">
+      <stop offset="0" stop-color="#8a5a2b" stop-opacity=".05"/>
+      <stop offset=".8" stop-color="#8a5a2b" stop-opacity=".08"/>
+      <stop offset=".93" stop-color="#76461d" stop-opacity=".26"/>
+      <stop offset=".975" stop-color="#633814" stop-opacity=".44"/>
+      <stop offset="1" stop-color="#633814" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<header class="hero" id="top">
+  <div class="stains" aria-hidden="true">
+    <svg class="stain" style="right:-120px;top:-90px;width:440px;height:440px" viewBox="0 0 200 200">
+      <g filter="url(#f-ring)">
+        <circle cx="100" cy="100" r="84" fill="url(#g-coffee)"/>
+        <path d="M22 118 A84 84 0 0 1 128 22" transform="translate(-9 7)" fill="none" stroke="#633814" stroke-opacity=".2" stroke-width="2.4"/>
+      </g>
+    </svg>
+    <svg class="stain" style="left:-150px;bottom:6%;width:330px;height:330px;opacity:.8" viewBox="0 0 200 200">
+      <g filter="url(#f-ring)"><circle cx="100" cy="100" r="84" fill="url(#g-coffee)"/></g>
+    </svg>
+    <i class="fox" style="left:38%;top:12%;width:26px;height:26px"></i>
+    <i class="fox" style="left:41%;top:15%;width:12px;height:12px"></i>
+    <i class="fox" style="left:12%;top:83%;width:18px;height:18px"></i>
+    <i class="fox" style="right:22%;bottom:9%;width:34px;height:34px;opacity:.7"></i>
+  </div>
+  <svg class="ink-layer" id="ink" aria-hidden="true"></svg>
+
+  <nav class="hero-nav" aria-label="Main">
+    <a class="mark" href="#top"><span class="sym">λ</span>Lemma Lounge</a>
+    <div class="links"><a href="#what">What we do</a><a href="explore.html">Explore</a><a href="#join">Join</a></div>
+  </nav>
+
+  <div class="hero-body">
+    <div>
+      <p class="where">Rutgers University–Newark</p>
+      <h1>Lemma <span class="l2">Lounge</span></h1>
+      <p class="society">Mathematical Society</p>
+      <p class="welcome"><span class="q">∀</span><span>x ∈ Newark, x is welcome.</span></p>
+    </div>
+    <figure class="plate">
+      <canvas id="rose-ink" role="img" aria-label="A rose curve, r equals cosine of k theta, being drawn in ink"></canvas>
+    </figure>
+  </div>
+
+  <div class="hero-foot">
+    <a class="begin" href="#about">
+      <svg viewBox="0 0 14 44" aria-hidden="true"><path d="M7 1 C 5 14, 9 26, 7 41 M2 34 L7 42 L12 34" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Scroll to see what we do
+    </a>
+    <a href="explore.html">Or explore two thousand years of mathematics</a>
+  </div>
+</header>
+
+<main class="club" id="club">
+  <section class="res" id="about" aria-labelledby="h-about">
+    <canvas class="art" data-slot="club" aria-hidden="true"></canvas>
+    <div class="wrap"><div class="res-grid">
+      <p class="lab"><b>Definition 1.</b><em>(Lemma Lounge)</em></p>
+      <div class="body">
+        <h2 class="lede" id="h-about">A community for anyone who has ever found a proof beautiful, a pattern surprising, or a puzzle impossible to put down.</h2>
+        <p class="statement">The Lemma Lounge encourages the love and appreciation of the beauty of mathematics in all its forms. We host lectures on special topics in mathematics, engage in community outreach, and organize events to foster the appreciation of mathematics in all.</p>
+      </div>
+    </div></div>
+    <p class="art-label"></p>
+  </section>
+
+  <section class="res" id="what" aria-labelledby="h-what">
+    <canvas class="art" data-slot="club" aria-hidden="true"></canvas>
+    <div class="wrap"><div class="res-grid">
+      <p class="lab"><b>Lemma 2.</b><em>(What we do)</em></p>
+      <div class="body wide">
+        <h2 id="h-what">Three ways to find your way in</h2>
+        <div class="cases box">
+          <div class="case"><span class="glyph" aria-hidden="true">∫</span><span class="n">Case (i)</span><h3>Special-topic lectures</h3><p>Talks on the corners of mathematics you won't always meet in a course, pitched so curious newcomers and seasoned students can both follow along.</p></div>
+          <div class="case"><span class="glyph" aria-hidden="true">∪</span><span class="n">Case (ii)</span><h3>Community outreach</h3><p>Bringing mathematics beyond the college classroom and into high school communities around the area, so more students get to see how much fun it can be.</p></div>
+          <div class="case"><span class="glyph" aria-hidden="true">π</span><span class="n">Case (iii)</span><h3>Events</h3><p>Gatherings built around problems, games, and good conversation, where the only prerequisite is showing up.</p></div>
+        </div>
+      </div>
+    </div></div>
+    <p class="art-label"></p>
+  </section>
+
+  <section class="res" id="axioms" aria-labelledby="h-ax">
+    <canvas class="art" data-slot="club" aria-hidden="true"></canvas>
+    <div class="wrap"><div class="res-grid">
+      <p class="lab"><b>Axioms.</b><em>(after Federico Ardila)</em></p>
+      <div class="body wide">
+        <h2 id="h-ax">Everybody counts</h2>
+        <p class="ax-intro">The mathematician Federico Ardila opened his 2016 essay <i>Todos cuentan</i>, “everybody counts,” with four axioms: principles he says he cannot prove, but chooses to build all his work on. We build on them too. In our own words:</p>
+        <ol class="axioms box">
+          <li><span class="an">Axiom 1.</span><p>Mathematical potential is spread evenly across every group of people, whatever their geography, background, or income.</p></li>
+          <li><span class="an">Axiom 2.</span><p>Anyone can find joy, meaning, and power in doing mathematics.</p></li>
+          <li><span class="an">Axiom 3.</span><p>Mathematics is a strong and flexible tool, and every community can reshape it and put it to work on what it needs.</p></li>
+          <li><span class="an">Axiom 4.</span><p>Every learner is owed dignity and respect.</p></li>
+        </ol>
+        <p class="src">Paraphrased from Federico Ardila, “Todos cuentan: Cultivating diversity in combinatorics,” <i>Notices of the American Mathematical Society</i> 63, no. 10 (2016). <a href="https://arxiv.org/abs/2008.02832">Read his original wording</a>.</p>
+      </div>
+    </div></div>
+    <p class="art-label"></p>
+  </section>
+
+  <section class="res" id="welcome" aria-labelledby="h-thm">
+    <canvas class="art" data-slot="club" aria-hidden="true"></canvas>
+    <div class="wrap"><div class="res-grid">
+      <p class="lab"><b>Theorem 3.</b><em>(All are welcome)</em></p>
+      <div class="body">
+        <h2 id="h-thm" class="sr">All are welcome</h2>
+        <p class="statement">Every person, regardless of major, year, or mathematical background, belongs in the Lemma Lounge.</p>
+        <div class="proof">
+          <p><span class="p">Proof.</span> Suppose you enjoy mathematics in any form, or are curious whether you might. Then by Definition 1 you share our purpose. No course, grade, or prior experience appears anywhere in our hypotheses. Hence you are welcome.</p>
+          <p class="qed" aria-label="End of proof">∎</p>
+        </div>
+      </div>
+    </div></div>
+    <p class="art-label"></p>
+  </section>
+
+  <section class="res" id="officers" aria-labelledby="h-off">
+    <canvas class="art" data-slot="club" aria-hidden="true"></canvas>
+    <div class="wrap"><div class="res-grid">
+      <p class="lab"><b>Corollary 4.</b><em>(Officers)</em></p>
+      <div class="body wide">
+        <h2 id="h-off">The people who keep the Newark lounge running</h2>
+        <div class="officers box">
+          <div class="officer"><div class="avatar" aria-hidden="true">VR</div><div><div class="role">President</div><div class="name">Vakul Raghavan</div></div></div>
+          <div class="officer"><div class="avatar" aria-hidden="true">JQ</div><div><div class="role">Vice President</div><div class="name">Jose Quintero</div></div></div>
+          <div class="officer"><div class="avatar" aria-hidden="true">GC</div><div><div class="role">Treasurer</div><div class="name">Gregory Chacon</div></div></div>
+        </div>
+      </div>
+    </div></div>
+    <p class="art-label"></p>
+  </section>
+
+  <section class="res" id="join" aria-labelledby="h-join">
+    <canvas class="art" data-slot="club" aria-hidden="true"></canvas>
+    <div class="wrap"><div class="res-grid">
+      <p class="lab"><b>Remark 5.</b><em>(Joining)</em></p>
+      <div class="body wide">
+        <h2 id="h-join">Come say hello</h2>
+        <div class="join">
+          <div>
+            <p>There is no application and no entrance exam. Stop by a lecture or event, bring a friend, and bring whatever questions you have.</p>
+            <p>Want to give a talk, suggest a topic, or help with outreach? Reach out to any of the officers above. We'd love to hear from you.</p>
+            <!-- TODO: add a way to reach the club, e.g.
+            <p>Email <a href="mailto:YOUR-CLUB-EMAIL">YOUR-CLUB-EMAIL</a> or find us on Instagram at <a href="https://instagram.com/YOUR-HANDLE">@YOUR-HANDLE</a>.</p> -->
+          </div>
+          <div class="set box" role="img" aria-label="Members equals the set of you such that you like math, union the set of you such that you're curious">
+            Members = { <i>you</i> : you like math }<br><span class="pad"></span>∪ { <i>you</i> : you're curious }
+          </div>
+        </div>
+      </div>
+    </div></div>
+    <p class="art-label"></p>
+  </section>
+
+  <section class="res" id="explore" aria-labelledby="h-exp">
+    <canvas class="art" data-slot="club" aria-hidden="true"></canvas>
+    <div class="wrap"><div class="res-grid">
+      <p class="lab"><b>Exercise 6.</b><em>(Explore)</em></p>
+      <div class="body">
+        <h2 id="h-exp">Walk through two thousand years of mathematics</h2>
+        <p>From Ptolemy's epicycles to Ramanujan's mock theta functions, in five chapters you scroll through.</p>
+        <ol class="toc">
+          <li><a href="explore.html#heavens"><span class="ch">Chapter I</span><span class="ttl">The heavens</span><span class="dots" aria-hidden="true"></span><span class="who">Ptolemy</span></a></li>
+          <li><a href="explore.html#infinitesimal"><span class="ch">Chapter II</span><span class="ttl">The infinitesimal</span><span class="dots" aria-hidden="true"></span><span class="who">Newton and Leibniz</span></a></li>
+          <li><a href="explore.html#harmonics"><span class="ch">Chapter III</span><span class="ttl">Harmonics</span><span class="dots" aria-hidden="true"></span><span class="who">Laplace and Fourier</span></a></li>
+          <li><a href="explore.html#number"><span class="ch">Chapter IV</span><span class="ttl">Number</span><span class="dots" aria-hidden="true"></span><span class="who">Euclid to Ramanujan</span></a></li>
+          <li><a href="explore.html#space"><span class="ch">Chapter V</span><span class="ttl">Space</span><span class="dots" aria-hidden="true"></span><span class="who">Euclid to Poincaré</span></a></li>
+        </ol>
+        <a class="cta" href="explore.html">Start exploring</a>
+      </div>
+    </div></div>
+    <p class="art-label"></p>
+  </section>
+</main>
+
+<section class="prologue poem" id="poem" aria-label="Closing verse">
+  <canvas class="art" data-slot="poem" aria-hidden="true"></canvas>
+  <svg class="stain" aria-hidden="true" style="left:-110px;top:8%;width:380px;height:380px;opacity:.85" viewBox="0 0 200 200">
+    <g filter="url(#f-ring)"><circle cx="100" cy="100" r="84" fill="url(#g-coffee)"/></g>
+  </svg>
+  <div class="inner">
+    <p class="lead">Entire worlds spring forth from logic, and thought.</p>
+    <p class="bridge">In an era where understanding grows further and further from creating, we strive</p>
+    <p class="verse">
+      <span>To see a World in a Grain of Sand</span>
+      <span>And a Heaven in a Wild Flower,</span>
+      <span>Hold Infinity in the palm of your hand</span>
+      <span>And Eternity in an hour.</span>
+    </p>
+    <p class="attrib">William Blake, from <i>Auguries of Innocence</i>, written c. 1803</p>
+    <p class="qed-end" aria-hidden="true">∎</p>
+  </div>
+  <p class="art-label"></p>
+</section>
+
+<footer>
+  <span>Lemma Lounge Mathematical Society, Rutgers University–Newark</span>
+  <span class="eq">e<sup>iπ</sup> + 1 = 0</span>
+  <p class="gen">Every visit draws this page from a fresh random seed; this one was <a id="seed-link" href="?seed="><span id="seed">random</span></a>, and that link brings it back. Behind everything, four billiard balls bounce among circular obstacles you can't see. Billiards like this are ergodic: given time, almost every path comes arbitrarily close to every point on the page, and the obstacles show up as the holes the paths never cross.</p>
+</footer>
+
+<script>
+(function () {
+'use strict';
+const root = document.documentElement;
+root.classList.add('js');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const TAU = Math.PI * 2;
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+/* ---------- Palette: iron-gall ink on rag paper, becoming navy on graph paper ---------- */
+const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const OLD = { bg: hex('#E7DDC7'), ink: hex('#2A2019'), muted: hex('#6B5A45'), accent: hex('#A1301D'), pencil: hex('#8A785F') };
+const NEW = { bg: hex('#F3F6F9'), ink: hex('#14203A'), muted: hex('#4B5A73'), accent: hex('#C8102E'), pencil: hex('#8C9DB8') };
+const P = {};
+const mixc = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
+const rgba = (c, a = 1) => `rgba(${c[0]},${c[1]},${c[2]},${a})`;
+let gNow = -1;
+function setPalette(g) {
+  for (const k in OLD) P[k] = mixc(OLD[k], NEW[k], g);
+  root.style.setProperty('--bg', rgba(P.bg));
+  root.style.setProperty('--ink', rgba(P.ink));
+  root.style.setProperty('--muted', rgba(P.muted));
+  root.style.setProperty('--accent', rgba(P.accent));
+  root.style.setProperty('--rule', rgba(P.ink, lerp(.2, .16, g)));
+  root.style.setProperty('--paper-o', (1 - smooth(.2, .75, g)).toFixed(3));
+  root.style.setProperty('--grid-o', smooth(.3, .85, g).toFixed(3));
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = rgba(P.bg);
+}
+setPalette(0);
+
+/* ---------- Scene plumbing: sized canvases, drawn only when visible ---------- */
+const scenes = [];
+function scene(canvas, opts) {
+  const s = Object.assign({ canvas, ctx: canvas.getContext('2d'), w: 0, h: 0, visible: false, active: true, dirty: true, p: 0, animated: false }, opts);
+  scenes.push(s); ro.observe(canvas); io.observe(canvas);
+  return s;
+}
+function fit(s) {
+  const r = s.canvas.getBoundingClientRect();
+  if (!r.width) return;
+  const d = Math.min(window.devicePixelRatio || 1, 2);
+  s.w = r.width; s.h = r.height;
+  s.canvas.width = Math.round(r.width * d); s.canvas.height = Math.round(r.height * d);
+  s.ctx.setTransform(d, 0, 0, d, 0, 0);
+  s.dirty = true;
+  if (s.onResize) s.onResize(s);
+}
+const ro = new ResizeObserver(es => { for (const e of es) { const s = scenes.find(x => x.canvas === e.target); if (s) fit(s); } });
+const io = new IntersectionObserver(es => { for (const e of es) { const s = scenes.find(x => x.canvas === e.target); if (s) { s.visible = e.isIntersecting; s.dirty = true; if (!e.isIntersecting) s.t0 = null; } } }, { rootMargin: '120px' });
+
+
+/* ---------- One random seed per visit; every generative piece draws from it ---------- */
+const qsSeed = new URLSearchParams(location.search).get('seed');
+const SEED = qsSeed && /^\d{1,10}$/.test(qsSeed) ? Number(qsSeed) >>> 0
+  : (window.crypto && crypto.getRandomValues ? crypto.getRandomValues(new Uint32Array(1))[0] : Math.floor(Math.random() * 4294967296));
+const mulberry = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+const master = mulberry(SEED), fork = () => mulberry(Math.floor(master() * 4294967296));
+const pick = (r, arr) => arr[Math.floor(r() * arr.length)];
+const shuffle = (r, arr) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+/* ---------- Hero: coffee-stained paper, ink drops that spread ---------- */
+const hero = document.getElementById('top');
+const inkSvg = document.getElementById('ink');
+const NS = 'http://www.w3.org/2000/svg';
+let userDrops = [];
+function drop(x, y, r, color, delay, seed) {
+  let rnd = seed || Math.random() * 1e4;
+  const rand = () => { rnd = (rnd * 9301 + 49297) % 233280; return rnd / 233280; };
+  const g = document.createElementNS(NS, 'g');
+  g.setAttribute('class', 'drop');
+  g.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
+  g.style.setProperty('--d', delay + 's');
+  const c = (cls, cx, cy, rr, op, filt) => {
+    const e = document.createElementNS(NS, 'circle');
+    e.setAttribute('class', cls); e.setAttribute('cx', cx.toFixed(1)); e.setAttribute('cy', cy.toFixed(1));
+    e.setAttribute('r', rr.toFixed(1)); e.setAttribute('fill', color); e.setAttribute('fill-opacity', op);
+    e.setAttribute('filter', `url(#${filt})`);
+    g.appendChild(e);
+  };
+  c('halo', 0, 0, r * 1.45, .16, 'f-bleed');
+  c('core', 0, 0, r, .92, 'f-ink');
+  const n = 3 + Math.floor(rand() * 5);
+  for (let i = 0; i < n; i++) {
+    const a = rand() * TAU, d = r * (1.35 + rand() * 1.6);
+    c('spat', Math.cos(a) * d, Math.sin(a) * d, Math.max(1.2, r * (.05 + rand() * .13)), .85, 'f-ink');
+  }
+  inkSvg.appendChild(g);
+  return g;
+}
+const dropPlan = (() => {
+  const r = fork(), j = v => v + (r() - .5) * .04;
+  const wide = { big: [[.58, .84], [.93, .62], [.47, .9], [.64, .8]], red: [[.535, .19], [.47, .12], [.63, .1], [.95, .78]], small: [[.35, .91], [.07, .7], [.54, .64], [.84, .2]] };
+  const narrow = { big: [[.86, .92], [.92, .45], [.15, .95]], red: [[.1, .26], [.22, .08], [.9, .3]], small: [[.7, .6], [.55, .93], [.85, .78]] };
+  const mk = S => { const b = pick(r, S.big), rd = pick(r, S.red), sm = pick(r, S.small); return [[j(b[0]), j(b[1]), .038 + r() * .022, 0, .4 + r() * .4, 1 + Math.floor(r() * 9999)], [j(rd[0]), j(rd[1]), .014 + r() * .012, 1, 1.1 + r() * .5, 1 + Math.floor(r() * 9999)], [j(sm[0]), j(sm[1]), .012 + r() * .008, 0, 2 + r() * .6, 1 + Math.floor(r() * 9999)]]; };
+  return { wide: mk(wide), narrow: mk(narrow) };
+})();
+function seedDrops() {
+  inkSvg.querySelectorAll('.drop.seed').forEach(e => e.remove());
+  const w = hero.clientWidth, h = hero.clientHeight, m = Math.min(w, h);
+  for (const [fx, fy, fr, red, dl, sd] of (w > 860 ? dropPlan.wide : dropPlan.narrow)) drop(fx * w, fy * h, fr * m, rgba(red ? OLD.accent : OLD.ink), dl, sd).classList.add('seed');
+}
+seedDrops();
+let lastW = hero.clientWidth;
+new ResizeObserver(() => { if (Math.abs(hero.clientWidth - lastW) > 40) { lastW = hero.clientWidth; seedDrops(); } }).observe(hero);
+hero.addEventListener('pointerdown', e => {
+  if (e.target.closest('a, button')) return;
+  const b = hero.getBoundingClientRect();
+  const col = Math.random() < .25 ? rgba(OLD.accent) : rgba(OLD.ink);
+  userDrops.push(drop(e.clientX - b.left, e.clientY - b.top, 8 + Math.random() * 16, col, 0));
+  if (userDrops.length > 10) userDrops.shift().remove();
+});
+
+/* ---------- Rose curves (the hero plate in quill ink, the Lounge plot in crisp vector) ---------- */
+const ROSES = shuffle(fork(), [[7, 4], [5, 3], [3, 2], [5, 4], [2, 1], [8, 5], [7, 3], [9, 5]]);
+const rosePeriod = (n, d) => Math.PI * d * ((n * d) % 2 === 1 ? 1 : 2);
+function roseScene(canvas, label, style, start) {
+  let idx = start, tt = rosePeriod(...ROSES[start]) * .6, last = null;
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const ctx = s.ctx, size = s.w, c = size / 2, R = size * .42;
+      const pal = style === 'ink' ? OLD : NEW;
+      const dt = last == null ? 0 : Math.min(.05, t - last); last = t;
+      let [n, d] = ROSES[idx]; let T = rosePeriod(n, d);
+      if (!reduce) { tt += dt * T / 8.6; if (tt > T * 1.35) { tt = 0; idx = (idx + 1) % ROSES.length; [n, d] = ROSES[idx]; T = rosePeriod(n, d); } }
+      const upTo = reduce ? T : Math.min(tt, T), k = n / d;
+      ctx.clearRect(0, 0, size, size);
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      if (style === 'ink') {
+        ctx.strokeStyle = rgba(pal.pencil, .55); ctx.lineWidth = .7;
+        ctx.setLineDash([2, 4]); ctx.beginPath(); ctx.arc(c, c, R, 0, TAU); ctx.stroke(); ctx.setLineDash([]);
+        ctx.beginPath(); ctx.moveTo(c - R - 14, c); ctx.lineTo(c + R + 14, c); ctx.moveTo(c, c - R - 14); ctx.lineTo(c, c + R + 14); ctx.stroke();
+        for (let i = 0; i < 24; i++) { const a = i / 24 * TAU, l = i % 6 ? 4 : 9; ctx.beginPath(); ctx.moveTo(c + Math.cos(a) * R, c + Math.sin(a) * R); ctx.lineTo(c + Math.cos(a) * (R + l), c + Math.sin(a) * (R + l)); ctx.stroke(); }
+      } else {
+        ctx.strokeStyle = rgba(pal.ink, .9); ctx.lineWidth = 1.2;
+        ctx.beginPath(); ctx.moveTo(6, c); ctx.lineTo(size - 6, c); ctx.moveTo(c, 6); ctx.lineTo(c, size - 6); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(size - 12, c - 5); ctx.lineTo(size - 5, c); ctx.lineTo(size - 12, c + 5); ctx.moveTo(c - 5, 12); ctx.lineTo(c, 5); ctx.lineTo(c + 5, 12); ctx.stroke();
+        ctx.lineWidth = 1;
+        for (let i = -4; i <= 4; i++) { if (!i) continue; const o = i * R / 4; ctx.beginPath(); ctx.moveTo(c + o, c - 4); ctx.lineTo(c + o, c + 4); ctx.moveTo(c - 4, c + o); ctx.lineTo(c + 4, c + o); ctx.stroke(); }
+        ctx.font = `italic ${Math.max(11, size * .03)}px "STIX Two Text", serif`; ctx.fillStyle = rgba(pal.muted);
+        ctx.fillText('x', size - 16, c + 20); ctx.fillText('y', c + 10, 16); ctx.fillText('1', c + R - 3, c + 20);
+        ctx.strokeStyle = rgba(pal.pencil, .7); ctx.setLineDash([3, 5]); ctx.beginPath(); ctx.arc(c, c, R, 0, TAU); ctx.stroke(); ctx.setLineDash([]);
+      }
+      const steps = 1500, pts = [];
+      for (let i = 0; i <= steps; i++) {
+        const th = i / steps * T; if (th > upTo) break;
+        const r = Math.cos(k * th) * R;
+        pts.push([c + r * Math.cos(th), c - r * Math.sin(th), th]);
+      }
+      if (style === 'ink') {
+        const B = 7, buckets = Array.from({ length: B }, () => new Path2D());
+        for (let i = 1; i < pts.length; i++) {
+          const th = pts[i][2], sp = Math.sqrt(Math.cos(k * th) ** 2 + k * k * Math.sin(k * th) ** 2);
+          const u = clamp((sp - 1) / (k - 1 || 1));
+          const b = Math.min(B - 1, Math.floor((1 - u) * B));
+          buckets[b].moveTo(pts[i - 1][0], pts[i - 1][1]); buckets[b].lineTo(pts[i][0], pts[i][1]);
+        }
+        ctx.strokeStyle = rgba(pal.ink, .92);
+        buckets.forEach((p, b) => { ctx.lineWidth = .8 + b * .42 * size / 460; ctx.stroke(p); });
+      } else {
+        ctx.strokeStyle = 'rgb(42,79,143)'; ctx.lineWidth = 1.7; ctx.beginPath();
+        pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.stroke();
+      }
+      const tip = pts[pts.length - 1];
+      if (tip && upTo < T) { ctx.fillStyle = rgba(pal.accent); ctx.beginPath(); ctx.arc(tip[0], tip[1], style === 'ink' ? 3.4 : 4, 0, TAU); ctx.fill(); }
+      if (label) label.textContent = d === 1 ? String(n) : n + '/' + d;
+    }
+  });
+}
+roseScene(document.getElementById('rose-ink'), null, 'ink', 0);
+
+
+/* ---------- Mathematics behind the club sections (drawn in the modern ink, reshuffled every visit) ---------- */
+const NAVY = NEW.ink, RED = NEW.accent, BLUE = [42, 79, 143], AMBER = [205, 134, 38], TEAL = [48, 122, 130];
+const fmt = (v, d = 3) => (v < 0 ? '−' : '') + Math.abs(v).toFixed(d);
+function RasterWH(w, h, pixel) {
+  const cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+  const cx = cv.getContext('2d'), img = cx.createImageData(w, h); let row = 0;
+  return {
+    cv, done: false,
+    work(budget) {
+      const t0 = performance.now(), D = img.data, from = row;
+      while (row < h && performance.now() - t0 < budget) { for (let i = 0; i < w; i++) pixel(i, row, D, (row * w + i) * 4); row++; }
+      cx.putImageData(img, 0, 0, 0, from, w, row - from);
+      if (row >= h) this.done = true;
+    }
+  };
+}
+
+/* The Mandelbrot set, or a Julia set whose c sits just inside the Mandelbrot set's rim */
+function mandel(canvas, rng, label) {
+  const julia = rng() < .7, rot = rng() * TAU, cs = Math.cos(rot), sn = Math.sin(rot), MAXI = 300;
+  let cr = 0, ci = 0;
+  if (julia) {
+    const th = .7 + rng() * (TAU - 1.4);
+    if (rng() < .72) { const f = .955 + rng() * .05; cr = f * (Math.cos(th) / 2 - Math.cos(2 * th) / 4); ci = f * (Math.sin(th) / 2 - Math.sin(2 * th) / 4); }
+    else { const f = .9 + rng() * .1; cr = -1 + f * Math.cos(th) / 4; ci = f * Math.sin(th) / 4; }
+    label(`The Julia set of z² + c, with c = ${fmt(cr)} ${ci < 0 ? '−' : '+'} ${Math.abs(ci).toFixed(3)}i`);
+  } else label('The Mandelbrot set');
+  let r = null, key = '';
+  return scene(canvas, {
+    busy: () => !!r && !r.done,
+    draw(s) {
+      const rw = Math.round(s.w), rh = Math.round(s.h), k = rw + 'x' + rh;
+      if (k !== key) {
+        key = k;
+        const sc = julia ? Math.min(rw / 5.6, rh / 3.1) : Math.min(rw / 5, rh / 2.7), ox = rw * .73, oy = rh * .5, mx = julia ? 0 : -.72;
+        r = RasterWH(rw, rh, (i, j, D, o) => {
+          let dx = (i - ox) / sc, dy = (j - oy) / sc, x, y, x0, y0;
+          if (julia) { x = dx * cs - dy * sn; y = dx * sn + dy * cs; x0 = cr; y0 = ci; } else { x0 = dx + mx; y0 = dy; x = 0; y = 0; }
+          let x2 = x * x, y2 = y * y, n = 0, inside = false;
+          if (!julia) { const q = (x0 - .25) * (x0 - .25) + y0 * y0; inside = q * (q + x0 - .25) < .25 * y0 * y0 || (x0 + 1) * (x0 + 1) + y0 * y0 < .0625; }
+          if (!inside) { while (x2 + y2 < 256 && n < MAXI) { y = 2 * x * y + y0; x = x2 - y2 + x0; x2 = x * x; y2 = y * y; n++; } inside = n >= MAXI; }
+          if (inside) { D[o] = NAVY[0]; D[o + 1] = NAVY[1]; D[o + 2] = NAVY[2]; D[o + 3] = 205; return; }
+          const nu = n + 1 - Math.log2(.5 * Math.log2(x2 + y2)), c = clamp((nu - 2) / 38);
+          const band = nu * .5 - Math.floor(nu * .5), line = band < .1 ? 1 - band / .1 : 0, m = clamp((c - .45) / .55);
+          D[o] = RED[0] + (NAVY[0] - RED[0]) * m; D[o + 1] = RED[1] + (NAVY[1] - RED[1]) * m; D[o + 2] = RED[2] + (NAVY[2] - RED[2]) * m;
+          D[o + 3] = 255 * Math.min(1, Math.pow(c, 1.7) * .9 + line * .2 * (1 - c) * smooth(.06, .22, c));
+        });
+      }
+      if (!r.done) r.work(9);
+      s.ctx.clearRect(0, 0, s.w, s.h); s.ctx.drawImage(r.cv, 0, 0, s.w, s.h);
+    }
+  });
+}
+
+/* An Apollonian gasket grown by Descartes' theorem from a random integral root quadruple */
+function apollo(canvas, rng, label) {
+  const Q = pick(rng, [[-1, 2, 2, 3], [-2, 3, 6, 7], [-3, 5, 8, 8], [-3, 4, 12, 13], [-4, 5, 20, 21], [-6, 10, 15, 19]]);
+  const [k1, k2, k3, k4] = Q, R1 = -1 / k1, r2 = 1 / k2, r3 = 1 / k3, r4 = 1 / k4, K = 520 * -k1;
+  const x2 = R1 - r2, x3 = ((R1 - r3) ** 2 - (r2 + r3) ** 2 + x2 * x2) / (2 * x2), y3 = Math.sqrt(Math.max(0, (R1 - r3) ** 2 - x3 * x3));
+  const pr = k2 * k3 * x2 * x3, pim = k2 * k3 * x2 * y3, mg = Math.hypot(pr, pim), sr = Math.sqrt((mg + pr) / 2), si = Math.sign(pim || 1) * Math.sqrt(Math.max(0, (mg - pr) / 2));
+  const cand = [1, -1].map(sg => [(k2 * x2 + k3 * x3 + sg * 2 * sr) / k4, (k3 * y3 + sg * 2 * si) / k4]);
+  const err = z => Math.abs(Math.hypot(z[0] - x2, z[1]) - (r2 + r4)) + Math.abs(Math.hypot(z[0] - x3, z[1] - y3) - (r3 + r4)) + Math.abs(Math.hypot(z[0], z[1]) - (R1 - r4));
+  const z4 = err(cand[0]) < err(cand[1]) ? cand[0] : cand[1];
+  const C = (k, x, y) => ({ k, x: x / R1, y: y / R1 });
+  const other = (a, b, c, d) => { const k = 2 * (a.k + b.k + c.k) - d.k; return k > K ? null : { k, x: (2 * (a.x * a.k + b.x * b.k + c.x * c.k) - d.x * d.k) / k, y: (2 * (a.y * a.k + b.y * b.k + c.y * c.k) - d.y * d.k) / k }; };
+  const base = [C(k1, 0, 0), C(k2, x2, 0), C(k3, x3, y3), C(k4, z4[0], z4[1])], list = base.slice();
+  base.push(other(base[0], base[1], base[2], base[3])); list.push(base[4]);
+  const rec = (a, b, c, d) => { let n; if ((n = other(b, c, d, a))) { list.push(n); rec(b, c, d, n); } if ((n = other(a, c, d, b))) { list.push(n); rec(a, c, d, n); } if ((n = other(a, b, d, c))) { list.push(n); rec(a, b, d, n); } };
+  rec(base[0], base[1], base[2], base[3]); rec(base[0], base[1], base[2], base[4]);
+  list.sort((p, q) => p.k - q.k);
+  const isPrime = k => { if (k < 2) return false; for (let i = 2; i * i <= k; i++) if (k % i === 0) return false; return true; };
+  list.forEach(c => { c.p = isPrime(c.k); });
+  const th0 = rng() * TAU, spin = (rng() < .5 ? -1 : 1) * (.025 + rng() * .025);
+  label(`An Apollonian gasket grown from the curvatures ${Q.map(v => fmt(v, 0)).join(', ')}; the red circles have prime curvature`);
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      if (s.t0 == null) s.t0 = t;
+      const ctx = s.ctx, W = s.w, H = s.h, R = Math.min(W * .4, H * .45), cx = W * .66, cy = H * .5;
+      const th = th0 + (reduce ? 0 : t) * spin, co = Math.cos(th), si2 = Math.sin(th);
+      const kShow = reduce ? K : -k1 + K * Math.pow(clamp((t - s.t0) / 3.5), 2.2);
+      ctx.clearRect(0, 0, W, H); ctx.lineWidth = 1;
+      for (const c of list) {
+        if (c.k > kShow) break;
+        const r = R * -k1 / Math.abs(c.k); if (r < .8) continue;
+        const x = cx + (c.x * co - c.y * si2) * R, y = cy + (c.x * si2 + c.y * co) * R;
+        ctx.beginPath(); ctx.arc(x, y, r, 0, TAU);
+        if (c.p && c.k > 10 * -k1 && r > 1.6) { ctx.fillStyle = rgba(RED, .22); ctx.fill(); }
+        ctx.strokeStyle = rgba(c.p ? RED : NAVY, Math.min(.8, .22 + 2.4 / Math.sqrt(Math.abs(c.k / k1) + 1))); ctx.stroke();
+      }
+    }
+  });
+}
+
+/* The Hopf fibration: circles of S³, stereographically projected, over a few latitudes of S² */
+function hopf(canvas, rng, label) {
+  const nL = 3 + Math.floor(rng() * 3), COLS = shuffle(rng, [RED, AMBER, TEAL, BLUE, NAVY]), NF = 16 + Math.floor(rng() * 9), NP = 96, fib = [];
+  const dir = rng() < .5 ? -1 : 1, a0 = rng() * TAU;
+  for (let li = 0; li < nL; li++) {
+    const eta = .35 + (li + .2 + rng() * .6) * (1.55 / nL), c = Math.cos(eta / 2), sn = Math.sin(eta / 2), off = rng() * TAU;
+    for (let f = 0; f < NF; f++) {
+      const phi = f / NF * TAU + off, pts = [];
+      for (let p = 0; p <= NP; p++) { const tt = p / NP * 2 * TAU, a = (tt + phi) / 2, b = (tt - phi) / 2, d = 1 - sn * Math.sin(b); pts.push([c * Math.cos(a) / d, c * Math.sin(a) / d, sn * Math.cos(b) / d]); }
+      fib.push({ pts, col: COLS[li] });
+    }
+  }
+  label('The Hopf fibration, filling S³ with linked circles; S³ is one of Thurston\'s eight geometries');
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const ctx = s.ctx, W = s.w, H = s.h, S = Math.min(W * .2, H * .25), cx = W * .68, cy = H * .5, tt = reduce ? 2 : t;
+      const a = a0 + dir * tt * .1, el = .5 + .12 * Math.sin(tt * .07), ca = Math.cos(a), sa = Math.sin(a), ce = Math.cos(el), se = Math.sin(el);
+      ctx.clearRect(0, 0, W, H); ctx.lineWidth = 1.25; ctx.lineJoin = 'round';
+      for (const f of fib) {
+        ctx.beginPath(); let zs = 0;
+        f.pts.forEach((p, i) => {
+          const u = p[0] * ca - p[1] * sa, v = p[0] * sa + p[1] * ca, w = p[2], y = w * ce + v * se, z = w * se - v * ce, k = 9 / Math.max(3, 9 - z);
+          zs += z; const X = cx + u * S * k, Y = cy - y * S * k; i ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y);
+        });
+        ctx.strokeStyle = rgba(f.col, clamp(.42 + zs / f.pts.length * .14, .14, .85)); ctx.stroke();
+      }
+    }
+  });
+}
+
+/* The hyperbolic plane: a triangle-group tiling of Poincaré's disk, seen from a random point */
+function htile(canvas, rng, label) {
+  const [pp, qq] = pick(rng, [[7, 3], [5, 4], [4, 5], [6, 4], [8, 3], [4, 6], [5, 5], [3, 8]]);
+  const a = Math.PI / pp, b = Math.PI / qq, den = Math.sqrt(Math.cos(b) ** 2 - Math.sin(a) ** 2);
+  const d = Math.cos(b) / den, r2 = (Math.sin(a) / den) ** 2, sa = Math.sin(a), ca = Math.cos(a);
+  const wr = rng() * .38, wa = rng() * TAU, wx = wr * Math.cos(wa), wy = wr * Math.sin(wa);
+  const [cA, cB] = pick(rng, [[NAVY, RED], [BLUE, AMBER], [TEAL, NAVY]]), dir = rng() < .5 ? -1 : 1;
+  label(`The hyperbolic plane ℍ², tiled by copies of one triangle with angles π/2, π/${pp} and π/${qq}; ℍ² × ℝ is one of Thurston's eight geometries`);
+  let r = null, key = '';
+  return scene(canvas, {
+    animated: true,
+    busy: () => !!r && !r.done,
+    draw(s, t) {
+      const ctx = s.ctx, W = s.w, H = s.h, R = Math.min(W * .42, H * .46), cx = W * .66, cy = H * .5;
+      const res = Math.min(900, Math.round(2 * R * Math.min(2, window.devicePixelRatio || 1))), k = String(res);
+      if (k !== key) {
+        key = k;
+        r = RasterWH(res, res, (i, j, D, o) => {
+          const zx = (i + .5) / res * 2 - 1, zy = 1 - (j + .5) / res * 2;
+          if (zx * zx + zy * zy >= 1) { D[o + 3] = 0; return; }
+          const nr = zx - wx, ni = zy - wy, dr = 1 - (wx * zx + wy * zy), di = -(wx * zy - wy * zx), dd = dr * dr + di * di;
+          let x = (nr * dr + ni * di) / dd, y = (ni * dr - nr * di) / dd, f = 0;
+          for (let it = 0; it < 90; it++) {
+            let ch = false;
+            if (y < 0) { y = -y; f++; ch = true; }
+            const sd = sa * x - ca * y; if (sd < 0) { x -= 2 * sd * sa; y += 2 * sd * ca; f++; ch = true; }
+            const dx = x - d, q = dx * dx + y * y; if (q < r2) { const kk = r2 / q; x = d + dx * kk; y *= kk; f++; ch = true; }
+            if (!ch) break;
+          }
+          const col = f & 1 ? cA : cB; D[o] = col[0]; D[o + 1] = col[1]; D[o + 2] = col[2]; D[o + 3] = f & 1 ? 46 : 22;
+        });
+      }
+      if (!r.done) r.work(8);
+      ctx.clearRect(0, 0, W, H);
+      ctx.save(); ctx.translate(cx, cy); ctx.rotate(dir * (reduce ? 0 : t) * .03); ctx.drawImage(r.cv, -R, -R, 2 * R, 2 * R); ctx.restore();
+      ctx.strokeStyle = rgba(NAVY, .7); ctx.lineWidth = 1.4; ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU); ctx.stroke();
+    }
+  });
+}
+
+/* Nil: the Heisenberg group's horizontal planes, spanned by (1, 0, −y/2) and (0, 1, x/2) */
+function nil(canvas, rng, label) {
+  const N = 4 + Math.floor(rng() * 3), n3 = v => { const l = Math.hypot(...v); return v.map(x => x / l); }, quads = [];
+  for (let i = -N; i <= N; i++) for (let j = -N; j <= N; j++) quads.push({ x: i, y: j, u: n3([1, 0, -j / 2]), v: n3([0, 1, i / 2]), st: clamp(Math.hypot(i, j) / (N * 1.2)) });
+  const el = .45 + rng() * .3, dir = rng() < .5 ? -1 : 1, a0 = rng() * TAU, [cA, cB] = pick(rng, [[TEAL, RED], [BLUE, AMBER], [AMBER, RED]]);
+  label('Nil, one of Thurston\'s eight geometries: its planes twist as you move outward');
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const ctx = s.ctx, W = s.w, H = s.h, cx = W * .66, cy = H * .52, S = Math.min(W * .62 / (3 * N + 1), H * .8 / (2 * N));
+      const a = a0 + dir * (reduce ? 0 : t) * .09, c = Math.cos(a), sn = Math.sin(a), ce = Math.cos(el), se = Math.sin(el), h = .4;
+      const pr = p => { const xr = p[0] * c - p[1] * sn, yr = p[0] * sn + p[1] * c; return [cx + xr * S, cy - (yr * se + p[2] * ce) * S, yr * ce - p[2] * se]; };
+      const items = quads.map(q => ({
+        pts: [[1, 1], [1, -1], [-1, -1], [-1, 1]].map(([m, n]) => pr([q.x + h * (m * q.u[0] + n * q.v[0]), q.y + h * (m * q.u[1] + n * q.v[1]), h * (m * q.u[2] + n * q.v[2])])),
+        z: pr([q.x, q.y, 0])[2], st: q.st
+      })).sort((p, q) => q.z - p.z);
+      ctx.clearRect(0, 0, W, H); ctx.lineWidth = 1; ctx.lineJoin = 'round';
+      for (const it of items) {
+        ctx.beginPath(); it.pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath();
+        ctx.fillStyle = rgba(mixc(cA, cB, it.st), .2 + .25 * it.st); ctx.fill();
+        ctx.strokeStyle = rgba(NAVY, .55); ctx.stroke();
+      }
+    }
+  });
+}
+
+/* The Heighway dragon: fold a strip of paper in half n times, then open every fold to a right angle */
+function dragon(canvas, rng, label) {
+  const n = 9 + Math.floor(rng() * 3), quarter = Math.floor(rng() * 4), flip = rng() < .5 ? -1 : 1, [cA, cB] = pick(rng, [[NAVY, RED], [BLUE, AMBER], [TEAL, RED]]);
+  const DX = [1, 0, -1, 0], DY = [0, 1, 0, -1], pts = [[0, 0]];
+  let x = 0, y = 0, d = quarter;
+  for (let i = 1; i <= (1 << n); i++) { x += DX[d]; y += DY[d] * flip; pts.push([x, y]); d = (d + ((((i & -i) << 1) & i) ? 3 : 1)) % 4; }
+  let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+  for (const p of pts) { x0 = Math.min(x0, p[0]); x1 = Math.max(x1, p[0]); y0 = Math.min(y0, p[1]); y1 = Math.max(y1, p[1]); }
+  label(`The Heighway dragon: a strip of paper folded in half ${n} times, each fold opened to a right angle`);
+  let full = false;
+  return scene(canvas, {
+    animated: true,
+    busy: () => !full,
+    draw(s, t) {
+      if (s.t0 == null) { s.t0 = t; full = false; }
+      const ctx = s.ctx, W = s.w, H = s.h, sc = Math.min(W * .46 / (x1 - x0), H * .78 / (y1 - y0)), ox = W * .72 - (x0 + x1) / 2 * sc, oy = H * .5 + (y0 + y1) / 2 * sc;
+      const total = pts.length - 1, m = reduce ? total : Math.floor(total * ease(clamp((t - s.t0) / 5)));
+      full = m >= total;
+      ctx.clearRect(0, 0, W, H); ctx.lineWidth = 1.7; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      const at = (i, f) => [ox + (pts[i][0] + (pts[i + 1][0] - pts[i][0]) * f) * sc, oy - (pts[i][1] + (pts[i + 1][1] - pts[i][1]) * f) * sc], CH = 32;
+      for (let st = 0; st < m; st += CH) {
+        ctx.beginPath(); let q = at(st, .25); ctx.moveTo(q[0], q[1]);
+        for (let i = st; i < Math.min(m, st + CH); i++) { q = at(i, .75); ctx.lineTo(q[0], q[1]); if (i + 1 < total) { q = at(i + 1, .25); ctx.lineTo(q[0], q[1]); } }
+        ctx.strokeStyle = rgba(mixc(cA, cB, st / total), .8); ctx.stroke();
+      }
+    }
+  });
+}
+
+/* Site percolation: every square gets a random number; squares under p are filled. p sweeps across the threshold near 0.5927 */
+function perc(canvas, rng, label) {
+  const N = 90 + Math.floor(rng() * 50), u = new Float32Array(N * N), inD = new Uint8Array(N * N), par = new Int32Array(N * N), sz = new Int32Array(N * N);
+  for (let i = 0; i < N * N; i++) { u[i] = rng(); const x = i % N - N / 2 + .5, y = Math.floor(i / N) - N / 2 + .5; inD[i] = x * x + y * y < N * N / 4 ? 1 : 0; }
+  const ph = rng() * TAU, others = shuffle(rng, [BLUE, TEAL, AMBER, NAVY]);
+  const off = document.createElement('canvas'); off.width = off.height = N; const octx = off.getContext('2d'), img = octx.createImageData(N, N);
+  const find = i => { while (par[i] !== i) { par[i] = par[par[i]]; i = par[i]; } return i; };
+  const unite = (a, b) => { a = find(a); b = find(b); if (a !== b) { if (a < b) par[b] = a; else par[a] = b; } };
+  let lastP = -1;
+  label('Site percolation: each square is filled with probability p, which sweeps back and forth across the critical value near 0.5927; the largest cluster is red');
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      const p = Math.round((.5927 + .06 * Math.sin((reduce ? 0 : t) * .14 + ph)) * 1000) / 1000;
+      const ctx = s.ctx, W = s.w, H = s.h, R = Math.min(W * .3, H * .4), cx = W * .74, cy = H * .5;
+      if (p !== lastP) {
+        lastP = p;
+        for (let i = 0; i < N * N; i++) par[i] = i;
+        for (let i = 0; i < N * N; i++) {
+          if (!inD[i] || u[i] >= p) continue;
+          if (i % N && inD[i - 1] && u[i - 1] < p) unite(i, i - 1);
+          if (i >= N && inD[i - N] && u[i - N] < p) unite(i, i - N);
+        }
+        sz.fill(0); let big = -1, bigS = 0;
+        for (let i = 0; i < N * N; i++) if (inD[i] && u[i] < p) { const r = find(i); if (++sz[r] > bigS) { bigS = sz[r]; big = r; } }
+        const D = img.data;
+        for (let i = 0; i < N * N; i++) {
+          const o = i * 4;
+          if (!inD[i] || u[i] >= p) { D[o + 3] = 0; continue; }
+          const r = find(i), col = r === big ? RED : others[(Math.imul(r, 2654435761) >>> 0) % others.length];
+          D[o] = col[0]; D[o + 1] = col[1]; D[o + 2] = col[2]; D[o + 3] = r === big ? 220 : sz[r] > 3 ? 100 : 55;
+        }
+        octx.putImageData(img, 0, 0);
+      }
+      ctx.clearRect(0, 0, W, H);
+      ctx.imageSmoothingEnabled = false; ctx.drawImage(off, cx - R, cy - R, 2 * R, 2 * R); ctx.imageSmoothingEnabled = true;
+      ctx.strokeStyle = rgba(NAVY, .6); ctx.lineWidth = 1.2; ctx.beginPath(); ctx.arc(cx, cy, R + 2, 0, TAU); ctx.stroke();
+      ctx.font = `italic ${Math.max(12, W * .016)}px "STIX Two Text", serif`; ctx.fillStyle = rgba(NAVY, .8);
+      ctx.fillText(`p = ${p.toFixed(3)}`, cx - R, cy - R - 12);
+    }
+  });
+}
+
+/* Magnetic domains: the Ising model under Metropolis dynamics, quenched from random to just below the critical temperature */
+function ising(canvas, rng, label) {
+  const N = 120 + Math.floor(rng() * 60), T = 2.12 + rng() * .14, spin = new Int8Array(N * N);
+  let seed = Math.floor(rng() * 4294967295) || 1;
+  const xr = () => { seed ^= seed << 13; seed ^= seed >>> 17; seed ^= seed << 5; return (seed >>> 0) / 4294967296; };
+  const reset = () => { for (let i = 0; i < N * N; i++) spin[i] = xr() < .5 ? 1 : -1; };
+  reset();
+  const p4 = Math.exp(-4 / T), p8 = Math.exp(-8 / T), [up, down] = pick(rng, [[NAVY, RED], [NAVY, AMBER], [BLUE, RED]]);
+  const sweep = () => {
+    for (let k = 0; k < N * N; k++) {
+      const i = Math.floor(xr() * N * N), x = i % N, y = (i / N) | 0;
+      const nb = spin[y * N + (x + 1) % N] + spin[y * N + (x + N - 1) % N] + spin[((y + 1) % N) * N + x] + spin[((y + N - 1) % N) * N + x];
+      const dE = 2 * spin[i] * nb;
+      if (dE <= 0 || (dE === 4 ? xr() < p4 : xr() < p8)) spin[i] = -spin[i];
+    }
+  };
+  if (reduce) for (let k = 0; k < 400; k++) sweep();
+  const off = document.createElement('canvas'); off.width = off.height = N; const octx = off.getContext('2d'), img = octx.createImageData(N, N);
+  let still = 0;
+  label(`Magnetic domains in the Ising model at temperature ${T.toFixed(2)}, just below the critical point near 2.269`);
+  return scene(canvas, {
+    animated: true,
+    draw(s) {
+      if (!reduce) { sweep(); sweep(); }
+      let mag = 0; const D = img.data;
+      for (let i = 0; i < N * N; i++) { const c = spin[i] > 0 ? up : down, o = i * 4; mag += spin[i]; D[o] = c[0]; D[o + 1] = c[1]; D[o + 2] = c[2]; D[o + 3] = spin[i] > 0 ? 175 : 40; }
+      if (!reduce && Math.abs(mag) > .94 * N * N) { if (++still > 360) { reset(); still = 0; } } else still = 0;
+      octx.putImageData(img, 0, 0);
+      const ctx = s.ctx, W = s.w, H = s.h, L = Math.min(W * .5, H * .76), x0 = W * .74 - L / 2, y0 = H * .5 - L / 2;
+      ctx.clearRect(0, 0, W, H);
+      ctx.imageSmoothingEnabled = false; ctx.drawImage(off, x0, y0, L, L); ctx.imageSmoothingEnabled = true;
+      ctx.strokeStyle = rgba(NAVY, .6); ctx.lineWidth = 1.2; ctx.strokeRect(x0 - 1.5, y0 - 1.5, L + 3, L + 3);
+    }
+  });
+}
+
+/* The Lorenz attractor: two paths that start a millionth apart. Drawn in ink, it closes the page on paper */
+function lorenz(canvas, rng, label) {
+  const SIG = 10, RHO = 28, BET = 8 / 3, dt = .005, MAXP = 5200, view0 = (rng() - .5) * .9 + (rng() < .5 ? 0 : Math.PI), dir = rng() < .5 ? -1 : 1;
+  const f = p => [SIG * (p[1] - p[0]), p[0] * (RHO - p[2]) - p[1], p[0] * p[1] - BET * p[2]];
+  const rk4 = p => { const k1 = f(p), a = p.map((v, i) => v + k1[i] * dt / 2), k2 = f(a), b = p.map((v, i) => v + k2[i] * dt / 2), k3 = f(b), c = p.map((v, i) => v + k3[i] * dt), k4 = f(c); return p.map((v, i) => v + dt / 6 * (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i])); };
+  const start = [rng() * 16 - 8, rng() * 16 - 8, 15 + rng() * 15];
+  let A, B, trA, trB;
+  const init = () => { A = start.slice(); for (let i = 0; i < 600; i++) A = rk4(A); B = [A[0] + 1e-6, A[1], A[2]]; trA = []; trB = []; };
+  init();
+  label('The Lorenz attractor: two paths that begin a millionth apart, then go their separate ways');
+  return scene(canvas, {
+    animated: true,
+    draw(s, t) {
+      if (s.t0 == null) { s.t0 = t; init(); if (reduce) for (let i = 0; i < 3000; i++) { A = rk4(A); B = rk4(B); trA.push(A); trB.push(B); } }
+      if (!reduce) for (let i = 0; i < 8; i++) { A = rk4(A); B = rk4(B); trA.push(A); trB.push(B); }
+      if (trA.length > MAXP) { trA.splice(0, trA.length - MAXP); trB.splice(0, trB.length - MAXP); }
+      const ctx = s.ctx, W = s.w, H = s.h, S = Math.min(W * .5 / 52, H * .82 / 50), cx = W * .74, cy = H * .5;
+      const th = view0 + dir * .35 * Math.sin((reduce ? 0 : t) * .07), c = Math.cos(th), sn = Math.sin(th);
+      const P2 = p => [cx + (p[0] * c - p[1] * sn) * S, cy - (p[2] - 25) * S];
+      ctx.clearRect(0, 0, W, H); ctx.lineWidth = 1.1; ctx.lineJoin = 'round';
+      const trail = (tr, col) => {
+        const K = 8, n = tr.length;
+        for (let k = 0; k < K; k++) {
+          const a = Math.floor(n * k / K), b = Math.min(n - 1, Math.floor(n * (k + 1) / K)); if (b <= a) continue;
+          ctx.beginPath(); let q = P2(tr[a]); ctx.moveTo(q[0], q[1]);
+          for (let i = a + 1; i <= b; i++) { q = P2(tr[i]); ctx.lineTo(q[0], q[1]); }
+          ctx.strokeStyle = rgba(col, .12 + .6 * (k + 1) / K); ctx.stroke();
+        }
+        if (n) { const q = P2(tr[n - 1]); ctx.fillStyle = rgba(col); ctx.beginPath(); ctx.arc(q[0], q[1], 3, 0, TAU); ctx.fill(); }
+      };
+      trail(trB, P.accent); trail(trA, P.ink);
+    }
+  });
+}
+
+const ARTS = { mandel, apollo, hopf, htile, nil, dragon, perc, ising, lorenz };
+{
+  const r = fork();
+  const pool = shuffle(r, ['perc', 'ising', ...shuffle(r, ['mandel', 'apollo', 'dragon', 'hopf', 'htile', 'nil']).slice(0, 5)]);
+  document.querySelectorAll('canvas.art[data-slot]').forEach(cv => {
+    const key = cv.dataset.slot === 'poem' ? 'lorenz' : pool.shift(), lab = cv.parentElement.querySelector('.art-label');
+    ARTS[key](cv, fork(), txt => { if (lab) lab.textContent = txt; });
+  });
+}
+
+/* ---------- An ergodic billiard across the whole page ----------
+   Balls bounce off the page's edges and off circular obstacles that are never drawn. Dispersing billiards like this are
+   ergodic, so over time almost every path comes arbitrarily close to every point, and the obstacles appear as holes. */
+const billiard = (() => {
+  const r = fork(), cv = document.createElement('canvas'), ctx = cv.getContext('2d');
+  cv.className = 'billiard'; cv.setAttribute('aria-hidden', 'true');
+  document.getElementById('top').before(cv);
+  let W = 0, Hd = 0, circles = [], balls = [], last = null, dpr = 1, lastY = -1, dirty = true;
+  const SPEED = 360;
+  function build() {
+    W = document.documentElement.clientWidth; Hd = document.documentElement.scrollHeight;
+    const g = mulberry(Math.floor(r() * 4294967296)), scale = clamp(W / 1440, .45, 1);
+    circles = [];
+    const want = Math.round(Hd / 300 * (.6 + .4 * scale)) + 4;
+    for (let tries = 0; circles.length < want && tries < 4000; tries++) {
+      const rad = (34 + g() * 110) * scale, x = rad + 30 + g() * (W - 2 * rad - 60), y = rad + 30 + g() * (Hd - 2 * rad - 60);
+      if (circles.every(c => Math.hypot(c.x - x, c.y - y) > c.r + rad + 50)) circles.push({ x, y, r: rad });
+    }
+    balls = [];
+    for (let k = 0; k < 4; k++) {
+      let x, y; do { x = 10 + g() * (W - 20); y = k ? 10 + g() * (Hd - 20) : 40 + g() * innerHeight * .8; } while (circles.some(c => Math.hypot(c.x - x, c.y - y) < c.r + 4));
+      const a = g() * TAU; balls.push({ x, y, vx: Math.cos(a), vy: Math.sin(a), pts: [[x, y]] });
+    }
+    if (reduce) for (let i = 0; i < 1500; i++) balls.forEach(b => step(b, .05));
+    dirty = true;
+  }
+  function step(b, dt) {
+    let rem = dt * SPEED;
+    for (let guard = 0; guard < 50 && rem > 0; guard++) {
+      let hit = Infinity, kind = 0, hc = null;
+      if (b.vx > 0) { const s = (W - b.x) / b.vx; if (s < hit) { hit = s; kind = 1; } } else if (b.vx < 0) { const s = -b.x / b.vx; if (s < hit) { hit = s; kind = 1; } }
+      if (b.vy > 0) { const s = (Hd - b.y) / b.vy; if (s < hit) { hit = s; kind = 2; } } else if (b.vy < 0) { const s = -b.y / b.vy; if (s < hit) { hit = s; kind = 2; } }
+      for (const c of circles) {
+        const ox = b.x - c.x, oy = b.y - c.y, bb = ox * b.vx + oy * b.vy; if (bb >= 0) continue;
+        const disc = bb * bb - (ox * ox + oy * oy - c.r * c.r); if (disc <= 0) continue;
+        const s = -bb - Math.sqrt(disc); if (s > 1e-7 && s < hit) { hit = s; kind = 3; hc = c; }
+      }
+      if (hit > rem) { b.x += b.vx * rem; b.y += b.vy * rem; break; }
+      b.x += b.vx * hit; b.y += b.vy * hit; rem -= hit;
+      if (kind === 1) b.vx = -b.vx; else if (kind === 2) b.vy = -b.vy;
+      else { const nx = (b.x - hc.x) / hc.r, ny = (b.y - hc.y) / hc.r, dd = b.vx * nx + b.vy * ny; b.vx -= 2 * dd * nx; b.vy -= 2 * dd * ny; }
+      b.pts.push([b.x, b.y]);
+    }
+  }
+  function draw() {
+    const vw = innerWidth, vh = innerHeight, d = Math.min(window.devicePixelRatio || 1, 1.5);
+    if (cv.width !== Math.round(vw * d) || cv.height !== Math.round(vh * d) || d !== dpr) { dpr = d; cv.width = Math.round(vw * d); cv.height = Math.round(vh * d); }
+    const y0 = scrollY;
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height);
+    ctx.setTransform(d, 0, 0, d, 0, -y0 * d);
+    ctx.lineWidth = 1; ctx.lineJoin = 'round';
+    for (const b of balls) {
+      const P0 = b.pts; ctx.beginPath();
+      for (let i = 0; i < P0.length; i++) {
+        const a = P0[i], c = i + 1 < P0.length ? P0[i + 1] : [b.x, b.y];
+        if (Math.max(a[1], c[1]) < y0 - 2 || Math.min(a[1], c[1]) > y0 + vh + 2) continue;
+        ctx.moveTo(a[0], a[1]); ctx.lineTo(c[0], c[1]);
+      }
+      ctx.strokeStyle = rgba(P.ink, .11); ctx.stroke();
+      if (reduce) continue;
+      let need = 420, hx = b.x, hy = b.y; ctx.beginPath(); ctx.moveTo(hx, hy);
+      for (let i = P0.length - 1; i >= 0 && need > 0; i--) { const q = P0[i], l = Math.hypot(q[0] - hx, q[1] - hy); if (l >= need) { ctx.lineTo(hx + (q[0] - hx) * need / l, hy + (q[1] - hy) * need / l); need = 0; } else { ctx.lineTo(q[0], q[1]); need -= l; hx = q[0]; hy = q[1]; } }
+      ctx.strokeStyle = rgba(P.accent, .45); ctx.lineWidth = 1.3; ctx.stroke(); ctx.lineWidth = 1;
+      ctx.fillStyle = rgba(P.accent, .9); ctx.beginPath(); ctx.arc(b.x, b.y, 2.6, 0, TAU); ctx.fill();
+    }
+  }
+  let pendingH = 0;
+  new ResizeObserver(() => {
+    const w = document.documentElement.clientWidth, h = document.documentElement.scrollHeight;
+    if (w !== W || Math.abs(h - Hd) > 40) { clearTimeout(pendingH); pendingH = setTimeout(build, 150); }
+  }).observe(document.body);
+  build();
+  return {
+    tick(t) {
+      const dt = last == null ? 0 : Math.min(.05, t - last); last = t;
+      if (!reduce && dt > 0) { balls.forEach(b => step(b, dt)); dirty = true; }
+      if (dirty || scrollY !== lastY) { lastY = scrollY; dirty = false; draw(); }
+    },
+    repaint() { dirty = true; }
+  };
+})();
+
+/* ---------- Hero details that change with each visit ---------- */
+{ const r = fork(); document.querySelectorAll('.stain').forEach(el => { el.style.transform = `rotate(${Math.floor(r() * 360)}deg)`; }); }
+{ const el = document.getElementById('seed'), a = document.getElementById('seed-link'); if (el) el.textContent = SEED; if (a) a.href = '?seed=' + SEED; }
+
+/* ---------- Scroll: paper gives way to graph paper for the club, then returns for the poem ---------- */
+const about = document.getElementById('about'), poem = document.getElementById('poem');
+function frame(now) {
+  const t = now / 1000, vh = innerHeight, sy = scrollY;
+  const ta = about.getBoundingClientRect().top + sy, tp = poem.getBoundingClientRect().top + sy;
+  const g = smooth(ta - vh * 1.05, ta - vh * .3, sy) * (1 - .94 * smooth(tp - vh * .95, tp - vh * .25, sy));
+  if (Math.abs(g - gNow) > .002) { gNow = g; setPalette(g); scenes.forEach(s => { s.dirty = true; }); billiard.repaint(); }
+  billiard.tick(t);
+  for (const s of scenes) {
+    if (!s.visible || !s.active || !s.w) continue;
+    if (s.dirty || (s.animated && !reduce) || (s.busy && s.busy())) { s.dirty = false; s.draw(s, t); }
+  }
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+if (document.fonts) document.fonts.ready.then(() => scenes.forEach(s => { s.dirty = true; }));
+})();
+</script>
+</body>
+</html>
