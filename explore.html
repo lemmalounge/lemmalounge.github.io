@@ -848,7 +848,7 @@ function Raster(res, pixel) {
 /* ---------- Chapter III, step 5: the hydrogen atom wears the spherical harmonics ---------- */
 function hydrogen(canvas) {
   const ORBS = [[1, 0, 0], [2, 0, 0], [2, 1, 0], [2, 1, 1], [3, 1, 0], [3, 2, 0], [3, 2, 1], [3, 2, 2], [4, 3, 0], [4, 3, 2]];
-  const LET = 'spdfg', BLUEC = [42, 79, 143], NPTS = 2600, SPR = 64;
+  const LET = 'spdfg', BLUEC = [42, 79, 143], NPTS = 4200, SPR = 64;
   const leg = (l, m, x) => {
     let pmm = 1; const s = Math.sqrt(Math.max(0, 1 - x * x));
     for (let i = 1; i <= m; i++) pmm *= -(2 * i - 1) * s;
@@ -869,20 +869,26 @@ function hydrogen(canvas) {
     let mx = 0;
     for (let a = 0; a <= 34; a++) for (let b = 0; b <= 34; b++) for (let d = 0; d <= 34; d++)
       mx = Math.max(mx, Math.abs(psi(n, l, m, (a / 17 - 1) * V, (b / 17 - 1) * V, (d / 17 - 1) * V)));
-    const m2 = mx * mx, pts = new Float32Array(NPTS * 3), sg = new Uint8Array(NPTS);
+    const m2 = mx * mx, raw = new Float32Array(NPTS * 3), sg = new Uint8Array(NPTS), rr = [];
     let got = 0, tries = 0;
-    while (got < NPTS && tries < 500000) {
+    while (got < NPTS && tries < 2200000) {
       tries++;
       const x = (rnd() * 2 - 1) * V, y = (rnd() * 2 - 1) * V, z = (rnd() * 2 - 1) * V;
       const v = psi(n, l, m, x, y, z);
-      if (Math.pow(v * v / m2, .62) > rnd()) { pts[got * 3] = x / V; pts[got * 3 + 1] = y / V; pts[got * 3 + 2] = z / V; sg[got] = v >= 0 ? 1 : 0; got++; }
+      if (v * v / m2 > rnd()) { raw[got * 3] = x; raw[got * 3 + 1] = y; raw[got * 3 + 2] = z; sg[got] = v >= 0 ? 1 : 0; rr.push(Math.hypot(x, y, z)); got++; }
     }
-    return { pts, sg, got };
+    rr.sort((a, b) => a - b);
+    const sc = (rr[Math.floor(rr.length * .95)] || V) * 1.08, pts = new Float32Array(got * 3);
+    for (let k = 0; k < got * 3; k++) pts[k] = raw[k] / sc;
+    return { pts, sg, got, span: Math.round(2 * sc) };
   };
+  let pre = 0;
+  const tick = () => { if (pre < ORBS.length) { if (!clouds.has(pre)) clouds.set(pre, make(pre)); pre++; setTimeout(tick, 80); } };
+  setTimeout(tick, 600);
   const mkSpr = col => {
     const cv = document.createElement('canvas'); cv.width = cv.height = SPR;
     const cx = cv.getContext('2d'), g = cx.createRadialGradient(SPR / 2, SPR / 2, 0, SPR / 2, SPR / 2, SPR / 2);
-    g.addColorStop(0, rgba(col, .5)); g.addColorStop(.4, rgba(col, .18)); g.addColorStop(1, rgba(col, 0));
+    g.addColorStop(0, rgba(col, .55)); g.addColorStop(.35, rgba(col, .2)); g.addColorStop(1, rgba(col, 0));
     cx.fillStyle = g; cx.fillRect(0, 0, SPR, SPR);
     return cv;
   };
@@ -901,26 +907,30 @@ function hydrogen(canvas) {
       const yaw = reduce ? .7 : t * .25, cyw = Math.cos(yaw), syw = Math.sin(yaw), pit = .4, cp = Math.cos(pit), sp = Math.sin(pit);
       ctx.clearRect(0, 0, W, W);
       ctx.strokeStyle = rgba(P.pencil, .5); ctx.lineWidth = .8; ctx.setLineDash([2, 4]);
-      ctx.beginPath(); ctx.moveTo(c, c - R * .96); ctx.lineTo(c, c + R * .96); ctx.stroke(); ctx.setLineDash([]);
-      const SZ = W * .052;
+      ctx.beginPath(); ctx.moveTo(c, c - R * .98); ctx.lineTo(c, c + R * .98); ctx.stroke(); ctx.setLineDash([]);
+      const SZ = W * .034, CO = Math.max(1.8, W * .005), cores = [rgba(BLUEC), rgba(P.accent)];
       const cloud = (cl, am) => {
         if (!cl || am <= .01) return;
         for (let k = 0; k < cl.got; k++) {
           const x = cl.pts[k * 3], y = cl.pts[k * 3 + 1], z = cl.pts[k * 3 + 2];
           const x1 = x * cyw - y * syw, y1 = x * syw + y * cyw;
           const sx = c + x1 * R, sy = c - (y1 * sp + z * cp) * R;
-          const near = clamp((1 - (y1 * cp - z * sp)) / 2), ss = SZ * (.65 + .65 * near);
-          ctx.globalAlpha = am * (.1 + .12 * near);
+          const near = clamp((1 - (y1 * cp - z * sp)) / 2), ss = SZ * (.55 + .5 * near);
+          ctx.globalAlpha = am * (.12 + .1 * near);
           ctx.drawImage(sprites[cl.sg[k]], sx - ss / 2, sy - ss / 2, ss, ss);
+          ctx.globalAlpha = am * (.3 + .3 * near);
+          ctx.fillStyle = cores[cl.sg[k]];
+          ctx.fillRect(sx - CO / 2, sy - CO / 2, CO, CO);
         }
         ctx.globalAlpha = 1;
       };
       cloud(clouds.get(ia), 1 - fr);
       cloud(clouds.get(ib), fr);
       ctx.fillStyle = rgba(P.ink); ctx.beginPath(); ctx.arc(c, c, 2.2, 0, TAU); ctx.fill();
+      const span = (clouds.get(I) || {}).span || Math.round(2 * ext(n));
       ctx.font = `italic ${fs}px "Bodoni Moda", Didot, serif`;
       ctx.fillStyle = rgba(P.ink); ctx.fillText(`n = ${n}, l = ${l}, m = ${m}`, W * .04, W * .07);
-      ctx.fillStyle = rgba(P.muted); ctx.fillText(`${Math.round(2 * ext(n))} Bohr radii across`, W * .04, W * .97);
+      ctx.fillStyle = rgba(P.muted); ctx.fillText(`${span} Bohr radii across`, W * .04, W * .97);
     }
   });
 }
