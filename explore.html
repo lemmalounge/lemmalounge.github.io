@@ -358,7 +358,7 @@ footer a:hover{color:var(--accent)}
         </div>
         <div class="step">
           <p class="when">1926, the hydrogen atom</p>
-          <p>Solve Schrödinger's equation for hydrogen's one electron and the spherical harmonics appear unbidden: they are the angular shape of every orbital. The quantum numbers <i>l</i> and <i>m</i> of chemistry class are Laplace's indices, and the electron's probability cloud wears the same lobes as the sphere you just saw.</p>
+          <p>Solve Schrödinger's equation for hydrogen's one electron and the spherical harmonics appear unbidden: they are the angular shape of every orbital. The quantum numbers <i>l</i> and <i>m</i> of chemistry class are Laplace's indices, and the electron's probability cloud wears the same lobes as the sphere you just saw. Keep scrolling to climb from 1s up through the d and f orbitals.</p>
           <p class="math">ψ<sub>nlm</sub> = R<sub>nl</sub>(r) Y<sub>l</sub><sup>m</sup>(θ, φ)</p>
         </div>
       </div>
@@ -848,7 +848,7 @@ function Raster(res, pixel) {
 /* ---------- Chapter III, step 5: the hydrogen atom wears the spherical harmonics ---------- */
 function hydrogen(canvas) {
   const ORBS = [[1, 0, 0], [2, 0, 0], [2, 1, 0], [2, 1, 1], [3, 1, 0], [3, 2, 0], [3, 2, 1], [3, 2, 2], [4, 3, 0], [4, 3, 2]];
-  const LET = 'spdfg', BLUEC = [42, 79, 143], NPTS = 2600;
+  const LET = 'spdfg', BLUEC = [42, 79, 143], NPTS = 2600, SPR = 64;
   const leg = (l, m, x) => {
     let pmm = 1; const s = Math.sqrt(Math.max(0, 1 - x * x));
     for (let i = 1; i <= m; i++) pmm *= -(2 * i - 1) * s;
@@ -879,43 +879,45 @@ function hydrogen(canvas) {
     }
     return { pts, sg, got };
   };
-  let I = -1, prevC = null, curC = null, tSwitch = 0;
+  const mkSpr = col => {
+    const cv = document.createElement('canvas'); cv.width = cv.height = SPR;
+    const cx = cv.getContext('2d'), g = cx.createRadialGradient(SPR / 2, SPR / 2, 0, SPR / 2, SPR / 2, SPR / 2);
+    g.addColorStop(0, rgba(col, .5)); g.addColorStop(.4, rgba(col, .18)); g.addColorStop(1, rgba(col, 0));
+    cx.fillStyle = g; cx.fillRect(0, 0, SPR, SPR);
+    return cv;
+  };
+  let sprites = null, sprKey = '';
   return scene(canvas, {
     animated: true,
     draw(s, t) {
-      const i = reduce ? 5 : Math.floor(t / 4.5) % ORBS.length;
-      if (i !== I) { I = i; prevC = curC; if (!clouds.has(I)) clouds.set(I, make(I)); curC = clouds.get(I); tSwitch = t; }
-      const [n, l, m] = ORBS[I];
+      const lp = clamp((s.p * 5 - 4) / .88), fi = lp * (ORBS.length - 1), ia = Math.floor(fi), ib = Math.min(ORBS.length - 1, ia + 1), fr = ease(fi - ia);
+      const I = fr < .5 ? ia : ib, [n, l, m] = ORBS[I];
       { const el = document.getElementById('hyd-lab'), tx = `${n}${LET[l]}, m = ${m}`; if (el && el.textContent !== tx) el.textContent = tx; }
+      const key = rgba(P.accent);
+      if (key !== sprKey) { sprKey = key; sprites = [mkSpr(BLUEC), mkSpr(P.accent)]; }
+      if (!clouds.has(ia)) clouds.set(ia, make(ia));
+      if (!clouds.has(ib)) clouds.set(ib, make(ib));
       const ctx = s.ctx, W = s.w, c = W / 2, R = W * .42, fs = Math.max(12, W * .03);
-      const yaw = reduce ? .7 : t * .3, cyw = Math.cos(yaw), syw = Math.sin(yaw), pit = .4, cp = Math.cos(pit), sp = Math.sin(pit);
-      const fade = reduce ? 1 : clamp((t - tSwitch) / .7);
-      if (fade >= 1) prevC = null;
+      const yaw = reduce ? .7 : t * .25, cyw = Math.cos(yaw), syw = Math.sin(yaw), pit = .4, cp = Math.cos(pit), sp = Math.sin(pit);
       ctx.clearRect(0, 0, W, W);
       ctx.strokeStyle = rgba(P.pencil, .5); ctx.lineWidth = .8; ctx.setLineDash([2, 4]);
       ctx.beginPath(); ctx.moveTo(c, c - R * .96); ctx.lineTo(c, c + R * .96); ctx.stroke(); ctx.setLineDash([]);
-      const sz = Math.max(1.6, W * .006), LV = 5;
-      const styles = [];
-      for (let b = 0; b < LV; b++) {
-        styles.push(rgba(BLUEC, .22 + .5 * b / (LV - 1)));
-        styles.push(rgba(P.accent, .22 + .5 * b / (LV - 1)));
-      }
+      const SZ = W * .052;
       const cloud = (cl, am) => {
-        if (!cl || am <= 0) return;
-        ctx.save(); ctx.globalAlpha = am;
+        if (!cl || am <= .01) return;
         for (let k = 0; k < cl.got; k++) {
           const x = cl.pts[k * 3], y = cl.pts[k * 3 + 1], z = cl.pts[k * 3 + 2];
           const x1 = x * cyw - y * syw, y1 = x * syw + y * cyw;
           const sx = c + x1 * R, sy = c - (y1 * sp + z * cp) * R;
-          const near = clamp((1 - (y1 * cp - z * sp)) / 2), b = Math.min(LV - 1, Math.floor(near * LV));
-          ctx.fillStyle = styles[b * 2 + cl.sg[k]];
-          ctx.fillRect(sx - sz / 2, sy - sz / 2, sz, sz);
+          const near = clamp((1 - (y1 * cp - z * sp)) / 2), ss = SZ * (.65 + .65 * near);
+          ctx.globalAlpha = am * (.1 + .12 * near);
+          ctx.drawImage(sprites[cl.sg[k]], sx - ss / 2, sy - ss / 2, ss, ss);
         }
-        ctx.restore();
+        ctx.globalAlpha = 1;
       };
-      cloud(prevC, 1 - fade);
-      cloud(curC, fade);
-      ctx.fillStyle = rgba(P.ink); ctx.beginPath(); ctx.arc(c, c, 2.4, 0, TAU); ctx.fill();
+      cloud(clouds.get(ia), 1 - fr);
+      cloud(clouds.get(ib), fr);
+      ctx.fillStyle = rgba(P.ink); ctx.beginPath(); ctx.arc(c, c, 2.2, 0, TAU); ctx.fill();
       ctx.font = `italic ${fs}px "Bodoni Moda", Didot, serif`;
       ctx.fillStyle = rgba(P.ink); ctx.fillText(`n = ${n}, l = ${l}, m = ${m}`, W * .04, W * .07);
       ctx.fillStyle = rgba(P.muted); ctx.fillText(`${Math.round(2 * ext(n))} Bohr radii across`, W * .04, W * .97);
